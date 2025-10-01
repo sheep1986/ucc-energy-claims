@@ -36,7 +36,7 @@ const Header = () => {
               <img 
                 src="/ucc-logo.png" 
                 alt="UCC" 
-                className="h-10 w-auto transition-all duration-300 group-hover:scale-105"
+                className="h-12 lg:h-14 w-auto transition-all duration-300 group-hover:scale-105"
                 onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.nextSibling.style.display = 'flex';
@@ -44,8 +44,8 @@ const Header = () => {
               />
               {/* Fallback if logo doesn't load */}
               <div className="hidden items-center">
-                <IconShieldCheck className="w-7 h-7 text-green-600" />
-                <span className="ml-2 text-xl font-bold text-gray-900">UCC</span>
+                <IconShieldCheck className="w-8 h-8 text-green-600" />
+                <span className="ml-2 text-2xl font-bold text-gray-900">UCC</span>
               </div>
             </Link>
 
