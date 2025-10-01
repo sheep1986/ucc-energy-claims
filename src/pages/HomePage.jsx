@@ -295,45 +295,6 @@ const HomePage = () => {
         
       </section>
 
-
-      {/* Our Service Promise Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Service Promise</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              What you can expect when working with us
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">100%</div>
-              <div className="text-sm text-gray-400">Risk Free</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">Fast</div>
-              <div className="text-sm text-gray-400">Processing</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">Expert</div>
-              <div className="text-sm text-gray-400">Legal Team</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">£0</div>
-              <div className="text-sm text-gray-400">Upfront Costs</div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/calculator" className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-all transform hover:scale-105">
-              Get Your Free Assessment Now
-              <IconArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* OFGEM Report Alert */}
       <section className="py-8 bg-amber-50 border-t-4 border-amber-400 fade-up">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -426,8 +387,8 @@ const HomePage = () => {
                 {/* Main Image with Overlay Stats */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                   <img 
-                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800"
-                    alt="Business team in office meeting"
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800"
+                    alt="Professional business team reviewing documents"
                     className="w-full h-[600px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
