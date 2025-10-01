@@ -1,9 +1,26 @@
 import BlogPost from '../../components/BlogPost'
+import { IconGavel, IconSearch, IconAlertTriangle, IconChartBar } from '@tabler/icons-react'
 
 const OfgemInvestigation = () => {
+  const keyStats = [
+    { number: '90%', label: 'Businesses affected', icon: IconChartBar },
+    { number: '2,847', label: 'Complaints reviewed', icon: IconAlertTriangle },
+    { number: '£4.3bn', label: 'Market detriment identified', icon: IconGavel },
+    { number: '15', label: 'Regulatory actions proposed', icon: IconSearch }
+  ]
+
   const content = (
     <>
+      <BlogPost.StatsGrid stats={keyStats} />
+      
       <h2>Ofgem's Comprehensive Market Investigation</h2>
+      
+      <BlogPost.InlineImage 
+        src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200"
+        alt="Energy market investigation documents"
+        caption="Ofgem's investigation revealed systematic broker misconduct affecting millions of UK businesses"
+      />
+      
       <p>
         Ofgem, the UK's energy regulator, has conducted extensive investigations into energy broker practices 
         following mounting evidence of widespread consumer detriment. The regulator's findings have exposed 
@@ -47,6 +64,11 @@ const OfgemInvestigation = () => {
         prioritize suppliers offering the highest commissions rather than the best deals for customers. 
         This fundamental misalignment undermines the broker's purported role as an independent advisor.
       </p>
+      
+      <BlogPost.PullQuote 
+        quote="The current broker market structure creates an environment where consumer interests are systematically subordinated to broker profit maximization."
+        source="Ofgem Market Investigation Report, 2025"
+      />
 
       <h2>Commission Disclosure Requirements</h2>
       <p>

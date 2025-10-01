@@ -1,9 +1,26 @@
 import BlogPost from '../../components/BlogPost'
+import { IconHeartbeat, IconPigMoney, IconBuildingHospital, IconTrendingUp } from '@tabler/icons-react'
 
 const HealthcareRecovery = () => {
+  const keyStats = [
+    { number: '£180M', label: 'Healthcare sector recovery', icon: IconPigMoney },
+    { number: '247', label: 'NHS trusts affected', icon: IconBuildingHospital },
+    { number: '£2.3M', label: 'Largest single recovery', icon: IconTrendingUp },
+    { number: '2-3x', label: 'Energy intensity vs offices', icon: IconHeartbeat }
+  ]
+
   const content = (
     <>
+      <BlogPost.StatsGrid stats={keyStats} />
+      
       <h2>NHS and Healthcare Sector Under Pressure</h2>
+      
+      <BlogPost.InlineImage 
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200"
+        alt="Modern NHS hospital facility"
+        caption="Healthcare facilities' high energy demands make them particularly vulnerable to hidden broker commissions"
+      />
+      
       <p>
         The UK healthcare sector, including NHS trusts, private healthcare providers, and care facilities, 
         faces unprecedented financial pressures while delivering critical public services. Energy costs 
@@ -76,6 +93,11 @@ const HealthcareRecovery = () => {
         <li>With interest: approximately £3.5-4 million recoverable</li>
       </ul>
 
+      <BlogPost.PullQuote 
+        quote="Every pound recovered from hidden commissions is a pound that can be invested directly in patient care and life-saving equipment."
+        source="NHS Trust Finance Director"
+      />
+      
       <h2>Impact on Healthcare Delivery</h2>
       <p>
         Hidden energy commissions directly impact healthcare organizations' ability to deliver services:

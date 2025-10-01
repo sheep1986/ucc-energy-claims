@@ -1,6 +1,79 @@
 import BlogPost from '../../components/BlogPost'
+import { IconCalculator, IconChartLine, IconPercentage, IconClock } from '@tabler/icons-react'
 
 const CalculationGuide = () => {
+  const statistics = [
+    {
+      value: "10-50%",
+      label: "Hidden cost range",
+      trend: "Typical commission rates",
+      icon: <IconPercentage className="w-6 h-6" />
+    },
+    {
+      value: "£28k",
+      label: "Example annual cost",
+      trend: "2,000 MWh facility",
+      icon: <IconCalculator className="w-6 h-6" />
+    },
+    {
+      value: "8%",
+      label: "Compound interest",
+      trend: "Commercial recovery rate",
+      icon: <IconChartLine className="w-6 h-6" />
+    },
+    {
+      value: "6 Years",
+      label: "Recovery period",
+      trend: "Legal limitation period",
+      icon: <IconClock className="w-6 h-6" />
+    }
+  ]
+
+  const pullQuotes = [
+    {
+      text: "Hidden Commission = (Contract Rate - Market Rate) × Annual Consumption",
+      source: "Basic Commission Formula"
+    },
+    {
+      text: "Many businesses discover they have sufficient evidence in their existing files to support a strong claim for commission recovery.",
+      source: "Legal Analysis"
+    },
+    {
+      text: "Understanding how to calculate hidden energy costs puts you in control of your energy procurement and helps identify potential claims worth hundreds of thousands of pounds.",
+      source: "Energy Analysis Expert"
+    }
+  ]
+
+  const inlineImages = [
+    {
+      src: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800",
+      alt: "Energy cost calculation spreadsheet and charts",
+      caption: "Detailed calculations help identify hidden commissions embedded in energy contracts",
+      position: "right"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      alt: "Business analytics and data visualization dashboard",
+      caption: "Market data analysis reveals the true cost breakdown of energy pricing",
+      position: "center"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      alt: "Financial documents and calculator for energy audit",
+      caption: "Professional verification ensures accurate calculation of hidden commission claims",
+      position: "left"
+    }
+  ]
+
+  const authorBio = {
+    description: "Expert team of energy market analysts and financial auditors specializing in energy cost analysis and commission identification. Our team has helped recover millions in hidden broker fees.",
+    credentials: ["Energy Market Analysis", "Financial Auditing", "Commercial Recovery"],
+    contact: {
+      email: "analysis.team@ucclaims.co.uk",
+      location: "London, UK"
+    }
+  }
+
   const content = (
     <>
       <h2>Understanding Hidden Energy Costs</h2>
@@ -296,6 +369,10 @@ const CalculationGuide = () => {
       category="Expert Guides"
       image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200"
       content={content}
+      statistics={statistics}
+      pullQuotes={pullQuotes}
+      inlineImages={inlineImages}
+      authorBio={authorBio}
       keyPoints={[
         "Hidden commissions typically add 10-50% to energy costs without disclosure",
         "Basic formula: (Contract Rate - Market Rate) × Annual Consumption",

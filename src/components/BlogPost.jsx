@@ -10,9 +10,68 @@ import {
   IconChevronRight,
   IconAlertCircle,
   IconQuote,
-  IconArrowUp
+  IconArrowUp,
+  IconBrandTwitter,
+  IconBrandLinkedin,
+  IconBrandFacebook,
+  IconCopy,
+  IconCheck,
+  IconMail,
+  IconPhone,
+  IconMapPin
 } from '@tabler/icons-react'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+
+// Helper component for pull quotes
+const PullQuote = ({ children, source }) => (
+  <div className="my-12 relative">
+    <div className="absolute -left-4 -top-4 w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center shadow-lg">
+      <IconQuote className="w-8 h-8 text-white" />
+    </div>
+    <blockquote className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 pl-16 border-l-4 border-green-500 shadow-sm">
+      <p className="text-xl lg:text-2xl font-medium text-gray-800 leading-relaxed italic mb-4">
+        "{children}"
+      </p>
+      {source && (
+        <cite className="text-green-700 font-semibold text-sm block">
+          — {source}
+        </cite>
+      )}
+    </blockquote>
+  </div>
+)
+
+// Helper component for inline images with captions
+const InlineImage = ({ src, alt, caption, position = "center" }) => (
+  <div className={`my-8 ${position === 'left' ? 'lg:float-left lg:mr-8 lg:mb-4 lg:w-1/2' : position === 'right' ? 'lg:float-right lg:ml-8 lg:mb-4 lg:w-1/2' : ''}`}>
+    <div className="rounded-xl overflow-hidden shadow-lg">
+      <img 
+        src={src} 
+        alt={alt}
+        className="w-full h-64 lg:h-72 object-cover"
+      />
+    </div>
+    {caption && (
+      <p className="text-sm text-gray-600 mt-3 italic text-center px-4">
+        {caption}
+      </p>
+    )}
+  </div>
+)
+
+// Helper component for statistics/data visualization
+const StatCard = ({ value, label, trend, icon }) => (
+  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mx-auto mb-3">
+      {icon}
+    </div>
+    <div className="text-3xl font-bold text-gray-900 mb-1">{value}</div>
+    <div className="text-sm text-gray-600 mb-2">{label}</div>
+    {trend && (
+      <div className="text-xs text-green-600 font-medium">{trend}</div>
+    )}
+  </div>
+)
 
 const BlogPost = ({ 
   title, 
@@ -25,11 +84,16 @@ const BlogPost = ({
   content,
   keyPoints,
   sources,
-  relatedArticles 
+  relatedArticles,
+  pullQuotes = [],
+  inlineImages = [],
+  authorBio,
+  statistics = []
 }) => {
   useScrollAnimation()
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +110,40 @@ const BlogPost = ({
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const shareText = `${title} - ${subtitle}`
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.log('Failed to copy link')
+    }
+  }
+
+  const socialShares = [
+    {
+      name: 'Twitter',
+      icon: IconBrandTwitter,
+      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+      color: 'hover:bg-blue-50 hover:text-blue-600'
+    },
+    {
+      name: 'LinkedIn',
+      icon: IconBrandLinkedin,
+      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+      color: 'hover:bg-blue-50 hover:text-blue-700'
+    },
+    {
+      name: 'Facebook',
+      icon: IconBrandFacebook,
+      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+      color: 'hover:bg-blue-50 hover:text-blue-800'
+    }
+  ]
 
   return (
     <article className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
@@ -121,8 +219,31 @@ const BlogPost = ({
               </div>
               
               <div className="flex items-center gap-2">
-                <button className="p-3 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all group">
-                  <IconShare2 className="w-5 h-5 text-gray-600 group-hover:text-green-600" />
+                {socialShares.map((share) => {
+                  const IconComponent = share.icon
+                  return (
+                    <a
+                      key={share.name}
+                      href={share.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 bg-gray-50 rounded-xl transition-all ${share.color}`}
+                      title={`Share on ${share.name}`}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </a>
+                  )
+                })}
+                <button 
+                  onClick={handleCopyLink}
+                  className="p-3 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all group"
+                  title="Copy link"
+                >
+                  {copied ? (
+                    <IconCheck className="w-5 h-5 text-green-600" />
+                  ) : (
+                    <IconCopy className="w-5 h-5 text-gray-600 group-hover:text-green-600" />
+                  )}
                 </button>
                 <button className="p-3 bg-gray-50 hover:bg-gray-100 rounded-xl transition-all group">
                   <IconBookmark className="w-5 h-5 text-gray-600 group-hover:text-green-600" />
@@ -173,6 +294,27 @@ const BlogPost = ({
         </div>
       )}
 
+      {/* Statistics Section */}
+      {statistics && statistics.length > 0 && (
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Key Statistics</h3>
+            <p className="text-gray-600">Critical data that illustrates the scope of the issue</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 fade-up">
+            {statistics.map((stat, index) => (
+              <StatCard
+                key={index}
+                value={stat.value}
+                label={stat.label}
+                trend={stat.trend}
+                icon={stat.icon}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Main Content - Enhanced Typography */}
       <div className="max-w-4xl mx-auto px-6 lg:px-8 pb-16">
         <div className="prose prose-lg lg:prose-xl max-w-none prose-gray
@@ -187,6 +329,24 @@ const BlogPost = ({
           prose-blockquote:border-l-4 prose-blockquote:border-green-500 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-600
           prose-a:text-green-600 prose-a:no-underline hover:prose-a:underline">
           {content}
+          
+          {/* Inline Images */}
+          {inlineImages.map((img, index) => (
+            <InlineImage
+              key={index}
+              src={img.src}
+              alt={img.alt}
+              caption={img.caption}
+              position={img.position}
+            />
+          ))}
+          
+          {/* Pull Quotes */}
+          {pullQuotes.map((quote, index) => (
+            <PullQuote key={index} source={quote.source}>
+              {quote.text}
+            </PullQuote>
+          ))}
         </div>
 
         {/* Sources Section - Enhanced */}
@@ -205,6 +365,67 @@ const BlogPost = ({
                   <p className="text-sm text-gray-600 leading-relaxed">{source}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* Author Bio Section */}
+        {authorBio && (
+          <div className="mt-16 bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+              <IconUser className="w-6 h-6 text-green-600" />
+              About the Author
+            </h3>
+            <div className="flex flex-col lg:flex-row gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+                  {author.charAt(0)}
+                </div>
+              </div>
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">{author}</h4>
+                <p className="text-gray-600 leading-relaxed mb-4">{authorBio.description}</p>
+                {authorBio.credentials && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {authorBio.credentials.map((credential, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full"
+                      >
+                        {credential}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {authorBio.contact && (
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                    {authorBio.contact.email && (
+                      <a 
+                        href={`mailto:${authorBio.contact.email}`}
+                        className="flex items-center gap-1 hover:text-green-600 transition-colors"
+                      >
+                        <IconMail className="w-4 h-4" />
+                        {authorBio.contact.email}
+                      </a>
+                    )}
+                    {authorBio.contact.phone && (
+                      <a 
+                        href={`tel:${authorBio.contact.phone}`}
+                        className="flex items-center gap-1 hover:text-green-600 transition-colors"
+                      >
+                        <IconPhone className="w-4 h-4" />
+                        {authorBio.contact.phone}
+                      </a>
+                    )}
+                    {authorBio.contact.location && (
+                      <span className="flex items-center gap-1">
+                        <IconMapPin className="w-4 h-4" />
+                        {authorBio.contact.location}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         )}
@@ -307,3 +528,4 @@ const BlogPost = ({
 }
 
 export default BlogPost
+export { PullQuote, InlineImage, StatCard }

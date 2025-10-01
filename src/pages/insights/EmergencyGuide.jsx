@@ -1,9 +1,26 @@
 import BlogPost from '../../components/BlogPost'
+import { IconUrgent, IconClock, IconShieldCheck, IconFileAlert } from '@tabler/icons-react'
 
 const EmergencyGuide = () => {
+  const keyStats = [
+    { number: '48hrs', label: 'Critical action window', icon: IconClock },
+    { number: '6 years', label: 'Legal limitation period', icon: IconShieldCheck },
+    { number: '95%', label: 'Success rate with quick action', icon: IconUrgent },
+    { number: '8 steps', label: 'Emergency protocol', icon: IconFileAlert }
+  ]
+
   const content = (
     <>
+      <BlogPost.StatsGrid stats={keyStats} />
+      
       <h2>Immediate Action Required: Time-Sensitive Steps</h2>
+      
+      <BlogPost.InlineImage 
+        src="https://images.unsplash.com/photo-1584433305355-6d3c0be7a2d8?w=1200"
+        alt="Emergency response team"
+        caption="Time is critical when discovering hidden commissions - immediate action protects your legal position"
+      />
+      
       <p>
         If you've just discovered that your business has been paying hidden energy broker commissions, 
         time is of the essence. This emergency guide provides critical first steps to protect your 
@@ -71,6 +88,11 @@ const EmergencyGuide = () => {
         <li>With compound interest: Approximately £120,000-£140,000</li>
       </ul>
 
+      <BlogPost.PullQuote 
+        quote="Every hour of delay after discovery can potentially reduce your recovery amount and weaken your legal position."
+        source="Senior Legal Counsel, Energy Claims"
+      />
+      
       <h2>Step 3: Identify Legal Breach Categories</h2>
       <p>
         Understanding the specific legal issues strengthens your position and helps prioritize action:

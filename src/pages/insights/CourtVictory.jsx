@@ -1,6 +1,79 @@
 import BlogPost from '../../components/BlogPost'
+import { IconScale, IconShieldCheck, IconGavel, IconCertificate } from '@tabler/icons-react'
 
 const CourtVictory = () => {
+  const statistics = [
+    {
+      value: "6 Years",
+      label: "Limitation period",
+      trend: "For fiduciary claims",
+      icon: <IconScale className="w-6 h-6" />
+    },
+    {
+      value: "150+",
+      label: "Years of precedent",
+      trend: "Secret profit doctrine",
+      icon: <IconGavel className="w-6 h-6" />
+    },
+    {
+      value: "100%",
+      label: "Recovery rate",
+      trend: "Plus compound interest",
+      icon: <IconShieldCheck className="w-6 h-6" />
+    },
+    {
+      value: "Legal",
+      label: "Cost recovery",
+      trend: "In appropriate cases",
+      icon: <IconCertificate className="w-6 h-6" />
+    }
+  ]
+
+  const pullQuotes = [
+    {
+      text: "Where an agent receives payments from a third party without the principal's knowledge or consent, the principal is entitled to full disclosure and recovery of all profits made from the undisclosed arrangement.",
+      source: "Court of Appeal Ruling"
+    },
+    {
+      text: "Undisclosed broker commissions may constitute a breach of fiduciary duty and businesses have legitimate grounds to pursue claims where brokers have failed to provide adequate disclosure.",
+      source: "Ofgem Official Guidance"
+    },
+    {
+      text: "Courts treat breaches of fiduciary duty seriously and are generally willing to make robust orders for recovery of secret profits.",
+      source: "Legal Analysis"
+    }
+  ]
+
+  const inlineImages = [
+    {
+      src: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800",
+      alt: "UK High Court building representing legal authority",
+      caption: "The UK High Court has established clear precedents for energy broker commission claims",
+      position: "right"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800",
+      alt: "Legal documents and scales of justice",
+      caption: "Fiduciary duty law provides the foundation for recovering undisclosed commissions",
+      position: "center"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?w=800",
+      alt: "Business professionals in legal consultation",
+      caption: "Businesses are increasingly seeking legal remedies for undisclosed broker arrangements",
+      position: "left"
+    }
+  ]
+
+  const authorBio = {
+    description: "Expert legal analysis team specializing in commercial law, fiduciary duty, and energy sector litigation. Our team provides comprehensive legal insights on broker commission recovery.",
+    credentials: ["Commercial Law", "Fiduciary Duty", "Energy Litigation"],
+    contact: {
+      email: "legal.team@ucclaims.co.uk",
+      location: "London, UK"
+    }
+  }
+
   const content = (
     <>
       <h2>Legal Foundations for Energy Broker Claims</h2>
@@ -174,6 +247,10 @@ const CourtVictory = () => {
       category="Legal Updates"
       image="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200"
       content={content}
+      statistics={statistics}
+      pullQuotes={pullQuotes}
+      inlineImages={inlineImages}
+      authorBio={authorBio}
       keyPoints={[
         "Fiduciary duty law provides strong foundation for commission recovery claims",
         "Courts treat undisclosed broker payments as 'secret profits' requiring disgorgement",

@@ -1,6 +1,75 @@
 import BlogPost from '../../components/BlogPost'
+import { IconFactory, IconTrendingDown, IconAlertTriangle, IconChartBar } from '@tabler/icons-react'
 
 const ManufacturingCrisis = () => {
+  const statistics = [
+    {
+      value: "33.6%",
+      label: "Output decline since 2021",
+      trend: "Lowest since 1990",
+      icon: <IconTrendingDown className="w-6 h-6" />
+    },
+    {
+      value: "4x",
+      label: "Higher costs than US",
+      trend: "46% above global average",
+      icon: <IconChartBar className="w-6 h-6" />
+    },
+    {
+      value: "90%",
+      label: "Businesses affected",
+      trend: "Hidden commission victims",
+      icon: <IconAlertTriangle className="w-6 h-6" />
+    },
+    {
+      value: "£750k",
+      label: "Potential 3-year losses",
+      trend: "Per affected business",
+      icon: <IconFactory className="w-6 h-6" />
+    }
+  ]
+
+  const pullQuotes = [
+    {
+      text: "Every pound we can claw back from these hidden commissions is a pound we can invest in our people, our equipment, and our future. In the current climate, that could literally save businesses.",
+      source: "UK Manufacturing Industry Leader"
+    },
+    {
+      text: "UK manufacturers pay some of the highest electricity prices in the developed world, threatening the sector's very existence.",
+      source: "Make UK Report"
+    }
+  ]
+
+  const inlineImages = [
+    {
+      src: "https://images.unsplash.com/photo-1565515267418-b4c1df9a6dfc?w=800",
+      alt: "Industrial manufacturing facility with high energy consumption",
+      caption: "UK manufacturing facilities face unprecedented energy costs that threaten their competitiveness",
+      position: "right"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800", 
+      alt: "Energy costs comparison chart visualization",
+      caption: "Energy price comparisons show UK industrial costs significantly exceed global averages",
+      position: "center"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1565515267418-b4c1df9a6dfc?w=800",
+      alt: "Manufacturing production line operations",
+      caption: "Production lines across the UK are scaling back operations due to unsustainable energy costs",
+      position: "left"
+    }
+  ]
+
+  const authorBio = {
+    description: "Specialized team of energy market analysts and economic researchers focused on UK industrial energy costs and their impact on manufacturing competitiveness.",
+    credentials: ["Energy Economics", "Industrial Analysis", "Policy Research"],
+    contact: {
+      email: "energy.team@ucclaims.co.uk",
+      location: "London, UK"
+    }
+  }
+
   const content = (
     <>
       <h2>The Scale of the Crisis</h2>
@@ -134,6 +203,10 @@ const ManufacturingCrisis = () => {
       category="Industry Analysis"
       image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200"
       content={content}
+      statistics={statistics}
+      pullQuotes={pullQuotes}
+      inlineImages={inlineImages}
+      authorBio={authorBio}
       keyPoints={[
         "UK manufacturing output down 33.6% due to energy costs - lowest since 1990",
         "Industrial energy costs 4x higher than US, 46% above global average",

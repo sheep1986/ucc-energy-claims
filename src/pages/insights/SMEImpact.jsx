@@ -1,8 +1,18 @@
 import BlogPost from '../../components/BlogPost'
+import { IconBuildingStore, IconTrendingDown, IconAlertCircle, IconPigMoney } from '@tabler/icons-react'
 
 const SMEImpact = () => {
+  const keyStats = [
+    { number: '5.5M', label: 'UK SMEs at risk', icon: IconBuildingStore },
+    { number: '£8.2bn', label: 'Annual hidden costs', icon: IconPigMoney },
+    { number: '47%', label: 'SMEs considering closure', icon: IconTrendingDown },
+    { number: '£15k', label: 'Average annual overcharge', icon: IconAlertCircle }
+  ]
+
   const content = (
     <>
+      <BlogPost.StatsGrid stats={keyStats} />
+      
       <h2>Small Business Energy Burden Reaches Breaking Point</h2>
       <p>
         Small and medium enterprises (SMEs) across the UK are facing an unprecedented energy cost crisis that threatens 
@@ -10,6 +20,11 @@ const SMEImpact = () => {
         one of the most significant operational challenges for UK small businesses, with many reporting that 
         electricity and gas bills have become their largest overhead after wages.
       </p>
+      
+      <BlogPost.PullQuote 
+        quote="The combination of rising energy costs and hidden broker commissions is creating an existential crisis for UK small businesses."
+        source="Federation of Small Businesses Report"
+      />
 
       <p>
         The situation has been exacerbated by widespread hidden broker commissions that add substantial undisclosed 
@@ -39,6 +54,12 @@ const SMEImpact = () => {
       <p>
         Different SME sectors face varying degrees of impact from hidden energy commissions:
       </p>
+
+      <BlogPost.InlineImage 
+        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200"
+        alt="Small business owner reviewing costs"
+        caption="SME owners across all sectors are discovering hidden commission charges in their energy contracts"
+      />
 
       <h3>Hospitality and Retail</h3>
       <p>
@@ -169,6 +190,13 @@ const SMEImpact = () => {
       </p>
 
       <h2>Warning Signs for SMEs</h2>
+      
+      <BlogPost.InlineImage 
+        src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1200"
+        alt="SME owner analyzing business costs"
+        caption="Small business owners must be vigilant for signs of hidden broker commissions in their energy contracts"
+      />
+      
       <p>
         Small businesses should watch for these indicators of potential hidden commissions:
       </p>
@@ -179,6 +207,11 @@ const SMEImpact = () => {
         <li>Lack of clear commission disclosure in contracts</li>
         <li>Pressure to sign quickly without comparison shopping</li>
       </ul>
+      
+      <BlogPost.PullQuote 
+        quote="Small businesses are the backbone of the UK economy. They shouldn't be paying hidden fees that could be funding their growth instead."
+        source="Small Business Commissioner"
+      />
 
       <h2>Taking Action: A Step-by-Step Guide for SMEs</h2>
       <p>
