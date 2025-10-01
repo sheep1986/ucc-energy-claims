@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { IconMenu2, IconX } from '@tabler/icons-react'
+import { IconMenu2, IconX, IconShieldCheck, IconArrowRight } from '@tabler/icons-react'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
+      setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -19,62 +19,56 @@ const Header = () => {
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'Industries', href: '/industries' },
     { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   return (
     <>
-      <header className={`fixed w-full z-50 transition-all duration-500 ${
+      <header className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/98 backdrop-blur-xl shadow-sm' 
-          : 'bg-white/80 backdrop-blur-md'
+          ? 'bg-white shadow-md py-2' 
+          : 'bg-white/95 backdrop-blur-sm py-4'
       }`}>
         <nav className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14">
-            {/* Logo */}
-            <Link to="/" className="flex items-center group">
-              <img 
-                src="/ucc-logo.png" 
-                alt="UCC" 
-                className="h-8 w-auto transition-all duration-300 group-hover:scale-105"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              {/* Fallback */}
-              <div className="hidden">
-                <span className="text-2xl font-bold tracking-tight">UCC</span>
+          <div className="flex justify-between items-center">
+            {/* Logo Section */}
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="flex items-center">
+                <IconShieldCheck className="w-7 h-7 text-green-600 transition-transform group-hover:scale-110" />
+                <div className="ml-2">
+                  <span className="text-lg font-bold text-gray-900 tracking-tight">UTILITY</span>
+                  <span className="text-lg font-bold text-gray-900 tracking-tight block -mt-1 text-xs">COMMISSION</span>
+                  <span className="text-xs font-semibold text-green-600 tracking-tight block -mt-0.5">CLAIMS</span>
+                </div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  className={`text-sm font-medium transition-all duration-200 relative group ${
                     location.pathname === item.href 
-                      ? 'bg-gray-900 text-white' 
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-green-600' 
+                      : 'text-gray-700 hover:text-green-600'
                   }`}
                 >
                   {item.name}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-200 ${
+                    location.pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}></span>
                 </Link>
               ))}
               
-              <div className="ml-4 flex items-center gap-3">
-                <Link 
-                  to="/contact"
-                  className="px-4 py-1.5 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:border-gray-300 transition-all duration-200"
-                >
-                  Contact
-                </Link>
+              <div className="ml-4">
                 <Link 
                   to="/calculator"
-                  className="px-4 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-black transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-green-700 rounded-lg hover:from-green-700 hover:to-green-800 transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105"
                 >
-                  Calculate Claim →
+                  Calculate Claim
+                  <IconArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -82,7 +76,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`lg:hidden p-2.5 rounded-lg transition-all duration-300 ${
+              className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
                 isOpen ? 'bg-gray-100' : 'hover:bg-gray-100'
               }`}
             >
@@ -107,32 +101,35 @@ const Header = () => {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="p-6 pt-20">
-            <div className="space-y-6">
+            <div className="space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block text-lg font-medium text-gray-900 hover:text-emerald-600 transition-colors"
+                  className="block text-base font-medium text-gray-900 hover:text-green-600 transition-colors py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
               
-              <Link 
-                to="/calculator"
-                className="btn btn-primary block text-center mt-8"
-                onClick={() => setIsOpen(false)}
-              >
-                Calculate Claim
-              </Link>
+              <div className="pt-4 border-t border-gray-200">
+                <Link 
+                  to="/calculator"
+                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-green-700 rounded-lg hover:from-green-700 hover:to-green-800 transition-all duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Calculate Claim
+                  <IconArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Spacer */}
-      <div className="h-14"></div>
+      {/* Spacer - Dynamic based on initial state */}
+      <div className="h-16 lg:h-20"></div>
     </>
   )
 }
