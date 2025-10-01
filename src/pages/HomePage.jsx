@@ -369,6 +369,140 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* How Hidden Commissions Work - Educational Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-orange-200 rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full filter blur-3xl opacity-20"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Educational Content */}
+            <div className="fade-up">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                The Hidden Commission
+                <span className="text-blue-600"> Scheme Explained</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Discover how thousands of UK businesses are unknowingly paying massive 
+                broker fees hidden inside their energy bills. See if you're one of them.
+              </p>
+              
+              {/* Commission Breakdown */}
+              <div className="space-y-4 mb-8">
+                <div className="bg-blue-100 rounded-xl p-5 border-l-4 border-blue-500">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-gray-900">True energy cost from supplier</span>
+                    <span className="text-2xl font-bold text-gray-900">14p/kWh</span>
+                  </div>
+                </div>
+                
+                <div className="bg-red-100 rounded-xl p-5 border-l-4 border-red-500">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-gray-900">Hidden broker commission added</span>
+                    <span className="text-2xl font-bold text-red-600">+8p/kWh</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-900 text-white rounded-xl p-5">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">What you actually pay</span>
+                    <span className="text-2xl font-bold text-yellow-400">22p/kWh</span>
+                  </div>
+                  <p className="text-sm text-gray-300 mt-2">
+                    (That's 57% above the real cost!)
+                  </p>
+                </div>
+                
+                <div className="bg-green-100 rounded-xl p-5 border-l-4 border-green-500">
+                  <div className="flex items-start gap-3">
+                    <IconCircleCheck className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-semibold text-gray-900">The broker gets paid 8p/kWh</span>
+                      <p className="text-sm text-gray-600 mt-1">
+                        Secretly taken from your payments without your knowledge or consent
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <Link to="/calculator" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                Uncover Your Hidden Costs
+                <IconArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            
+            {/* Right Side - Visual Impact */}
+            <div className="relative fade-up">
+              <div className="bg-gradient-to-br from-orange-100 to-yellow-50 rounded-3xl p-8 lg:p-10 shadow-xl">
+                <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm border border-gray-100">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">💡</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Exposing The Truth</h3>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <p className="text-sm text-gray-700">
+                        UK businesses are paying <span className="font-bold">3x more</span> than in 2020
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <p className="text-sm text-gray-700">
+                        Average broker takes <span className="font-bold">20-50%</span> commission
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-bold">£3.2 billion</span> in hidden fees annually
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                    Ready to Fight Back?
+                  </h4>
+                  <p className="text-gray-600 mb-6">
+                    Our expert team has already recovered millions for UK businesses. 
+                    Your money could be next.
+                  </p>
+                  
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="text-2xl font-bold text-green-600">98%</div>
+                      <div className="text-xs text-gray-500">Success Rate</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="text-2xl font-bold text-green-600">£0</div>
+                      <div className="text-xs text-gray-500">Upfront</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="text-2xl font-bold text-green-600">21</div>
+                      <div className="text-xs text-gray-500">Days Avg</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -top-4 -right-4 bg-red-500 text-white rounded-full p-4 shadow-lg animate-bounce">
+                <div className="text-center">
+                  <div className="text-2xl font-bold">⚠️</div>
+                  <div className="text-xs">Alert!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Affected Suppliers Section */}
       <SupplierSection />
 
