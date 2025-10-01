@@ -465,7 +465,7 @@ const HomePage = () => {
                   </div>
 
                   {/* Results Banner */}
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 text-white">
+                  <div className="bg-green-600 rounded-2xl p-6 text-white">
                     <div className="grid grid-cols-3 gap-4 text-center">
                       <div>
                         <div className="text-2xl lg:text-3xl font-bold">£47K</div>
