@@ -121,15 +121,15 @@ const Terms = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-navy via-slate-900 to-navy text-white">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-gray-800 via-slate-900 to-gray-800 text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-emerald/20 flex items-center justify-center">
-              <IconGavel size={40} className="text-emerald" />
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-green-500/20 flex items-center justify-center">
+              <IconGavel size={40} className="text-green-500" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Terms of
@@ -138,7 +138,7 @@ const Terms = () => {
             <p className="text-xl text-gray-300 mb-8">
               Clear, transparent terms for our energy broker commission recovery services
             </p>
-            <div className="inline-flex items-center gap-2 bg-emerald/10 backdrop-blur text-emerald px-4 py-2 rounded-full text-sm">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 backdrop-blur text-green-500 px-4 py-2 rounded-full text-sm">
               <IconGavel size={16} />
               <span>Last updated: March 2024</span>
             </div>
@@ -147,14 +147,14 @@ const Terms = () => {
       </section>
 
       {/* Quick Facts */}
-      <section className="py-12 bg-emerald-50">
+      <section className="py-12 bg-green-500-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-navy text-center mb-8">Key Terms at a Glance</h2>
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Key Terms at a Glance</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {quickFacts.map((fact, index) => (
                 <motion.div
@@ -165,8 +165,8 @@ const Terms = () => {
                   viewport={{ once: true }}
                   className="bg-white rounded-xl p-6 shadow-sm text-center"
                 >
-                  <fact.icon className="text-emerald mx-auto mb-4" size={32} />
-                  <h3 className="font-bold text-navy mb-2">{fact.title}</h3>
+                  <fact.icon className="text-green-500 mx-auto mb-4" size={32} />
+                  <h3 className="font-bold text-gray-900 mb-2">{fact.title}</h3>
                   <p className="text-slate-600 text-sm">{fact.description}</p>
                 </motion.div>
               ))}
@@ -210,9 +210,9 @@ const Terms = () => {
                 viewport={{ once: true }}
                 className="mb-16"
               >
-                <h2 className="text-3xl font-bold text-navy mb-8 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center">
-                    <span className="text-emerald font-bold text-sm">{index + 1}</span>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
+                    <span className="text-green-500 font-bold text-sm">{index + 1}</span>
                   </div>
                   {section.title}
                 </h2>
@@ -220,7 +220,7 @@ const Terms = () => {
                 <div className="space-y-8">
                   {section.content.map((subsection, subIndex) => (
                     <div key={subIndex} className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-                      <h3 className="text-xl font-bold text-navy mb-4">{subsection.subtitle}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">{subsection.subtitle}</h3>
                       <p className="text-slate-700 leading-relaxed">{subsection.text}</p>
                     </div>
                   ))}
@@ -240,11 +240,11 @@ const Terms = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl font-bold text-navy mb-8">Additional Terms</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Additional Terms</h2>
             
             <div className="space-y-6">
               <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-                <h3 className="text-xl font-bold text-navy mb-4">Data Protection</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Data Protection</h3>
                 <p className="text-slate-700 leading-relaxed">
                   We process your personal data in accordance with UK data protection laws and our Privacy Policy. 
                   By instructing our services, you consent to the processing of your personal data for the purposes 
@@ -253,7 +253,7 @@ const Terms = () => {
               </div>
 
               <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-                <h3 className="text-xl font-bold text-navy mb-4">Governing Law</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Governing Law</h3>
                 <p className="text-slate-700 leading-relaxed">
                   These terms are governed by English law and any disputes will be subject to the exclusive 
                   jurisdiction of the English courts. If any provision is found to be unenforceable, 
@@ -262,7 +262,7 @@ const Terms = () => {
               </div>
 
               <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-                <h3 className="text-xl font-bold text-navy mb-4">Complaints Procedure</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Complaints Procedure</h3>
                 <p className="text-slate-700 leading-relaxed">
                   If you have any concerns about our service, please contact our complaints department. 
                   We are also regulated by the Solicitors Regulation Authority and subscribe to the 
@@ -271,7 +271,7 @@ const Terms = () => {
               </div>
 
               <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-                <h3 className="text-xl font-bold text-navy mb-4">Amendment of Terms</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Amendment of Terms</h3>
                 <p className="text-slate-700 leading-relaxed">
                   We may update these terms from time to time. Any material changes will be communicated 
                   to existing clients with reasonable notice. Continued use of our services after changes 
@@ -299,13 +299,13 @@ const Terms = () => {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
               <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconGavel className="text-emerald mx-auto mb-4" size={32} />
+                <IconGavel className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold mb-2">Legal Enquiries</h3>
                 <p className="text-gray-300 text-sm">legal@utilitycommissionclaims.co.uk</p>
                 <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconHeart className="text-emerald mx-auto mb-4" size={32} />
+                <IconHeart className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold mb-2">General Enquiries</h3>
                 <p className="text-gray-300 text-sm">hello@utilitycommissionclaims.co.uk</p>
                 <p className="text-gray-400 text-xs mt-2">Mon-Fri 9am-6pm</p>
@@ -315,7 +315,7 @@ const Terms = () => {
             <div className="text-center">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-emerald text-white px-8 py-4 rounded-xl hover:bg-emerald/90 transition-all duration-300 font-medium"
+                className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-500/90 transition-all duration-300 font-medium"
               >
                 Contact Our Legal Team
                 <IconGavel size={20} />

@@ -131,15 +131,15 @@ const Privacy = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-navy via-slate-900 to-navy text-white">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-gray-800 via-slate-900 to-gray-800 text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-emerald/20 flex items-center justify-center">
-              <IconShieldCheck size={40} className="text-emerald" />
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-green-500/20 flex items-center justify-center">
+              <IconShieldCheck size={40} className="text-green-500" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Privacy
@@ -148,7 +148,7 @@ const Privacy = () => {
             <p className="text-xl text-gray-300 mb-8">
               We take your privacy seriously. This policy explains how we collect, use, and protect your personal information.
             </p>
-            <div className="inline-flex items-center gap-2 bg-emerald/10 backdrop-blur text-emerald px-4 py-2 rounded-full text-sm">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 backdrop-blur text-green-500 px-4 py-2 rounded-full text-sm">
               <IconShieldCheck size={16} />
               <span>Last updated: March 2024</span>
             </div>
@@ -157,7 +157,7 @@ const Privacy = () => {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-12 bg-emerald-50">
+      <section className="py-12 bg-green-500-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -165,21 +165,21 @@ const Privacy = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-bold text-navy mb-6">Privacy in Simple Terms</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Privacy in Simple Terms</h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <IconLock className="text-emerald mx-auto mb-4" size={32} />
-                <h3 className="font-bold text-navy mb-2">Secure Collection</h3>
+                <IconLock className="text-green-500 mx-auto mb-4" size={32} />
+                <h3 className="font-bold text-gray-900 mb-2">Secure Collection</h3>
                 <p className="text-slate-600 text-sm">We only collect information necessary to process your claim</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <IconShieldCheck className="text-emerald mx-auto mb-4" size={32} />
-                <h3 className="font-bold text-navy mb-2">Protected Use</h3>
+                <IconShieldCheck className="text-green-500 mx-auto mb-4" size={32} />
+                <h3 className="font-bold text-gray-900 mb-2">Protected Use</h3>
                 <p className="text-slate-600 text-sm">Your data is used exclusively for claim processing and legal purposes</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <IconEye className="text-emerald mx-auto mb-4" size={32} />
-                <h3 className="font-bold text-navy mb-2">Full Transparency</h3>
+                <IconEye className="text-green-500 mx-auto mb-4" size={32} />
+                <h3 className="font-bold text-gray-900 mb-2">Full Transparency</h3>
                 <p className="text-slate-600 text-sm">You maintain complete control and visibility over your data</p>
               </div>
             </div>
@@ -201,20 +201,20 @@ const Privacy = () => {
                 className="mb-16"
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-emerald/10 flex items-center justify-center">
-                    <section.icon className="text-emerald" size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                    <section.icon className="text-green-500" size={24} />
                   </div>
-                  <h2 className="text-3xl font-bold text-navy">{section.title}</h2>
+                  <h2 className="text-3xl font-bold text-gray-900">{section.title}</h2>
                 </div>
 
                 <div className="space-y-8">
                   {section.content.map((subsection, subIndex) => (
                     <div key={subIndex} className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-                      <h3 className="text-xl font-bold text-navy mb-4">{subsection.subtitle}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">{subsection.subtitle}</h3>
                       <ul className="space-y-3">
                         {subsection.items.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-emerald rounded-full mt-2 flex-shrink-0" />
+                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
                             <span className="text-slate-700">{item}</span>
                           </li>
                         ))}
@@ -237,7 +237,7 @@ const Privacy = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-navy mb-4">Your Data Rights</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Your Data Rights</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Under GDPR and UK data protection laws, you have comprehensive rights over your personal data
             </p>
@@ -253,10 +253,10 @@ const Privacy = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-emerald/10 flex items-center justify-center">
-                  <right.icon className="text-emerald" size={28} />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center">
+                  <right.icon className="text-green-500" size={28} />
                 </div>
-                <h3 className="text-lg font-bold text-navy mb-3">{right.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{right.title}</h3>
                 <p className="text-slate-600 text-sm">{right.description}</p>
               </motion.div>
             ))}
@@ -280,13 +280,13 @@ const Privacy = () => {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
               <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconMail className="text-emerald mx-auto mb-4" size={32} />
+                <IconMail className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold mb-2">Email Us</h3>
                 <p className="text-gray-300 text-sm">privacy@utilitycommissionclaims.co.uk</p>
                 <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconMail className="text-emerald mx-auto mb-4" size={32} />
+                <IconMail className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold mb-2">Contact Form</h3>
                 <p className="text-gray-300 text-sm">Use our secure contact form</p>
                 <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
@@ -296,7 +296,7 @@ const Privacy = () => {
             <div className="text-center">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-emerald text-white px-8 py-4 rounded-xl hover:bg-emerald/90 transition-all duration-300 font-medium"
+                className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-500/90 transition-all duration-300 font-medium"
               >
                 Contact Our Privacy Team
                 <IconShieldCheck size={20} />
