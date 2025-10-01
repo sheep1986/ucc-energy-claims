@@ -25,6 +25,7 @@ import {
   IconQuestionMark
 } from '@tabler/icons-react'
 import InstantCalculator from '../components/InstantCalculator'
+import SupplierSection from '../components/SupplierSection'
 
 const HomePage = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
@@ -371,24 +372,7 @@ const HomePage = () => {
       </section>
 
       {/* Affected Suppliers Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Major Energy Suppliers Under Investigation</h3>
-            <p className="text-gray-600">Businesses with these suppliers may have valid claims for hidden commissions</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {['British Gas', 'E.ON', 'EDF Energy', 'SSE', 'Shell Energy', 'Opus Energy', 'Total Gas & Power'].map((supplier) => (
-              <div key={supplier} className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200 hover:border-green-400 transition-colors">
-                <span className="text-sm font-medium text-gray-700">{supplier}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-sm text-gray-500 mt-6">
-            * This list is not exhaustive. Claims can be made against any energy supplier who failed to disclose broker commissions.
-          </p>
-        </div>
-      </section>
+      <SupplierSection />
 
       {/* Burden Section - Emotional Impact */}
       <section className="py-32 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
