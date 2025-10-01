@@ -385,112 +385,68 @@ const HomePage = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Interactive Minimalist Price Breakdown */}
+            {/* Left Side - Ultra Clean Price Breakdown */}
             <div>
-              <div className="relative">
-                {/* Interactive Calculator */}
-                <div className="space-y-3">
-                  {/* Actual Cost */}
-                  <div 
-                    className="group cursor-pointer transform transition-all hover:scale-[1.01]"
-                    onMouseEnter={() => setHoveredItem('actual')}
-                    onMouseLeave={() => setHoveredItem(null)}
-                  >
-                    <div className={`flex items-center justify-between p-4 bg-white rounded-lg border transition-all duration-300 ${
-                      hoveredItem === 'actual' ? 'border-green-400 shadow-md' : 'border-gray-200'
-                    }`}>
-                      <div className="flex items-center gap-3">
-                        <div className={`w-2 h-2 rounded-full transition-all ${
-                          hoveredItem === 'actual' ? 'w-3 h-3 bg-green-500' : 'bg-green-400'
-                        }`}></div>
-                        <span className="text-sm font-medium text-gray-700">Actual Cost</span>
-                      </div>
-                      <span className={`font-bold transition-all ${
-                        hoveredItem === 'actual' ? 'text-3xl text-green-600' : 'text-2xl text-gray-900'
-                      }`}>14p</span>
+              <div className="max-w-sm mx-auto">
+                {/* Simplified Visual */}
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                  {/* Numbers in a clean stack */}
+                  <div className="space-y-6">
+                    {/* Energy Cost */}
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Energy cost</span>
+                      <span className="text-2xl font-semibold text-gray-900">14p</span>
                     </div>
-                  </div>
-
-                  {/* Animated Plus */}
-                  <div className="flex items-center justify-center py-1">
-                    <div className="text-gray-400 text-lg animate-pulse">+</div>
-                  </div>
-
-                  {/* Hidden Commission */}
-                  <div 
-                    className="group cursor-pointer transform transition-all hover:scale-[1.01]"
-                    onMouseEnter={() => setHoveredItem('commission')}
-                    onMouseLeave={() => setHoveredItem(null)}
-                  >
-                    <div className={`flex items-center justify-between p-4 bg-white rounded-lg border transition-all duration-300 ${
-                      hoveredItem === 'commission' ? 'border-red-400 shadow-md' : 'border-gray-200'
-                    }`}>
-                      <div className="flex items-center gap-3">
-                        <div className={`rounded-full transition-all ${
-                          hoveredItem === 'commission' 
-                            ? 'w-3 h-3 bg-red-500' 
-                            : 'w-2 h-2 bg-red-400 animate-pulse'
-                        }`}></div>
-                        <span className="text-sm font-medium text-gray-700">Hidden Fee</span>
-                      </div>
-                      <span className={`font-bold transition-all ${
-                        hoveredItem === 'commission' ? 'text-3xl text-red-600' : 'text-2xl text-red-500'
-                      }`}>8p</span>
+                    
+                    {/* Plus sign */}
+                    <div className="text-center text-gray-400">+</div>
+                    
+                    {/* Hidden commission */}
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Hidden commission</span>
+                      <span className="text-2xl font-semibold text-red-600">8p</span>
                     </div>
-                  </div>
-
-                  {/* Equals Line */}
-                  <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-2"></div>
-
-                  {/* Total You Pay - Interactive */}
-                  <div 
-                    className="relative group cursor-pointer"
-                    onClick={() => setShowAnnualImpact(!showAnnualImpact)}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div className="relative bg-gray-900 text-white rounded-lg p-4 transform transition-all hover:scale-[1.01] hover:shadow-xl">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">You Pay</p>
-                          <div className="flex items-baseline">
-                            <span className="text-3xl font-bold">22p</span>
-                            <span className="text-sm text-gray-400 ml-1">/kWh</span>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-xl font-bold text-red-400">+57%</div>
-                          <div className="text-xs text-gray-400">overcharge</div>
-                        </div>
+                    
+                    {/* Separator */}
+                    <div className="border-t border-gray-200"></div>
+                    
+                    {/* Total */}
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-900 font-medium">Your total rate</span>
+                      <div className="text-right">
+                        <span className="text-3xl font-bold text-gray-900">22p</span>
+                        <span className="text-sm text-gray-500 ml-1">/kWh</span>
+                      </div>
+                    </div>
+                    
+                    {/* Impact indicator */}
+                    <div 
+                      className="bg-red-50 rounded-lg p-4 cursor-pointer hover:bg-red-100 transition-colors"
+                      onClick={() => setShowAnnualImpact(!showAnnualImpact)}
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-red-700 font-medium">
+                          {showAnnualImpact ? 'Annual impact' : 'That\'s 57% overcharge'}
+                        </span>
+                        <IconChevronRight className={`w-4 h-4 text-red-600 transition-transform ${showAnnualImpact ? 'rotate-90' : ''}`} />
                       </div>
                       
-                      {/* Animated Progress Bar */}
-                      <div className="mt-3 bg-gray-800 rounded-full h-1.5 overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-full transition-all duration-1000" 
-                          style={{width: showAnnualImpact ? '57%' : '0%'}}></div>
-                      </div>
+                      {/* Expandable annual impact */}
+                      {showAnnualImpact && (
+                        <div className="mt-3 pt-3 border-t border-red-200">
+                          <p className="text-xs text-red-600 mb-1">Typical £50k/year business:</p>
+                          <p className="text-xl font-bold text-red-700">£28,500 in hidden fees</p>
+                        </div>
+                      )}
                     </div>
                   </div>
-
-                  {/* Annual Impact - Shows on click */}
-                  {showAnnualImpact && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 animate-fade-in">
-                      <div className="text-center">
-                        <p className="text-sm text-gray-600 mb-2">For a typical business spending £50,000/year:</p>
-                        <p className="text-2xl font-bold text-red-600">£28,500 hidden commission</p>
-                        <p className="text-xs text-gray-500 mt-1">That's money taken without your knowledge</p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Interactive Note */}
-                  <div className="text-center">
-                    <button 
-                      onClick={() => setShowAnnualImpact(!showAnnualImpact)}
-                      className="text-xs text-blue-600 hover:text-blue-700 hover:underline transition-colors"
-                    >
-                      {showAnnualImpact ? 'Hide impact' : 'Click to see annual impact'} →
-                    </button>
-                  </div>
+                </div>
+                
+                {/* Call to action */}
+                <div className="text-center mt-6">
+                  <Link to="/calculator" className="text-sm text-green-600 hover:text-green-700 font-medium hover:underline">
+                    Calculate your exact overpayment →
+                  </Link>
                 </div>
               </div>
             </div>
