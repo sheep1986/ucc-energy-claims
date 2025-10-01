@@ -9,9 +9,9 @@ import {
   IconAward,
   IconBuildingBank,
   IconChartBar,
-  IconHandshake2,
   IconBriefcase,
-  IconCertificate
+  IconCertificate,
+  IconClock
 } from '@tabler/icons-react'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
@@ -45,7 +45,7 @@ const About = () => {
     { number: "£127M+", label: "Total Recovered", icon: IconChartBar },
     { number: "50,000+", label: "Businesses Helped", icon: IconBuildingBank },
     { number: "95%", label: "Success Rate", icon: IconAward },
-    { number: "21 Days", label: "Average Resolution", icon: IconHandshake2 }
+    { number: "21 Days", label: "Average Resolution", icon: IconClock }
   ]
 
   const teamMembers = [

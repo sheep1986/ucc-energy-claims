@@ -1,5 +1,5 @@
 import BlogPost from '../../components/BlogPost'
-import { IconFactory, IconTrendingDown, IconAlertTriangle, IconChartBar } from '@tabler/icons-react'
+import { IconBuildingFactory2, IconTrendingDown, IconAlertTriangle, IconChartBar } from '@tabler/icons-react'
 
 const ManufacturingCrisis = () => {
   const statistics = [
@@ -25,7 +25,7 @@ const ManufacturingCrisis = () => {
       value: "£750k",
       label: "Potential 3-year losses",
       trend: "Per affected business",
-      icon: <IconFactory className="w-6 h-6" />
+      icon: <IconBuildingFactory2 className="w-6 h-6" />
     }
   ]
 

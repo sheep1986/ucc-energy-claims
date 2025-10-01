@@ -12,7 +12,6 @@ import {
   IconCurrencyPound,
   IconBuildingSkyscraper,
   IconChartBar,
-  IconHandshake2,
   IconCertificate,
   IconCalculator,
   IconCalendar
@@ -114,7 +113,7 @@ const HowItWorks = () => {
     { icon: IconBuildingSkyscraper, number: "50,000+", label: "Businesses Helped" },
     { icon: IconCurrencyPound, number: "£127M", label: "Total Recovered" },
     { icon: IconChartBar, number: "95%", label: "Success Rate" },
-    { icon: IconHandshake2, number: "100%", label: "Client Satisfaction" }
+    { icon: IconCertificate, number: "100%", label: "Client Satisfaction" }
   ]
 
   return (

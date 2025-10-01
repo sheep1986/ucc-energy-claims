@@ -15,7 +15,7 @@ import {
   IconChevronRight,
   IconShieldCheck,
   IconUsers,
-  IconFire,
+  IconFlame,
   IconStar,
   IconBookmark,
   IconShare,
@@ -277,7 +277,7 @@ const Insights = () => {
                     <div className="absolute top-4 left-4 flex gap-2">
                       {article.trending && (
                         <span className="flex items-center gap-1 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                          <IconFire className="w-3 h-3" />
+                          <IconFlame className="w-3 h-3" />
                           Trending
                         </span>
                       )}
@@ -414,7 +414,7 @@ const Insights = () => {
                     <div className="absolute top-3 left-3 flex gap-2">
                       {article.trending && (
                         <span className="flex items-center gap-1 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold shadow-md">
-                          <IconFire className="w-3 h-3" />
+                          <IconFlame className="w-3 h-3" />
                           Hot
                         </span>
                       )}
