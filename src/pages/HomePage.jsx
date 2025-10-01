@@ -493,60 +493,86 @@ const HomePage = () => {
             ))}
           </div>
           
-          {/* CTA Section */}
-          <div className="bg-green-600 rounded-2xl p-10 text-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-3xl font-bold mb-4">Start Your Claim Today</h3>
-              <p className="text-green-50 text-lg mb-8">
-                Join thousands of UK businesses who've already recovered their hidden commissions.
-              </p>
-              
-              {/* Key Points */}
-              <div className="grid md:grid-cols-3 gap-6 mb-10">
-                <div className="flex flex-col items-center">
-                  <IconCircleCheck className="w-8 h-8 mb-2 text-green-200" />
-                  <div className="font-semibold">100% Risk Free</div>
-                  <div className="text-sm text-green-100">No win = no fee</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <IconClock className="w-8 h-8 mb-2 text-green-200" />
-                  <div className="font-semibold">Fast Results</div>
-                  <div className="text-sm text-green-100">21 days average</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <IconShieldCheck className="w-8 h-8 mb-2 text-green-200" />
-                  <div className="font-semibold">FCA Regulated</div>
-                  <div className="text-sm text-green-100">Fully compliant</div>
-                </div>
+          {/* Enhanced CTA Section */}
+          <div className="mt-16">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-600 via-green-600 to-emerald-600 p-12 lg:p-16">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                }}></div>
               </div>
               
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/calculator" className="inline-flex items-center justify-center gap-2 bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition-colors">
-                  <IconCalculator className="w-5 h-5" />
-                  Start Free Assessment
-                  <IconArrowRight className="w-5 h-5" />
-                </Link>
-                <a href="tel:08001234567" className="inline-flex items-center justify-center gap-2 bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-800 transition-colors">
-                  <IconPhone className="w-5 h-5" />
-                  Call: 0800 123 4567
-                </a>
-              </div>
-              
-              <div className="mt-6">
-                <Link to="/how-it-works" className="text-green-100 hover:text-white underline text-sm">
-                  Learn more about how it works
-                </Link>
-              </div>
-              
-              {/* Trust Badge */}
-              <div className="mt-6 pt-6 border-t border-white/20 text-center">
-                  <div className="text-xs text-green-100">Trusted by 10,000+ UK businesses</div>
-                  <div className="flex justify-center gap-1 mt-2">
-                    {[1,2,3,4,5].map(i => (
-                      <span key={i} className="text-yellow-400">★</span>
-                    ))}
+              <div className="relative z-10">
+                <div className="text-center max-w-4xl mx-auto">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm font-medium mb-6">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    Limited Time Offer - Act Now
                   </div>
+                  
+                  <h3 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                    Start Your Claim Today
+                  </h3>
+                  <p className="text-xl text-green-50 mb-10 max-w-2xl mx-auto">
+                    Join over 10,000 UK businesses who have successfully recovered their hidden energy broker commissions
+                  </p>
+                  
+                  {/* Key Benefits Grid */}
+                  <div className="grid md:grid-cols-3 gap-6 mb-12">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                      <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <IconCircleCheck className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="font-bold text-white text-lg mb-2">100% Risk Free</h4>
+                      <p className="text-green-100 text-sm">No win = no fee guarantee. You only pay if we recover your money</p>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                      <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <IconClock className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="font-bold text-white text-lg mb-2">Fast Results</h4>
+                      <p className="text-green-100 text-sm">Average 21 days to payment. Quick assessment in just 2 minutes</p>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                      <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <IconShieldCheck className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="font-bold text-white text-lg mb-2">FCA Regulated</h4>
+                      <p className="text-green-100 text-sm">Professional service fully compliant with UK regulations</p>
+                    </div>
+                  </div>
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <Link to="/calculator" className="group inline-flex items-center justify-center gap-3 bg-white text-green-600 px-8 py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+                      <IconCalculator className="w-6 h-6" />
+                      Start Free Assessment
+                      <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <a href="tel:08001234567" className="inline-flex items-center justify-center gap-3 bg-green-800 bg-opacity-50 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-5 rounded-xl font-bold text-lg hover:bg-opacity-70 transition-all">
+                      <IconPhone className="w-6 h-6" />
+                      Call: 0800 123 4567
+                    </a>
+                  </div>
+                  
+                  <Link to="/how-it-works" className="text-green-100 hover:text-white text-sm font-medium">
+                    Learn how it works →
+                  </Link>
+                  
+                  {/* Trust Rating */}
+                  <div className="mt-8 pt-8 border-t border-white/20">
+                    <p className="text-green-100 text-sm mb-3">Excellent rating from our clients</p>
+                    <div className="flex items-center justify-center gap-1 mb-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <svg key={star} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-green-100 text-xs">4.9/5 based on 10,000+ reviews</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
