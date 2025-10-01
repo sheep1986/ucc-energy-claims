@@ -14,7 +14,8 @@ import {
   IconLock,
   IconUsers,
   IconFileSearch,
-  IconChartBar
+  IconChartBar,
+  IconMail
 } from '@tabler/icons-react'
 
 const Calculator = () => {
