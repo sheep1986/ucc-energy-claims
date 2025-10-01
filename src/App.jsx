@@ -16,6 +16,7 @@ import Complaints from './pages/Complaints'
 import Success from './pages/Success'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import Insights from './pages/Insights'
 // Industry pages
 import Hospitality from './pages/industries/Hospitality'
 import Manufacturing from './pages/industries/Manufacturing'
@@ -42,6 +43,7 @@ function App() {
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/insights" element={<Insights />} />
             {/* Industry Routes */}
             <Route path="/industries/hospitality" element={<Hospitality />} />
             <Route path="/industries/manufacturing" element={<Manufacturing />} />
