@@ -45,9 +45,9 @@ const Footer = () => {
               <Link to="/calculator" className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
                 Start Free Check
               </Link>
-              <a href="tel:08001234567" className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors">
-                Call: 0800 123 4567
-              </a>
+              <Link to="/contact" className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors">
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { 
   IconMail,
-  IconPhone,
   IconMapPin,
   IconClock,
   IconSend,
@@ -39,12 +38,6 @@ const Contact = () => {
       title: "Email",
       content: "hello@utilitycommissionclaims.co.uk",
       link: "mailto:hello@utilitycommissionclaims.co.uk"
-    },
-    {
-      icon: <IconPhone className="w-6 h-6" />,
-      title: "Phone",
-      content: "0800 123 4567",
-      link: "tel:08001234567"
     },
     {
       icon: <IconClock className="w-6 h-6" />,

@@ -256,10 +256,10 @@ const HomePage = () => {
                   Check If You Can Claim
                   <IconArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:08001234567" className="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-900 px-8 py-4 rounded-md font-semibold hover:bg-gray-200 transition-colors">
-                  <IconPhone className="w-5 h-5" />
-                  <span>0800 123 4567</span>
-                </a>
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-900 px-8 py-4 rounded-md font-semibold hover:bg-gray-200 transition-colors">
+                  <IconMail className="w-5 h-5" />
+                  <span>Contact Us</span>
+                </Link>
               </div>
               
               {/* Trust Indicators */}
@@ -586,10 +586,10 @@ const HomePage = () => {
                       Start Free Assessment
                       <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    <a href="tel:08001234567" className="inline-flex items-center justify-center gap-3 bg-green-800 bg-opacity-50 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-5 rounded-xl font-bold text-lg hover:bg-opacity-70 transition-all">
-                      <IconPhone className="w-6 h-6" />
-                      Call: 0800 123 4567
-                    </a>
+                    <Link to="/contact" className="inline-flex items-center justify-center gap-3 bg-green-800 bg-opacity-50 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-5 rounded-xl font-bold text-lg hover:bg-opacity-70 transition-all">
+                      <IconMail className="w-6 h-6" />
+                      Contact Us
+                    </Link>
                   </div>
                   
                   <Link to="/how-it-works" className="text-green-100 hover:text-white text-sm font-medium">
@@ -805,10 +805,10 @@ const HomePage = () => {
                 <IconCalculator className="w-4 h-4" />
                 Check Your Eligibility
               </Link>
-              <a href="tel:08001234567" className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-                <IconPhone className="w-4 h-4" />
-                Call 0800 123 4567
-              </a>
+              <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                <IconMail className="w-4 h-4" />
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
@@ -901,12 +901,12 @@ const HomePage = () => {
               </div>
             </Link>
             
-            <a href="tel:08001234567" className="group">
+            <Link to="/contact" className="group">
               <div className="bg-white hover:bg-gray-50 border border-gray-300 text-gray-900 px-8 py-3.5 rounded-lg font-medium text-sm transition-all duration-200 flex items-center gap-2.5 shadow-sm">
-                <IconPhone className="w-4 h-4 text-green-600" />
-                <span>Free Consultation: 0800 123 4567</span>
+                <IconMail className="w-4 h-4 text-green-600" />
+                <span>Free Consultation</span>
               </div>
-            </a>
+            </Link>
           </div>
           
           {/* Trust Bar */}

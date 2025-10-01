@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { IconShieldCheck, IconLock, IconEye, IconDatabase, IconMail, IconPhone } from '@tabler/icons-react'
+import { IconShieldCheck, IconLock, IconEye, IconDatabase, IconMail } from '@tabler/icons-react'
 
 const Privacy = () => {
   const sections = [
@@ -286,10 +286,10 @@ const Privacy = () => {
                 <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconPhone className="text-emerald mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2">Call Us</h3>
-                <p className="text-gray-300 text-sm">0800 123 4567</p>
-                <p className="text-gray-400 text-xs mt-2">Mon-Fri 9am-6pm</p>
+                <IconMail className="text-emerald mx-auto mb-4" size={32} />
+                <h3 className="font-bold mb-2">Contact Form</h3>
+                <p className="text-gray-300 text-sm">Use our secure contact form</p>
+                <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
               </div>
             </div>
 

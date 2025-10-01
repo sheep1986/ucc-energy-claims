@@ -137,12 +137,12 @@ const Calculator = () => {
                   <p className="text-green-50 mb-4 text-sm">
                     Our energy claim experts are standing by to assist you with your assessment.
                   </p>
-                  <a href="tel:08001234567" className="block w-full bg-white text-green-700 py-3 px-4 rounded-lg font-semibold text-center hover:bg-gray-50 transition-colors">
+                  <Link to="/contact" className="block w-full bg-white text-green-700 py-3 px-4 rounded-lg font-semibold text-center hover:bg-gray-50 transition-colors">
                     <div className="flex items-center justify-center gap-2">
-                      <IconPhone className="w-5 h-5" />
-                      <span>0800 123 4567</span>
+                      <IconMail className="w-5 h-5" />
+                      <span>Contact Us</span>
                     </div>
-                  </a>
+                  </Link>
                   <p className="text-xs text-green-50 mt-3 text-center">Mon-Fri: 9AM - 6PM</p>
                 </div>
                 
@@ -324,12 +324,12 @@ const Calculator = () => {
                 Start Calculator
               </span>
             </button>
-            <a href="tel:08001234567" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+            <Link to="/contact" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
               <span className="flex items-center justify-center gap-2">
-                <IconPhone className="w-5 h-5" />
-                Call 0800 123 4567
+                <IconMail className="w-5 h-5" />
+                Contact Us
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
