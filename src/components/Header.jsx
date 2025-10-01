@@ -32,14 +32,20 @@ const Header = () => {
         <nav className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo Section */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="flex items-center">
-                <IconShieldCheck className="w-7 h-7 text-green-600 transition-transform group-hover:scale-110" />
-                <div className="ml-2">
-                  <span className="text-lg font-bold text-gray-900 tracking-tight">UTILITY</span>
-                  <span className="text-lg font-bold text-gray-900 tracking-tight block -mt-1 text-xs">COMMISSION</span>
-                  <span className="text-xs font-semibold text-green-600 tracking-tight block -mt-0.5">CLAIMS</span>
-                </div>
+            <Link to="/" className="flex items-center group">
+              <img 
+                src="/ucc-logo.png" 
+                alt="UCC" 
+                className="h-10 w-auto transition-all duration-300 group-hover:scale-105"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              {/* Fallback if logo doesn't load */}
+              <div className="hidden items-center">
+                <IconShieldCheck className="w-7 h-7 text-green-600" />
+                <span className="ml-2 text-xl font-bold text-gray-900">UCC</span>
               </div>
             </Link>
 
