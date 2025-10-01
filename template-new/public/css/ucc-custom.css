@@ -1,0 +1,167 @@
+/* UCC Brand Colors Override */
+:root {
+    --ucc-primary: #002855;
+    --ucc-secondary: #00d4ff;
+    --ucc-dark: #001f3d;
+    --ucc-light: #003366;
+    --ucc-text: #333333;
+    --ucc-gray: #6c757d;
+}
+
+/* Override primary color */
+.primary-color {
+    background-color: var(--ucc-primary) !important;
+}
+
+.primary-text-color {
+    color: var(--ucc-primary) !important;
+}
+
+/* Override secondary colors */
+.secondary-color {
+    background-color: var(--ucc-secondary) !important;
+}
+
+.secondary-text-color {
+    color: var(--ucc-secondary) !important;
+}
+
+/* Navigation customization */
+.navbar-dark {
+    background: rgba(0, 40, 85, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+/* Button overrides */
+.btn.primary-color {
+    background-color: var(--ucc-secondary) !important;
+    border-color: var(--ucc-secondary) !important;
+    color: var(--ucc-primary) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn.primary-color:hover {
+    background-color: var(--ucc-primary) !important;
+    border-color: var(--ucc-primary) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 40, 85, 0.3);
+}
+
+.btn.btn-outline {
+    border: 2px solid white;
+    background: transparent;
+}
+
+.btn.btn-outline:hover {
+    background: white;
+    color: var(--ucc-primary) !important;
+}
+
+/* Card customizations */
+.card-item {
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.card-item:hover {
+    border-color: var(--ucc-secondary);
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Header background adjustments */
+header .background {
+    background: linear-gradient(135deg, var(--ucc-dark) 0%, var(--ucc-primary) 50%, var(--ucc-light) 100%);
+}
+
+header .background img {
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+}
+
+/* Typography adjustments */
+h1, .h1 {
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+h2, .h2, h3, .h3 {
+    font-weight: 400;
+    color: var(--ucc-primary);
+}
+
+.text-color {
+    color: var(--ucc-primary) !important;
+}
+
+.second-text-color {
+    color: var(--ucc-gray) !important;
+}
+
+/* Icon colors */
+.bi {
+    color: var(--ucc-secondary);
+}
+
+.icn-lg.primary-text-color,
+.icn-xl.primary-text-color {
+    color: var(--ucc-secondary) !important;
+}
+
+/* Section backgrounds */
+.light-gray-1 {
+    background-color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 35px;
+    }
+    
+    h1, .h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animation effects */
+.accentued-drop-shadow {
+    transition: all 0.3s ease;
+}
+
+.accentued-drop-shadow:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 40, 85, 0.15);
+}
+
+/* Custom UCC sections */
+.stats-bar {
+    background: white;
+    border-top: 3px solid var(--ucc-secondary);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stat-item {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--ucc-primary);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--ucc-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+}

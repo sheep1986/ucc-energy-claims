@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Free Energy Commission Calculator | UCC Claims Assessment</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Calculate your potential energy broker commission refund in 30 seconds. Free assessment with no obligation. £1.2M+ already recovered for UK businesses." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Energy Commission Calculator | UCC Claims Assessment" />
+    <meta property="og:description" content="Calculate your potential energy broker commission refund in 30 seconds. Free assessment with no obligation." />
+    <meta property="og:image" content="../img/ucc-logo.png" />
+    <meta property="og:url" content="https://utilitycommissionclaims.co.uk/calculator" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/ucc-custom.css">
+    <style>
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .step-indicator .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .step-indicator .step.active {
+            background-color: var(--ucc-secondary);
+            color: var(--ucc-primary);
+        }
+        
+        .step-indicator .step.completed {
+            background-color: var(--ucc-primary);
+            color: white;
+        }
+        
+        .step-indicator .step::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: #e0e0e0;
+            right: -70px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .step-indicator .step:last-child::after {
+            display: none;
+        }
+        
+        .step-indicator .step.completed::after {
+            background-color: var(--ucc-primary);
+        }
+        
+        .calculator-step {
+            display: none;
+        }
+        
+        .calculator-step.active {
+            display: block;
+        }
+        
+        .energy-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            outline: none;
+            margin: 20px 0;
+        }
+        
+        .energy-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--ucc-secondary);
+            cursor: pointer;
+            border: 3px solid var(--ucc-primary);
+        }
+        
+        .energy-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--ucc-secondary);
+            cursor: pointer;
+            border: 3px solid var(--ucc-primary);
+        }
+        
+        .potential-recovery {
+            background: linear-gradient(135deg, var(--ucc-primary) 0%, var(--ucc-dark) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .recovery-amount {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+        
+        .recovery-range {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="position-relative" style="background: linear-gradient(135deg, var(--ucc-dark) 0%, var(--ucc-primary) 100%); padding: 2rem 0;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark py-4"><a class="navbar-brand" href="index.html">
+                    <img src="../img/ucc-logo.png" alt="UCC" style="height: 40px;">
+                </a><button class="navbar-toggler" type="button" data-bs-target="#navbarSupportedContent"
+                    data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse ms-lg-5  mt-4 mt-lg-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html"><span>Home</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="how-it-works.html"><span>How It Works</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="calculator.html"><span>Calculator</span></a></li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="industries.html" role="button" data-bs-toggle="dropdown"><span>Industries</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="industries.html#manufacturing">Manufacturing</a></li>
+                                <li><a class="dropdown-item" href="industries.html#healthcare">Healthcare</a></li>
+                                <li><a class="dropdown-item" href="industries.html#hospitality">Hospitality</a></li>
+                                <li><a class="dropdown-item" href="industries.html#retail">Retail</a></li>
+                                <li><a class="dropdown-item" href="industries.html#offices">Offices</a></li>
+                                <li><a class="dropdown-item" href="industries.html#education">Education</a></li>
+                                <li><a class="dropdown-item" href="industries.html#warehouses">Warehouses</a></li>
+                                <li><a class="dropdown-item" href="industries.html#restaurants">Restaurants</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><span>About</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html"><span>Contact</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html"><span>FAQ</span></a></li>
+                    </ul>
+                    <ul class="navbar-nav mt-4 mt-lg-0 ms-auto align-items-center">
+                        <li class="nav-item ms-lg-4 mt-4 mt-lg-0"><a href="contact.html"><button class="btn primary-color"><span
+                                    class="btn-text light-text-color">Get Expert Help</span><i
+                                    class="bi bi-arrow-right-short icn-xs light-text-color"
+                                    style="margin-left: 15px"></i></button></a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="text-center py-5">
+                <h1 class="h1 light-text-color mt-0">Free Energy Commission Calculator</h1>
+                <h4 class="h4 light-text-color" style="margin-top: 20px">Discover how much you could recover in hidden broker commissions</h4>
+                <p class="paragraph light-text-color" style="margin-top: 20px; opacity: 0.9;">Takes just 30 seconds • No obligation • Completely free</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 py-md-8">
+        <div class="container">
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step active" id="step-1-indicator">1</div>
+                <div class="step" id="step-2-indicator">2</div>
+                <div class="step" id="step-3-indicator">3</div>
+            </div>
+
+            <!-- Step 1: Energy Spend -->
+            <div class="calculator-step active" id="step-1">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card-item rounded light-background-color" style="padding: 3rem 2rem;">
+                            <div class="text-center mb-4">
+                                <h2 class="h2 text-color">What's Your Annual Energy Spend?</h2>
+                                <p class="paragraph second-text-color">Move the slider to indicate your approximate annual energy costs</p>
+                            </div>
+                            
+                            <div class="energy-spend-section">
+                                <div class="text-center mb-4">
+                                    <div class="display-4 primary-text-color" id="energy-amount">£50,000</div>
+                                    <small class="text-muted">per year</small>
+                                </div>
+                                
+                                <input type="range" class="energy-slider" id="energy-slider" 
+                                       min="10000" max="1000000" value="50000" step="5000">
+                                       
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="text-muted">£10k</small>
+                                    <small class="text-muted">£1M+</small>
+                                </div>
+                                
+                                <!-- Potential Recovery Display -->
+                                <div class="potential-recovery">
+                                    <div class="recovery-amount" id="recovery-amount">£12,500</div>
+                                    <div class="recovery-range">Potential Recovery Range: £7,500 - £17,500</div>
+                                    <p class="mt-3 mb-0">Based on typical commission rates of 15-35%</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <button class="btn primary-color btn-lg" onclick="nextStep(2)">
+                                    Continue to Broker Details
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Broker Details -->
+            <div class="calculator-step" id="step-2">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card-item rounded light-background-color" style="padding: 3rem 2rem;">
+                            <div class="text-center mb-4">
+                                <h2 class="h2 text-color">Energy Broker Information</h2>
+                                <p class="paragraph second-text-color">Help us understand your energy contract history</p>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label class="form-label h6 text-color">Did you use an energy broker? *</label>
+                                        <select class="form-select" id="used-broker" required>
+                                            <option value="">Select an option</option>
+                                            <option value="yes">Yes, we used a broker</option>
+                                            <option value="maybe">Not sure / Don't know</option>
+                                            <option value="no">No, dealt directly with supplier</option>
+                                        </select>
+                                        <small class="text-muted">If you're unsure, select "Not sure" - we can help identify this</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label class="form-label h6 text-color">When did you last switch suppliers?</label>
+                                        <select class="form-select" id="switch-date">
+                                            <option value="">Select timeframe</option>
+                                            <option value="0-12">Within the last 12 months</option>
+                                            <option value="12-24">1-2 years ago</option>
+                                            <option value="24-36">2-3 years ago</option>
+                                            <option value="36-48">3-4 years ago</option>
+                                            <option value="48+">More than 4 years ago</option>
+                                            <option value="never">Never switched</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label class="form-label h6 text-color">Current Energy Supplier</label>
+                                        <select class="form-select" id="current-supplier">
+                                            <option value="">Select your supplier</option>
+                                            <option value="british-gas">British Gas</option>
+                                            <option value="eon">E.ON</option>
+                                            <option value="edf">EDF Energy</option>
+                                            <option value="scottish-power">Scottish Power</option>
+                                            <option value="sse">SSE</option>
+                                            <option value="centrica">Centrica</option>
+                                            <option value="corona">Corona Energy</option>
+                                            <option value="opus">Opus Energy</option>
+                                            <option value="total">Total Gas & Power</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label class="form-label h6 text-color">Business Industry</label>
+                                        <select class="form-select" id="business-industry">
+                                            <option value="">Select your industry</option>
+                                            <option value="manufacturing">Manufacturing</option>
+                                            <option value="healthcare">Healthcare</option>
+                                            <option value="hospitality">Hospitality</option>
+                                            <option value="retail">Retail</option>
+                                            <option value="offices">Offices</option>
+                                            <option value="education">Education</option>
+                                            <option value="warehouses">Warehouses</option>
+                                            <option value="restaurants">Restaurants</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group mb-4">
+                                        <label class="form-label h6 text-color">Broker Name (if known)</label>
+                                        <input type="text" class="form-control" id="broker-name" placeholder="Enter broker or consultancy name (optional)">
+                                        <small class="text-muted">This helps us assess your claim more accurately</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mt-4">
+                                <button class="btn btn-outline-secondary" onclick="prevStep(1)">
+                                    <i class="bi bi-arrow-left me-2"></i>
+                                    Back
+                                </button>
+                                <button class="btn primary-color btn-lg" onclick="nextStep(3)">
+                                    Get My Assessment
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Contact Details & Results -->
+            <div class="calculator-step" id="step-3">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card-item rounded light-background-color" style="padding: 3rem 2rem;">
+                            <div class="text-center mb-4">
+                                <h2 class="h2 text-color">Your Commission Recovery Assessment</h2>
+                                <p class="paragraph second-text-color">Enter your details to receive your personalized claim assessment</p>
+                            </div>
+                            
+                            <!-- Results Summary -->
+                            <div class="potential-recovery mb-4">
+                                <div class="recovery-amount" id="final-recovery-amount">£12,500</div>
+                                <div class="recovery-range" id="final-recovery-range">Potential Recovery Range: £7,500 - £17,500</div>
+                                <div class="mt-3">
+                                    <div class="row text-start">
+                                        <div class="col-md-4">
+                                            <strong>Annual Spend:</strong><br>
+                                            <span id="final-annual-spend">£50,000</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <strong>Industry:</strong><br>
+                                            <span id="final-industry">Manufacturing</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <strong>Broker Used:</strong><br>
+                                            <span id="final-broker-status">Yes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label h6 text-color">Business Name *</label>
+                                        <input type="text" class="form-control" id="business-name" required placeholder="Your business name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label h6 text-color">Your Name *</label>
+                                        <input type="text" class="form-control" id="contact-name" required placeholder="Your full name">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label h6 text-color">Email Address *</label>
+                                        <input type="email" class="form-control" id="contact-email" required placeholder="your@business.com">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label h6 text-color">Phone Number</label>
+                                        <input type="tel" class="form-control" id="contact-phone" placeholder="Your phone number (optional)">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label class="form-label h6 text-color">Additional Information</label>
+                                <textarea class="form-control" id="additional-info" rows="3" placeholder="Any additional information about your energy contracts or specific questions (optional)"></textarea>
+                            </div>
+                            
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="consent-contact" required>
+                                <label class="form-check-label" for="consent-contact">
+                                    I consent to being contacted by UCC regarding my energy commission claim assessment. *
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="consent-marketing">
+                                <label class="form-check-label" for="consent-marketing">
+                                    I would like to receive updates about energy savings and industry news (optional)
+                                </label>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mt-4">
+                                <button class="btn btn-outline-secondary" onclick="prevStep(2)">
+                                    <i class="bi bi-arrow-left me-2"></i>
+                                    Back
+                                </button>
+                                <button class="btn primary-color btn-lg" onclick="submitCalculator()">
+                                    <i class="bi bi-send me-2"></i>
+                                    Get My Free Assessment
+                                </button>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <small class="text-muted">
+                                    <i class="bi bi-shield-check text-success me-1"></i>
+                                    Your information is secure and will not be shared with third parties.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Success Message (Hidden by default) -->
+            <div class="calculator-step text-center" id="success-message">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card-item rounded light-background-color" style="padding: 3rem 2rem;">
+                            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+                            <h2 class="h2 text-color mt-3">Assessment Submitted Successfully!</h2>
+                            <p class="paragraph second-text-color">Thank you for using our energy commission calculator. Our experts will review your details and contact you within 24 hours with a detailed assessment.</p>
+                            
+                            <div class="potential-recovery">
+                                <h4 class="text-white">Next Steps:</h4>
+                                <div class="text-start mt-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-1-circle me-3"></i>
+                                        <span>We'll analyze your energy contracts within 24 hours</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-2-circle me-3"></i>
+                                        <span>Our legal team will prepare your claim documentation</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-3-circle me-3"></i>
+                                        <span>We'll handle all negotiations and secure your refund</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="index.html" class="btn primary-color me-3">Return to Home</a>
+                                <a href="how-it-works.html" class="btn btn-outline-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="light-gray-1 py-5 py-md-8">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center col-lg-8 mb-5">
+                    <h2 class="h2 text-color">Why Choose UCC for Your Energy Claims?</h2>
+                    <p class="paragraph second-text-color">We're the UK's leading specialists in energy broker commission recovery</p>
+                </div>
+            </div>
+            <div class="row align-items-stretch">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-item text-center rounded light-background-color h-100" style="padding: 2rem 1.5rem;">
+                        <i class="bi bi-shield-check icn-xl primary-text-color"></i>
+                        <h5 class="h5 text-color mt-3">No Win, No Fee</h5>
+                        <p class="paragraph second-text-color">Zero upfront costs or hidden charges</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-item text-center rounded light-background-color h-100" style="padding: 2rem 1.5rem;">
+                        <i class="bi bi-clock-history icn-xl primary-text-color"></i>
+                        <h5 class="h5 text-color mt-3">Quick Results</h5>
+                        <p class="paragraph second-text-color">Average 30-day claim resolution</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-item text-center rounded light-background-color h-100" style="padding: 2rem 1.5rem;">
+                        <i class="bi bi-people icn-xl primary-text-color"></i>
+                        <h5 class="h5 text-color mt-3">Expert Team</h5>
+                        <p class="paragraph second-text-color">Specialized energy law professionals</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-item text-center rounded light-background-color h-100" style="padding: 2rem 1.5rem;">
+                        <i class="bi bi-graph-up icn-xl primary-text-color"></i>
+                        <h5 class="h5 text-color mt-3">Proven Success</h5>
+                        <p class="paragraph second-text-color">£1.2M+ recovered for 250+ businesses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="position-relative light-gray-1">
+            <div class="container py-4">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-8 mb-5 mb-md-0">
+                        <h3 class="h3 text-color">Questions About Your Assessment?</h3>
+                        <p class="paragraph second-text-color" style="margin-top: 10px">Our energy claims experts are here to help. Contact us for immediate assistance with your claim.</p>
+                    </div>
+                    <div class="col-md-3 text-md-center"><a href="contact.html"><button class="btn primary-color"><span
+                                class="btn-text">Contact Our Experts</span></button></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative">
+            <div class="container py-5">
+                <div class="row align-items-stretch">
+                    <div class="col-lg-2 col-md-4 mb-5 mb-lg-0">
+                        <h5 class="h5 text-color">Company Info</h5>
+                        <div class="links" style="margin-top: 20px"><a class="link d-block second-text-color"
+                                href="about.html">About Us</a><a class="link d-block second-text-color" href="how-it-works.html"
+                                style="margin-top: 10px">How It Works</a><a class="link d-block second-text-color" href="industries.html"
+                                style="margin-top: 10px">Industries We Serve</a><a class="link d-block second-text-color"
+                                href="faq.html" style="margin-top: 10px">FAQ</a></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-5 mb-lg-0">
+                        <h5 class="h5 text-color">Legal</h5>
+                        <div class="links" style="margin-top: 20px"><a class="link d-block second-text-color"
+                                href="privacy.html">Privacy Policy</a><a class="link d-block second-text-color" href="terms.html"
+                                style="margin-top: 10px">Terms of Service</a><a class="link d-block second-text-color" href="complaints.html"
+                                style="margin-top: 10px">Complaints Procedure</a><a class="link d-block second-text-color"
+                                href="contact.html" style="margin-top: 10px">Legal Notices</a></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-5 mb-lg-0">
+                        <h5 class="h5 text-color">Services</h5>
+                        <div class="links" style="margin-top: 20px"><a class="link d-block  second-text-color"
+                                href="calculator.html">Free Assessment</a><a class="link d-block second-text-color" href="how-it-works.html"
+                                style="margin-top: 10px">Claims Process</a><a class="link d-block second-text-color"
+                                href="contact.html" style="margin-top: 10px">Expert Consultation</a><a class="link d-block second-text-color"
+                                href="industries.html" style="margin-top: 10px">Industry Specialists</a></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-5 mb-lg-0">
+                        <h5 class="h5 text-color">Quick Links</h5>
+                        <div class="links" style="margin-top: 20px"><a class="link d-block second-text-color"
+                                href="calculator.html">Free Calculator</a><a class="link d-block  second-text-color" href="contact.html"
+                                style="margin-top: 10px">Contact Us</a><a class="link d-block  second-text-color"
+                                href="about.html" style="margin-top: 10px">Success Stories</a><a class="link d-block second-text-color"
+                                href="faq.html" style="margin-top: 10px">Common Questions</a></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 mb-5 mb-lg-0">
+                        <h5 class="h5 text-color">Get In Touch</h5>
+                        <div class="links" style="margin-top: 20px">
+                            <div class="feature-item d-flex align-items-center"><i
+                                    class="bi bi-telephone-fill icn-sm primary-text-color"></i>
+                                <h6 class="h6 second-text-color" style="margin-left: 10px">0800 123 4567</h6>
+                            </div>
+                            <div class="feature-item d-flex align-items-center" style="margin-top: 10px"><i
+                                    class="bi bi-geo-alt icn-sm primary-text-color"></i>
+                                <h6 class="h6 second-text-color" style="margin-left: 10px">Utility Commission Claims<br>1st Floor, 85 Great Portland Street<br>London W1W 7LT</h6>
+                            </div>
+                            <div class="feature-item d-flex align-items-center" style="margin-top: 10px"><i
+                                    class="bi bi-envelope-fill icn-sm primary-text-color"></i>
+                                <h6 class="h6 second-text-color" style="margin-left: 10px">claims@utilitycommissionclaims.co.uk</h6>
+                            </div>
+                            <div class="feature-item d-flex align-items-center" style="margin-top: 10px"><i
+                                    class="bi bi-clock icn-sm primary-text-color"></i>
+                                <h6 class="h6 second-text-color" style="margin-left: 10px">Mon-Fri: 9:00 AM - 6:00 PM</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative light-gray-1">
+            <div class="container py-4">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-7 mb-5 mb-md-0">
+                        <h6 class="h6 second-text-color">© 2024 Utility Commission Claims Ltd. All Rights Reserved. Registered in England & Wales. </h6>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="card-content py-2"><a class="facebook" href="#"><i
+                                    class="bi bi-facebook icn-sm primary-text-color"
+                                    style="margin-left: 20px"></i></a><a class="instagram" href="#"><i
+                                    class="bi bi-instagram icn-sm primary-text-color"
+                                    style="margin-left: 20px"></i></a><a class="twitter" href="#"><i
+                                    class="bi bi-twitter icn-sm primary-text-color" style="margin-left: 20px"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/tools.js"></script>
+    
+    <script>
+        // Calculator functionality
+        let currentStep = 1;
+        let calculatorData = {};
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateEnergySlider();
+            AOS.init();
+        });
+        
+        // Energy slider functionality
+        function updateEnergySlider() {
+            const slider = document.getElementById('energy-slider');
+            const amountDisplay = document.getElementById('energy-amount');
+            const recoveryDisplay = document.getElementById('recovery-amount');
+            
+            slider.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                amountDisplay.textContent = '£' + value.toLocaleString();
+                
+                // Calculate potential recovery (15-35% of annual spend)
+                const minRecovery = Math.round(value * 0.15);
+                const maxRecovery = Math.round(value * 0.35);
+                const avgRecovery = Math.round((minRecovery + maxRecovery) / 2);
+                
+                recoveryDisplay.textContent = '£' + avgRecovery.toLocaleString();
+                document.querySelector('.recovery-range').textContent = 
+                    `Potential Recovery Range: £${minRecovery.toLocaleString()} - £${maxRecovery.toLocaleString()}`;
+                    
+                calculatorData.energySpend = value;
+                calculatorData.estimatedRecovery = avgRecovery;
+                calculatorData.recoveryRange = { min: minRecovery, max: maxRecovery };
+            });
+            
+            // Trigger initial calculation
+            slider.dispatchEvent(new Event('input'));
+        }
+        
+        function nextStep(step) {
+            // Validate current step
+            if (currentStep === 2) {
+                const brokerSelect = document.getElementById('used-broker');
+                if (!brokerSelect.value) {
+                    alert('Please indicate whether you used an energy broker.');
+                    return;
+                }
+                calculatorData.usedBroker = brokerSelect.value;
+                calculatorData.switchDate = document.getElementById('switch-date').value;
+                calculatorData.currentSupplier = document.getElementById('current-supplier').value;
+                calculatorData.industry = document.getElementById('business-industry').value;
+                calculatorData.brokerName = document.getElementById('broker-name').value;
+            }
+            
+            // Hide current step
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.add('completed');
+            
+            // Show next step
+            currentStep = step;
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.add('active');
+            
+            // Update final summary if on step 3
+            if (currentStep === 3) {
+                updateFinalSummary();
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function prevStep(step) {
+            // Hide current step
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('active');
+            
+            // Show previous step
+            currentStep = step;
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.add('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('completed');
+            
+            // Remove completed status from future steps
+            for (let i = currentStep + 1; i <= 3; i++) {
+                document.getElementById(`step-${i}-indicator`).classList.remove('completed');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function updateFinalSummary() {
+            document.getElementById('final-recovery-amount').textContent = 
+                '£' + calculatorData.estimatedRecovery.toLocaleString();
+            document.getElementById('final-recovery-range').textContent = 
+                `Potential Recovery Range: £${calculatorData.recoveryRange.min.toLocaleString()} - £${calculatorData.recoveryRange.max.toLocaleString()}`;
+            document.getElementById('final-annual-spend').textContent = 
+                '£' + calculatorData.energySpend.toLocaleString();
+            
+            // Update industry and broker status
+            const industrySelect = document.getElementById('business-industry');
+            const industryText = industrySelect.options[industrySelect.selectedIndex]?.text || 'Not specified';
+            document.getElementById('final-industry').textContent = industryText;
+            
+            const brokerStatus = calculatorData.usedBroker === 'yes' ? 'Yes' : 
+                                calculatorData.usedBroker === 'maybe' ? 'Possibly' : 'No';
+            document.getElementById('final-broker-status').textContent = brokerStatus;
+        }
+        
+        function submitCalculator() {
+            // Validate required fields
+            const requiredFields = ['business-name', 'contact-name', 'contact-email'];
+            let valid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#dc3545';
+                    valid = false;
+                } else {
+                    field.style.borderColor = '#dee2e6';
+                }
+            });
+            
+            const consentCheck = document.getElementById('consent-contact');
+            if (!consentCheck.checked) {
+                alert('Please consent to being contacted regarding your assessment.');
+                valid = false;
+            }
+            
+            if (!valid) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Collect form data
+            calculatorData.businessName = document.getElementById('business-name').value;
+            calculatorData.contactName = document.getElementById('contact-name').value;
+            calculatorData.contactEmail = document.getElementById('contact-email').value;
+            calculatorData.contactPhone = document.getElementById('contact-phone').value;
+            calculatorData.additionalInfo = document.getElementById('additional-info').value;
+            calculatorData.consentMarketing = document.getElementById('consent-marketing').checked;
+            
+            // Hide step 3 and show success message
+            document.getElementById('step-3').classList.remove('active');
+            document.getElementById('success-message').classList.add('active');
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Calculator submission:', calculatorData);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>
