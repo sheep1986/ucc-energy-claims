@@ -353,8 +353,8 @@ const HomePage = () => {
                 {/* Main Image with Overlay Stats */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                   <img 
-                    src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800"
-                    alt="Business professional reviewing documents"
+                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800"
+                    alt="Business team in office meeting"
                     className="w-full h-[600px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
