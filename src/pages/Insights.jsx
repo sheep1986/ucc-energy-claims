@@ -43,7 +43,8 @@ const Insights = () => {
       date: 'September 2025',
       readTime: '5 min read',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800',
-      stats: { views: '12.5K', shares: 234 }
+      stats: { views: '12.5K', shares: 234 },
+      href: '/insights/manufacturing-crisis'
     },
     {
       id: 2,
@@ -56,7 +57,8 @@ const Insights = () => {
       date: 'September 2025',
       readTime: '7 min read',
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800',
-      stats: { views: '18.2K', shares: 456 }
+      stats: { views: '18.2K', shares: 456 },
+      href: '/insights/court-victory'
     },
     {
       id: 3,
@@ -68,7 +70,8 @@ const Insights = () => {
       date: 'August 2025',
       readTime: '4 min read',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
-      stats: { views: '9.8K', shares: 189 }
+      stats: { views: '9.8K', shares: 189 },
+      href: '/insights/red-flags'
     },
     {
       id: 4,
@@ -80,7 +83,8 @@ const Insights = () => {
       date: 'August 2025',
       readTime: '3 min read',
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800',
-      stats: { views: '22.1K', shares: 678 }
+      stats: { views: '22.1K', shares: 678 },
+      href: '/insights/ofgem-investigation'
     },
     {
       id: 5,
@@ -92,7 +96,8 @@ const Insights = () => {
       date: 'July 2025',
       readTime: '6 min read',
       image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800',
-      stats: { views: '14.3K', shares: 345 }
+      stats: { views: '14.3K', shares: 345 },
+      href: '/insights/healthcare-recovery'
     },
     {
       id: 6,
@@ -116,7 +121,8 @@ const Insights = () => {
       date: 'June 2025',
       readTime: '10 min read',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800',
-      stats: { views: '16.9K', shares: 423 }
+      stats: { views: '16.9K', shares: 423 },
+      href: '/insights/calculation-guide'
     },
     {
       id: 8,
@@ -164,7 +170,8 @@ const Insights = () => {
       date: 'February 2025',
       readTime: '5 min read',
       image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800',
-      stats: { views: '19.8K', shares: 567 }
+      stats: { views: '19.8K', shares: 567 },
+      href: '/insights/emergency-guide'
     },
     {
       id: 12,
@@ -176,7 +183,8 @@ const Insights = () => {
       date: 'January 2025',
       readTime: '8 min read',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
-      stats: { views: '21.3K', shares: 789 }
+      stats: { views: '21.3K', shares: 789 },
+      href: '/insights/sme-impact'
     }
   ]
 
@@ -237,7 +245,7 @@ const Insights = () => {
           
           <div className="grid lg:grid-cols-2 gap-8">
             {featuredArticles.map((article) => (
-              <div key={article.id} className="group cursor-pointer scale-in">
+              <Link key={article.id} to={article.href} className="group cursor-pointer scale-in block">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
                   <div className="aspect-video overflow-hidden">
                     <img 
@@ -268,14 +276,14 @@ const Insights = () => {
                         </span>
                         <span>{article.stats.shares} shares</span>
                       </div>
-                      <Link to={`/insights/${article.id}`} className="text-green-600 font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span className="text-green-600 font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                         Read More
                         <IconArrowRight className="w-4 h-4" />
-                      </Link>
+                      </span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -309,8 +317,8 @@ const Insights = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.filter(a => !a.featured).map((article, index) => (
-              <article key={article.id} className="group cursor-pointer stagger-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
+              <Link key={article.id} to={article.href || '#'} className="group cursor-pointer stagger-in block" style={{animationDelay: `${index * 0.1}s`}}>
+                <article className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
                   <div className="aspect-video overflow-hidden">
                     <img 
                       src={article.image} 
@@ -342,13 +350,13 @@ const Insights = () => {
                           {article.readTime}
                         </span>
                       </div>
-                      <Link to={`/insights/${article.id}`} className="text-green-600 text-sm font-semibold hover:text-green-700">
+                      <span className="text-green-600 text-sm font-semibold">
                         Read →
-                      </Link>
+                      </span>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
 

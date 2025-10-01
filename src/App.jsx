@@ -17,6 +17,15 @@ import Success from './pages/Success'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Insights from './pages/Insights'
+// Insights blog posts
+import ManufacturingCrisis from './pages/insights/ManufacturingCrisis'
+import CourtVictory from './pages/insights/CourtVictory'
+import RedFlagsGuide from './pages/insights/RedFlagsGuide'
+import OfgemInvestigation from './pages/insights/OfgemInvestigation'
+import CalculationGuide from './pages/insights/CalculationGuide'
+import SMEImpact from './pages/insights/SMEImpact'
+import EmergencyGuide from './pages/insights/EmergencyGuide'
+import HealthcareRecovery from './pages/insights/HealthcareRecovery'
 // Industry pages
 import Hospitality from './pages/industries/Hospitality'
 import Manufacturing from './pages/industries/Manufacturing'
@@ -44,6 +53,15 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/insights" element={<Insights />} />
+            {/* Insights Blog Posts */}
+            <Route path="/insights/manufacturing-crisis" element={<ManufacturingCrisis />} />
+            <Route path="/insights/court-victory" element={<CourtVictory />} />
+            <Route path="/insights/red-flags" element={<RedFlagsGuide />} />
+            <Route path="/insights/ofgem-investigation" element={<OfgemInvestigation />} />
+            <Route path="/insights/calculation-guide" element={<CalculationGuide />} />
+            <Route path="/insights/sme-impact" element={<SMEImpact />} />
+            <Route path="/insights/emergency-guide" element={<EmergencyGuide />} />
+            <Route path="/insights/healthcare-recovery" element={<HealthcareRecovery />} />
             {/* Industry Routes */}
             <Route path="/industries/hospitality" element={<Hospitality />} />
             <Route path="/industries/manufacturing" element={<Manufacturing />} />
