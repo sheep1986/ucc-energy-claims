@@ -382,56 +382,101 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Side - Minimal Price Breakdown */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Enhanced Visual Price Breakdown */}
             <div>
-              <div className="bg-white rounded-2xl p-8 border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                  Your Bill Breakdown
-                </h3>
+              <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+                {/* Header */}
+                <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-6">
+                  <h3 className="text-xl font-semibold text-white">
+                    Your Energy Bill Exposed
+                  </h3>
+                </div>
                 
-                {/* Clean Price Stack */}
-                <div className="space-y-4">
-                  {/* Base Cost */}
-                  <div className="border border-gray-200 rounded-lg p-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Actual Energy Cost</span>
-                      <span className="text-2xl font-bold text-gray-900">14p</span>
+                <div className="p-8">
+                  {/* Visual Price Stack */}
+                  <div className="space-y-3">
+                    {/* Base Cost */}
+                    <div className="group hover:scale-[1.02] transition-transform">
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-200">
+                        <div className="flex justify-between items-center">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                              <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                            </div>
+                            <span className="text-gray-700 font-medium">Actual Energy Cost</span>
+                          </div>
+                          <span className="text-3xl font-bold text-gray-900">14p</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Plus Icon */}
+                    <div className="flex justify-center">
+                      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m6-6H6" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Hidden Commission */}
+                    <div className="group hover:scale-[1.02] transition-transform">
+                      <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-5 border border-red-200">
+                        <div className="flex justify-between items-center">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                              <svg className="w-5 h-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                            </div>
+                            <span className="text-gray-700 font-medium">Hidden Commission</span>
+                          </div>
+                          <span className="text-3xl font-bold text-red-600">+8p</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="relative py-2">
+                      <div className="absolute inset-0 flex items-center">
+                        <div className="w-full border-t-2 border-gray-300"></div>
+                      </div>
+                      <div className="relative flex justify-center">
+                        <span className="bg-white px-3 text-gray-500 text-sm">=</span>
+                      </div>
+                    </div>
+
+                    {/* Total */}
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 text-white shadow-xl">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="text-gray-300 text-sm mb-1">You Actually Pay</p>
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-4xl font-bold">22p</span>
+                            <span className="text-lg text-gray-400">/kWh</span>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="inline-flex items-center gap-1 bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-medium">
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                            57% markup
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Plus */}
-                  <div className="text-center text-gray-400">
-                    <svg className="w-4 h-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m6-6H6" />
-                    </svg>
-                  </div>
-
-                  {/* Hidden Commission */}
-                  <div className="border border-gray-200 rounded-lg p-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Hidden Commission</span>
-                      <span className="text-2xl font-bold text-gray-900">8p</span>
-                    </div>
-                  </div>
-
-                  {/* Equals */}
-                  <div className="border-t-2 border-gray-300 pt-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-semibold text-gray-900">You Pay</span>
-                      <span className="text-3xl font-bold text-gray-900">22p<span className="text-lg font-normal text-gray-600">/kWh</span></span>
-                    </div>
-                    <p className="text-sm text-gray-500 mt-2">
-                      57% above actual cost
+                  {/* Bottom Note */}
+                  <div className="mt-6 text-center">
+                    <p className="text-sm text-gray-500">
+                      This hidden fee is added without your knowledge or consent
                     </p>
                   </div>
-                </div>
-
-                {/* Simple Note */}
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-600 text-center">
-                    This commission is taken without disclosure
-                  </p>
                 </div>
               </div>
             </div>
