@@ -7,12 +7,16 @@ import {
   IconShieldCheck,
   IconClock,
   IconChevronDown,
-  IconCircleCheck
+  IconCircleCheck,
+  IconTrendingUp,
+  IconCurrencyPound
 } from '@tabler/icons-react'
 import { useState } from 'react'
+import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const HowItWorks = () => {
   const [openFAQ, setOpenFAQ] = useState(null)
+  useScrollAnimation()
 
   const process = [
     {
@@ -101,50 +105,120 @@ const HowItWorks = () => {
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
+      {/* Enhanced Process Steps */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2310b981' fill-opacity='1'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+          {/* Section Header */}
+          <div className="text-center mb-16 fade-up">
+            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 px-4 py-2 rounded-full text-xs font-medium mb-4">
+              <IconTrendingUp className="w-4 h-4" />
+              Simple 3-Step Process
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Your Path to Recovery</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From initial assessment to successful payment in just 21 days
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {process.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Connection Line */}
+              <div key={index} className="relative group stagger-in">
+                {/* Connection Line Desktop */}
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-20 left-full w-full h-0.5 bg-gradient-to-r from-green-200 to-transparent -z-10" />
+                  <div className="hidden lg:block absolute top-24 left-[60%] w-[80%] h-0.5">
+                    <div className="h-full bg-gray-200"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                  </div>
                 )}
                 
-                <div className="text-center">
-                  {/* Step Number */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full text-white font-bold text-xl mb-6 shadow-lg">
-                    {index + 1}
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 hover:border-green-200">
+                  {/* Step Number Badge */}
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
+                        <div className="flex items-center gap-1 mt-1">
+                          <IconClock className="w-4 h-4 text-gray-400" />
+                          <span className="text-sm text-gray-500 font-medium">{step.timeline}</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600">
+                  <div className="w-24 h-24 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-600 group-hover:scale-110 transition-transform duration-300">
                     {step.icon}
                   </div>
                   
-                  {/* Content */}
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-600 mb-6">{step.description}</p>
+                  {/* Description */}
+                  <p className="text-gray-600 mb-6 text-center">{step.description}</p>
                   
-                  {/* Details */}
-                  <ul className="space-y-2 mb-6">
+                  {/* Enhanced Details */}
+                  <div className="space-y-3">
                     {step.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                        <IconCircleCheck className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span>{detail}</span>
-                      </li>
+                      <div key={idx} className="flex items-start gap-3 group/item">
+                        <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-green-200 transition-colors">
+                          <IconCircleCheck className="w-3 h-3 text-green-600" />
+                        </div>
+                        <span className="text-sm text-gray-600 group-hover/item:text-gray-900 transition-colors">{detail}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                   
-                  {/* Timeline */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm">
-                    <IconClock className="w-4 h-4 text-gray-500" />
-                    <span className="font-medium">{step.timeline}</span>
+                  {/* Bottom Indicator */}
+                  <div className="mt-8 pt-6 border-t border-gray-100">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Step {index + 1} of {process.length}</span>
+                      {index === process.length - 1 ? (
+                        <span className="text-green-600 font-semibold flex items-center gap-1">
+                          <IconCircleCheck className="w-4 h-4" />
+                          Complete
+                        </span>
+                      ) : (
+                        <span className="text-gray-400">Continue →</span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Additional Info Bar */}
+          <div className="mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 fade-up">
+            <div className="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <IconShieldCheck className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">100%</div>
+                <div className="text-sm text-gray-600">Risk Free</div>
+              </div>
+              <div>
+                <IconClock className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">21 Days</div>
+                <div className="text-sm text-gray-600">Claim Submission</div>
+              </div>
+              <div>
+                <IconCurrencyPound className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">25%</div>
+                <div className="text-sm text-gray-600">Success Fee Only</div>
+              </div>
+              <div>
+                <IconScale className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">6 Years</div>
+                <div className="text-sm text-gray-600">Claim Window</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
