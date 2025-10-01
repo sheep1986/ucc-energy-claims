@@ -440,113 +440,104 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Process Section with Images */}
-      <section className="py-24 bg-white">
+      {/* Process Section - Clean Professional */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="badge badge-emerald mb-4">How We Work</span>
-            <h2 className="mb-4">Three Simple Steps to Recovery</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We handle everything. You focus on your business. 
-              Our expert team manages the entire claims process from start to finish.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Three simple steps to recover your hidden commissions. We handle everything.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Process steps */}
-            <div>
-              <div className="space-y-8">
-                {process.map((step, index) => (
-                  <div key={index} className="flex gap-6 group hover:bg-gray-50 p-4 rounded-xl transition-all">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
-                        {step.number}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                      <p className="text-gray-600 mb-3">{step.description}</p>
-                      <div className="flex items-center text-sm text-green-600 font-medium">
-                        <IconClock className="w-4 h-4 mr-1" />
-                        {step.time}
-                      </div>
-                    </div>
-                    <div className="hidden lg:block w-24 h-24 rounded-lg overflow-hidden">
-                      <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
-                    </div>
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {/* Process Steps - No Images */}
+            {[
+              {
+                number: "01",
+                title: "Free Analysis",
+                description: "We review your energy contracts to identify hidden broker commissions - completely free",
+                time: "24 hours",
+                icon: <IconFileSearch className="w-6 h-6" />
+              },
+              {
+                number: "02",
+                title: "Build Your Case",
+                description: "Our legal experts prepare comprehensive documentation to support your claim",
+                time: "5-7 days",
+                icon: <IconScale className="w-6 h-6" />
+              },
+              {
+                number: "03",
+                title: "Secure Your Money",
+                description: "We negotiate with suppliers to recover your funds - you only pay if we win",
+                time: "14-21 days",
+                icon: <IconCash className="w-6 h-6" />
+              }
+            ].map((step, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg flex-shrink-0">
+                    {step.number}
                   </div>
-                ))}
-              </div>
-              
-              <div className="mt-12 flex gap-4">
-                <Link to="/calculator" className="btn btn-primary">
-                  Start Your Claim
-                  <IconArrowRight className="w-5 h-5" />
-                </Link>
-                <Link to="/how-it-works" className="btn btn-secondary">
-                  View Details
-                </Link>
-              </div>
-            </div>
-            
-            {/* Right side - CTA Focus */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl p-8 text-white">
-                <h3 className="text-3xl font-bold mb-6">Start Your Claim Today</h3>
-                <p className="text-green-100 mb-8">
-                  Join thousands of UK businesses who've already recovered their hidden commissions. 
-                  It takes just 2 minutes to check your eligibility.
-                </p>
-                
-                {/* Key Benefits */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                      <IconCircleCheck className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">100% Risk Free</div>
-                      <div className="text-sm text-green-100">No win = no fee guarantee</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                      <IconClock className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">Fast Results</div>
-                      <div className="text-sm text-green-100">Average 21 days to payment</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                      <IconShieldCheck className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">FCA Regulated</div>
-                      <div className="text-sm text-green-100">Professional & compliant service</div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                    <p className="text-gray-600 mb-4">{step.description}</p>
+                    <div className="flex items-center text-sm text-green-600 font-medium">
+                      <IconClock className="w-4 h-4 mr-1" />
+                      {step.time}
                     </div>
                   </div>
                 </div>
-                
-                {/* Multiple CTAs */}
-                <div className="space-y-3">
-                  <Link to="/calculator" className="block w-full bg-white text-green-700 py-4 px-6 rounded-lg font-bold text-center hover:bg-green-50 transition-all group">
-                    <span className="flex items-center justify-center gap-2">
-                      <IconCalculator className="w-5 h-5" />
-                      Start Free Assessment
-                      <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Link>
-                  <a href="tel:08001234567" className="block w-full bg-green-800 text-white py-4 px-6 rounded-lg font-bold text-center hover:bg-green-900 transition-all">
-                    <span className="flex items-center justify-center gap-2">
-                      <IconPhone className="w-5 h-5" />
-                      Call Free: 0800 123 4567
-                    </span>
-                  </a>
-                  <Link to="/how-it-works" className="block w-full border-2 border-white/30 text-white py-3 px-6 rounded-lg font-medium text-center hover:bg-white/10 transition-all">
-                    Learn How It Works
-                  </Link>
+              </div>
+            ))}
+          </div>
+          
+          {/* CTA Section */}
+          <div className="bg-green-600 rounded-2xl p-10 text-white">
+            <div className="max-w-4xl mx-auto text-center">
+              <h3 className="text-3xl font-bold mb-4">Start Your Claim Today</h3>
+              <p className="text-green-50 text-lg mb-8">
+                Join thousands of UK businesses who've already recovered their hidden commissions.
+              </p>
+              
+              {/* Key Points */}
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="flex flex-col items-center">
+                  <IconCircleCheck className="w-8 h-8 mb-2 text-green-200" />
+                  <div className="font-semibold">100% Risk Free</div>
+                  <div className="text-sm text-green-100">No win = no fee</div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <IconClock className="w-8 h-8 mb-2 text-green-200" />
+                  <div className="font-semibold">Fast Results</div>
+                  <div className="text-sm text-green-100">21 days average</div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <IconShieldCheck className="w-8 h-8 mb-2 text-green-200" />
+                  <div className="font-semibold">FCA Regulated</div>
+                  <div className="text-sm text-green-100">Fully compliant</div>
+                </div>
+              </div>
+              
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/calculator" className="inline-flex items-center justify-center gap-2 bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition-colors">
+                  <IconCalculator className="w-5 h-5" />
+                  Start Free Assessment
+                  <IconArrowRight className="w-5 h-5" />
+                </Link>
+                <a href="tel:08001234567" className="inline-flex items-center justify-center gap-2 bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-800 transition-colors">
+                  <IconPhone className="w-5 h-5" />
+                  Call: 0800 123 4567
+                </a>
+              </div>
+              
+              <div className="mt-6">
+                <Link to="/how-it-works" className="text-green-100 hover:text-white underline text-sm">
+                  Learn more about how it works
+                </Link>
+              </div>
                 </div>
                 
                 {/* Trust Badge */}
