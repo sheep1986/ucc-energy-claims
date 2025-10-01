@@ -224,19 +224,19 @@ const HomePage = () => {
                 UK courts ruled this is illegal. <span className="underline decoration-green-500 decoration-2">We'll get your money back.</span>
               </p>
               
-              {/* Key Stats Grid */}
+              {/* Key Benefits Grid */}
               <div className="grid grid-cols-2 gap-4 mb-8 fade-up">
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">£25k+</div>
-                  <div className="text-sm text-gray-600">Average Recovery</div>
+                  <div className="text-2xl font-bold text-green-600">No Win</div>
+                  <div className="text-sm text-gray-600">No Fee</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">21 Days</div>
-                  <div className="text-sm text-gray-600">Average Timeline</div>
+                  <div className="text-2xl font-bold text-green-600">Fast</div>
+                  <div className="text-sm text-gray-600">Processing</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">98%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
+                  <div className="text-2xl font-bold text-green-600">FCA</div>
+                  <div className="text-sm text-gray-600">Regulated</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                   <div className="text-2xl font-bold text-green-600">£0</div>
@@ -269,7 +269,7 @@ const HomePage = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <IconAward className="w-5 h-5 text-green-600" />
-                  <span>98% Success Rate</span>
+                  <span>Expert Legal Team</span>
                 </div>
               </div>
             </div>
@@ -296,28 +296,28 @@ const HomePage = () => {
       </section>
 
 
-      {/* Check Our Numbers Section */}
+      {/* Our Service Promise Section */}
       <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Check Our Numbers</h2>
+            <h2 className="text-3xl font-bold mb-4">Our Service Promise</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Real results from businesses we've helped recover their hidden energy commissions
+              What you can expect when working with us
             </p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">£2.5M+</div>
-              <div className="text-sm text-gray-400">Total Recovered</div>
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">100%</div>
+              <div className="text-sm text-gray-400">Risk Free</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">98%</div>
-              <div className="text-sm text-gray-400">Success Rate</div>
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">Fast</div>
+              <div className="text-sm text-gray-400">Processing</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">21</div>
-              <div className="text-sm text-gray-400">Days Average</div>
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">Expert</div>
+              <div className="text-sm text-gray-400">Legal Team</div>
             </div>
             <div className="text-center">
               <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">£0</div>
@@ -381,7 +381,7 @@ const HomePage = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <IconCircleCheck className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span className="text-gray-700">Average recovery of £18,000 per business</span>
+                    <span className="text-gray-700">Significant compensation possible</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <IconCircleCheck className="w-5 h-5 text-green-600 mt-0.5" />
@@ -895,7 +895,7 @@ Successfully recover your hidden energy broker commissions
                   </li>
                   <li className="flex items-start gap-3 text-gray-700">
                     <IconCircleCheck className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Average £18,000 per business recovered</span>
+                    <span className="text-sm">Significant compensation possible for your business</span>
                   </li>
                 </ul>
               </div>
@@ -917,20 +917,6 @@ Successfully recover your hidden energy broker commissions
                     <span className="text-sm">Money in your account within 21 days</span>
                   </li>
                 </ul>
-              </div>
-            </div>
-            
-            {/* Stats Bar */}
-            <div className="mt-8 pt-8 border-t border-gray-100">
-              <div className="grid md:grid-cols-2 gap-6 text-center">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg py-4 px-6">
-                  <div className="text-2xl font-semibold text-green-600">£3,247,891</div>
-                  <div className="text-xs text-gray-600 mt-1">Recovered This Month</div>
-                </div>
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg py-4 px-6">
-                  <div className="text-2xl font-semibold text-green-600">1,847</div>
-                  <div className="text-xs text-gray-600 mt-1">Businesses Helped</div>
-                </div>
               </div>
             </div>
           </div>
