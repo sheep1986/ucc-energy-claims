@@ -287,8 +287,31 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* OFGEM Report Alert */}
+      <section className="py-8 bg-amber-50 border-t-4 border-amber-400">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <IconAlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">OFGEM Report Confirms Widespread Mis-Selling</h3>
+                <p className="text-gray-700">
+                  On 28th March 2022, OFGEM confirmed that over 2 million UK businesses have been mis-sold energy contracts with undisclosed commissions
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-amber-600">£2,000 - £150,000</div>
+                <div className="text-sm text-gray-600">Potential compensation per business</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Value Section */}
-      <section className="py-16 bg-gradient-to-b from-green-50 to-white">
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-green-100">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -298,11 +321,11 @@ const HomePage = () => {
                   <span className="text-green-600 font-semibold">Your Legal Right</span>
                 </div>
                 <h2 className="text-3xl font-bold mb-4">
-                  UK Law Protects Your Right to Recover Hidden Commissions
+                  "Secret Commissions" Are Now Illegal - Claim Yours Back
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  In 2021, UK courts ruled that businesses are entitled to transparency about broker commissions. 
-                  If these weren't disclosed, you have a legal right to claim them back.
+                  UK courts have ruled that undisclosed broker commissions are "secret commissions" and businesses 
+                  are entitled to full transparency. If these weren't disclosed, you have a legal right to claim them back.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start gap-2">
@@ -335,6 +358,26 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Affected Suppliers Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Major Energy Suppliers Under Investigation</h3>
+            <p className="text-gray-600">Businesses with these suppliers may have valid claims for hidden commissions</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {['British Gas', 'E.ON', 'EDF Energy', 'SSE', 'Shell Energy', 'Opus Energy', 'Total Gas & Power'].map((supplier) => (
+              <div key={supplier} className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200 hover:border-green-400 transition-colors">
+                <span className="text-sm font-medium text-gray-700">{supplier}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm text-gray-500 mt-6">
+            * This list is not exhaustive. Claims can be made against any energy supplier who failed to disclose broker commissions.
+          </p>
         </div>
       </section>
 
