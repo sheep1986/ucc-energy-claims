@@ -40,7 +40,7 @@ const Insights = () => {
       excerpt: 'Exclusive analysis reveals UK manufacturers are losing billions annually to undisclosed broker commissions, with heavy industry bearing the brunt of secret energy markups.',
       content: 'Recent investigations have uncovered that UK manufacturing businesses are collectively overpaying £2.8 billion per year in hidden energy broker fees. These undisclosed commissions, averaging 35% above base rates, are decimating profit margins across the sector.',
       author: 'Energy Claims Team',
-      date: 'December 2024',
+      date: 'September 2025',
       readTime: '5 min read',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800',
       stats: { views: '12.5K', shares: 234 }
@@ -53,7 +53,7 @@ const Insights = () => {
       excerpt: 'High Court delivers crushing blow to energy brokers, declaring undisclosed commissions breach fiduciary duty and consumer protection laws.',
       content: 'In a groundbreaking decision that sends shockwaves through the energy sector, the High Court has ruled that energy brokers who fail to disclose their commissions are engaged in "fundamentally deceptive practices" that violate UK consumer law.',
       author: 'Legal Department',
-      date: 'November 2024',
+      date: 'September 2025',
       readTime: '7 min read',
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800',
       stats: { views: '18.2K', shares: 456 }
@@ -65,7 +65,7 @@ const Insights = () => {
       excerpt: 'Learn to identify the warning signs that your broker may be taking secret profits from your energy contracts.',
       content: 'Industry insiders reveal the telltale signs that indicate your energy broker is receiving undisclosed commissions. From vague pricing structures to pressure tactics, discover what to watch for.',
       author: 'Investigation Team',
-      date: 'November 2024',
+      date: 'August 2025',
       readTime: '4 min read',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
       stats: { views: '9.8K', shares: 189 }
@@ -77,7 +77,7 @@ const Insights = () => {
       excerpt: 'Energy regulator announces sweeping investigation following evidence of widespread commission concealment affecting millions of businesses.',
       content: 'Ofgem has initiated a comprehensive investigation into energy broker practices after receiving overwhelming evidence of systematic commission hiding across the industry.',
       author: 'News Desk',
-      date: 'December 2024',
+      date: 'August 2025',
       readTime: '3 min read',
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800',
       stats: { views: '22.1K', shares: 678 }
@@ -89,7 +89,7 @@ const Insights = () => {
       excerpt: 'NHS trusts and private healthcare facilities successfully recover massive sums after discovering years of broker overcharging.',
       content: 'A coordinated effort by healthcare providers has resulted in the recovery of £180 million in undisclosed energy broker commissions, with individual claims ranging from £50,000 to £2.3 million.',
       author: 'Sector Analysis Team',
-      date: 'October 2024',
+      date: 'July 2025',
       readTime: '6 min read',
       image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800',
       stats: { views: '14.3K', shares: 345 }
@@ -101,7 +101,7 @@ const Insights = () => {
       excerpt: 'Understanding the regulations that require brokers to disclose all commissions and how to enforce your rights.',
       content: 'UK law mandates complete transparency in energy broker dealings. This comprehensive guide explains your legal protections and the steps to take when brokers violate disclosure requirements.',
       author: 'Legal Team',
-      date: 'October 2024',
+      date: 'July 2025',
       readTime: '8 min read',
       image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800',
       stats: { views: '11.7K', shares: 267 }
@@ -113,7 +113,7 @@ const Insights = () => {
       excerpt: 'Practical guide to uncovering exactly how much your broker is secretly earning from your energy contracts.',
       content: 'This detailed walkthrough shows you precisely how to calculate the hidden commissions in your energy bills, with real examples and calculation templates.',
       author: 'Expert Analysis',
-      date: 'September 2024',
+      date: 'June 2025',
       readTime: '10 min read',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800',
       stats: { views: '16.9K', shares: 423 }
@@ -125,7 +125,7 @@ const Insights = () => {
       excerpt: 'Major broker ordered to repay millions after systematic commission concealment exposed by whistleblower.',
       content: 'One of the UK\'s largest energy brokers has been ordered to pay £45 million in compensation after internal documents revealed a deliberate policy of hiding commissions from business clients.',
       author: 'Investigation Unit',
-      date: 'September 2024',
+      date: 'May 2025',
       readTime: '5 min read',
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800',
       stats: { views: '25.6K', shares: 891 }
@@ -137,7 +137,7 @@ const Insights = () => {
       excerpt: 'Hotels, restaurants and venues losing millions to energy brokers exploiting post-pandemic vulnerabilities.',
       content: 'The hospitality industry, already struggling with post-pandemic recovery, is hemorrhaging £400 million yearly through concealed energy broker commissions, new research reveals.',
       author: 'Industry Research',
-      date: 'August 2024',
+      date: 'April 2025',
       readTime: '7 min read',
       image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
       stats: { views: '13.2K', shares: 312 }
@@ -149,7 +149,7 @@ const Insights = () => {
       excerpt: 'Historic legal action sees unprecedented coalition of businesses seeking justice for systematic commission deception.',
       content: 'In the largest class action of its kind, 50,000 UK businesses have joined forces to pursue legal action against energy brokers for years of undisclosed commission taking.',
       author: 'Legal Affairs',
-      date: 'August 2024',
+      date: 'March 2025',
       readTime: '6 min read',
       image: 'https://images.unsplash.com/photo-1436450412740-6b988f486c6b?w=800',
       stats: { views: '28.4K', shares: 1023 }
@@ -161,7 +161,7 @@ const Insights = () => {
       excerpt: 'Immediate actions to take when you uncover that your broker has been hiding fees in your energy contracts.',
       content: 'Time is critical when you discover broker fraud. This emergency guide provides a step-by-step action plan to protect your rights and maximize your compensation claim.',
       author: 'Claims Team',
-      date: 'July 2024',
+      date: 'February 2025',
       readTime: '5 min read',
       image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800',
       stats: { views: '19.8K', shares: 567 }
@@ -173,7 +173,7 @@ const Insights = () => {
       excerpt: 'Hidden broker fees pushing thousands of small businesses toward insolvency as energy costs spiral out of control.',
       content: 'Small and medium enterprises across the UK face an existential crisis as concealed broker commissions compound already crushing energy costs, with many forced to close their doors.',
       author: 'SME Focus Team',
-      date: 'July 2024',
+      date: 'January 2025',
       readTime: '8 min read',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
       stats: { views: '21.3K', shares: 789 }
