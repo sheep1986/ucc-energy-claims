@@ -15,7 +15,6 @@ import CookiePolicy from './pages/CookiePolicy'
 import Complaints from './pages/Complaints'
 import Success from './pages/Success'
 import CaseStudies from './pages/CaseStudies'
-import Resources from './pages/Resources'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 // Industry pages
@@ -55,7 +54,6 @@ function App() {
             <Route path="/industries/restaurants" element={<Restaurants />} />
             {/* Additional Routes */}
             <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/resources" element={<Resources />} />
             {/* Legal & Other Routes */}
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
