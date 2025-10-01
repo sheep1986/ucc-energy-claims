@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import InstantCalculator from '../components/InstantCalculator'
+import useScrollAnimation from '../hooks/useScrollAnimation'
 import { Link } from 'react-router-dom'
 import { 
   IconArrowRight,
@@ -17,6 +18,8 @@ import {
 } from '@tabler/icons-react'
 
 const Calculator = () => {
+  useScrollAnimation()
+  
   const stats = [
     { value: '2', label: 'Minutes to Complete', icon: <IconClock className="w-5 h-5" /> },
     { value: '£0', label: 'Upfront Cost', icon: <IconCircleCheck className="w-5 h-5" /> },
@@ -62,16 +65,16 @@ const Calculator = () => {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 px-4 py-2 rounded-full text-xs font-medium mb-8">
+            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 px-4 py-2 rounded-full text-xs font-medium mb-8 fade-up">
               <IconShieldCheck className="w-4 h-4" />
               FCA Regulated • No Win No Fee • 100% Confidential
             </div>
             
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-up" style={{animationDelay: '0.1s'}}>
               Calculate Your
               <span className="text-green-600"> Energy Commission Claim</span>
             </h1>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto mb-12">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto mb-12 fade-up" style={{animationDelay: '0.2s'}}>
               Join <span className="font-semibold">10,000+ UK businesses</span> recovering millions in hidden broker commissions. 
               Your free assessment takes just 2 minutes.
             </p>
@@ -79,7 +82,7 @@ const Calculator = () => {
             {/* Professional Stats Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-white rounded-xl p-5 border border-gray-100 hover:border-gray-200 transition-all group">
+                <div key={index} className="bg-white rounded-xl p-5 border border-gray-100 hover:border-gray-200 transition-all group stagger-in">
                   <div className="flex justify-center mb-2">
                     <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center text-green-600 group-hover:bg-green-100 transition-colors">
                       {stat.icon}
@@ -121,7 +124,7 @@ const Calculator = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Left Side - Calculator */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 scale-in">
               <InstantCalculator />
             </div>
             
@@ -129,7 +132,7 @@ const Calculator = () => {
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 {/* Need Help Card */}
-                <div className="bg-green-600 rounded-xl p-6 text-white">
+                <div className="bg-green-600 rounded-xl p-6 text-white fade-up">
                   <h3 className="text-xl font-bold mb-3">Need Help?</h3>
                   <p className="text-green-50 mb-4 text-sm">
                     Our energy claim experts are standing by to assist you with your assessment.
@@ -144,7 +147,7 @@ const Calculator = () => {
                 </div>
                 
                 {/* Trust Signals */}
-                <div className="bg-gray-50 rounded-xl p-6">
+                <div className="bg-gray-50 rounded-xl p-6 fade-up" style={{animationDelay: '0.3s'}}>
                   <h4 className="font-semibold mb-4">Why Choose UCC?</h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
@@ -175,7 +178,7 @@ const Calculator = () => {
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Use Our Calculator?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 fade-up">Why Use Our Calculator?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our advanced assessment tool instantly identifies if you have a valid energy broker commission claim
             </p>
@@ -183,7 +186,7 @@ const Calculator = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {reasons.map((reason, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 hover:shadow-lg transition-all">
+              <div key={index} className="bg-white rounded-xl p-6 hover:shadow-lg transition-all stagger-in">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4">
                   {reason.icon}
                 </div>
@@ -199,7 +202,7 @@ const Calculator = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="fade-up">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">What You'll Need</h2>
               <p className="text-lg text-gray-600 mb-8">
                 Our calculator is designed to be quick and easy. Here's the information that helps us assess your claim:
@@ -243,7 +246,7 @@ const Calculator = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative scale-in">
               <img 
                 src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600" 
                 alt="Business calculator" 
@@ -261,31 +264,31 @@ const Calculator = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Quick Answers</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 fade-up">Quick Answers</h2>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl stagger-in">
               <h3 className="font-semibold mb-2">Is this really free?</h3>
               <p className="text-sm text-gray-600">
                 Yes, the assessment is 100% free with no hidden charges. We only get paid if we successfully recover your money.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl stagger-in">
               <h3 className="font-semibold mb-2">How accurate is the calculator?</h3>
               <p className="text-sm text-gray-600">
                 Our calculator uses industry data and legal precedents to provide accurate estimates based on thousands of successful claims.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl stagger-in">
               <h3 className="font-semibold mb-2">What happens after I submit?</h3>
               <p className="text-sm text-gray-600">
                 You'll receive instant results and one of our specialists will contact you within 24 hours to discuss your claim.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl stagger-in">
               <h3 className="font-semibold mb-2">Is my information secure?</h3>
               <p className="text-sm text-gray-600">
                 Absolutely. We're ICO registered and GDPR compliant. Your data is encrypted and never shared without permission.
@@ -305,7 +308,7 @@ const Calculator = () => {
       {/* Final CTA */}
       <section className="py-16 bg-gray-900">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4 fade-up">
             Ready to Claim What's Yours?
           </h2>
           <p className="text-lg text-gray-300 mb-8">

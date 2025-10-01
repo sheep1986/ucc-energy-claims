@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import useScrollAnimation from '../hooks/useScrollAnimation'
 import { 
   IconArrowRight,
   IconCircleCheck,
@@ -28,6 +29,41 @@ import InstantCalculator from '../components/InstantCalculator'
 const HomePage = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [activeFAQ, setActiveFAQ] = useState(0)
+  const heroRef = useRef(null)
+  
+  // Initialize scroll animations
+  useScrollAnimation()
+  
+  // Number counter animation function
+  const animateValue = (start, end, duration, element) => {
+    let startTimestamp = null
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1)
+      element.textContent = Math.floor(progress * (end - start) + start).toLocaleString()
+      if (progress < 1) {
+        window.requestAnimationFrame(step)
+      }
+    }
+    window.requestAnimationFrame(step)
+  }
+  
+  // Parallax effect for hero section
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const scrolled = window.pageYOffset
+        const parallaxElements = heroRef.current.querySelectorAll('.parallax')
+        parallaxElements.forEach(element => {
+          const speed = element.dataset.speed || 0.5
+          element.style.transform = `translateY(${scrolled * speed}px)`
+        })
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const stats = [
     { value: 'No Win', label: 'No Fee', icon: <IconShieldCheck className="w-5 h-5" /> },
@@ -158,9 +194,9 @@ const HomePage = () => {
       </div>
 
       {/* Hero Section - Clean Professional Law Firm Style */}
-      <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <section ref={heroRef} className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
         {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.02] parallax" data-speed="0.3">
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 1px 1px, #10b981 1px, transparent 1px)',
             backgroundSize: '50px 50px'
@@ -172,19 +208,19 @@ const HomePage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:pt-8">
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm uppercase tracking-wider mb-6 fade-up">
                 <IconCircleCheck className="w-5 h-5" />
                 <span>Trusted by 10,000+ UK Businesses</span>
               </div>
               
               {/* Main Headline */}
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight fade-up">
                 Recover Hidden
                 <span className="text-green-600"> Energy Broker </span>
                 Commissions
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed fade-up">
                 Your energy broker may have taken up to 50% commission without telling you. 
                 UK courts ruled this is illegal. We'll get your money back.
               </p>
@@ -214,7 +250,7 @@ const HomePage = () => {
               
               
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-up">
                 <Link to="/calculator" className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-green-700 transition-colors">
                   Check If You Can Claim
                   <IconArrowRight className="w-5 h-5" />
@@ -244,7 +280,7 @@ const HomePage = () => {
             
             {/* Calculator Card - Clean Style */}
             <div className="lg:block">
-              <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+              <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden scale-in">
                 <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
                   <h3 className="text-lg font-bold text-gray-900">Quick Assessment</h3>
                   <p className="text-sm text-gray-600 mt-1">Find out if you can claim in 2 minutes</p>
@@ -262,25 +298,25 @@ const HomePage = () => {
       {/* Stats Bar */}
       <section className="py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-up">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Businesses Choose UCC</h2>
             <p className="text-lg text-gray-600">Join thousands of UK businesses recovering their hidden commissions</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">£52M+</div>
+            <div className="text-center stagger-in">
+              <div className="text-4xl font-bold text-green-600 mb-2 counter-animation" data-target="52">£0M+</div>
               <div className="text-sm text-gray-600">Total Recovered</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">10,000+</div>
+            <div className="text-center stagger-in">
+              <div className="text-4xl font-bold text-green-600 mb-2 counter-animation" data-target="10000">0+</div>
               <div className="text-sm text-gray-600">Successful Claims</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">21 Days</div>
+            <div className="text-center stagger-in">
+              <div className="text-4xl font-bold text-green-600 mb-2 counter-animation" data-target="21">0 Days</div>
               <div className="text-sm text-gray-600">Average Settlement</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">98%</div>
+            <div className="text-center stagger-in">
+              <div className="text-4xl font-bold text-green-600 mb-2 counter-animation" data-target="98">0%</div>
               <div className="text-sm text-gray-600">Success Rate</div>
             </div>
           </div>
@@ -288,7 +324,7 @@ const HomePage = () => {
       </section>
 
       {/* OFGEM Report Alert */}
-      <section className="py-8 bg-amber-50 border-t-4 border-amber-400">
+      <section className="py-8 bg-amber-50 border-t-4 border-amber-400 fade-up">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="flex items-start gap-4">
@@ -313,14 +349,14 @@ const HomePage = () => {
       {/* Value Section */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-green-100">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-green-100 scale-in">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 mb-4">
+                <div className="inline-flex items-center gap-2 mb-4 fade-up">
                   <IconCircleCheck className="w-6 h-6 text-green-500" />
                   <span className="text-green-600 font-semibold">Your Legal Right</span>
                 </div>
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 fade-up">
                   "Secret Commissions" Are Now Illegal - Claim Yours Back
                 </h2>
                 <p className="text-gray-600 mb-6">
@@ -427,12 +463,12 @@ const HomePage = () => {
             </div>
             
             <div className="order-1 lg:order-2">
-              <span className="badge badge-emerald mb-4">The Hidden Truth</span>
-              <h2 className="mb-6">
+              <span className="badge badge-emerald mb-4 fade-up">The Hidden Truth</span>
+              <h2 className="mb-6 fade-up">
                 Your Energy Broker Is
                 <span className="text-green-600"> Secretly Profiting</span> From You
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 mb-8 fade-up">
                 While you trusted them to get you the best deal, energy brokers have been taking 
                 massive hidden commissions from your contracts - without telling you.
               </p>
@@ -486,7 +522,7 @@ const HomePage = () => {
       {/* Process Section - Clean Professional */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-up">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Three simple steps to recover your hidden commissions. We handle everything.
@@ -518,7 +554,7 @@ const HomePage = () => {
                 icon: <IconCash className="w-6 h-6" />
               }
             ].map((step, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow scale-in">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg flex-shrink-0">
                     {step.number}
@@ -625,7 +661,7 @@ const HomePage = () => {
       {/* Industries Section - Enhanced */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 fade-up">
             <span className="badge badge-emerald mb-4">Industry Expertise</span>
             <h2 className="mb-4">Every Business Sector Is Affected</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -638,7 +674,7 @@ const HomePage = () => {
             {industries.map((industry, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group"
+                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group stagger-in"
               >
                 <div className="text-4xl mb-4">{industry.icon}</div>
                 <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
@@ -668,7 +704,7 @@ const HomePage = () => {
       {/* Trust Signals Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-up">
             <h2 className="mb-4">Why UK Businesses Trust UCC</h2>
             <p className="text-xl text-gray-600">
               We're the regulated, professional choice for energy commission claims
@@ -677,7 +713,7 @@ const HomePage = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {trustSignals.map((signal, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center stagger-in">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-green-600">
                   {signal.icon}
                 </div>
@@ -692,7 +728,7 @@ const HomePage = () => {
       {/* Testimonials - Enhanced */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 fade-up">
             <span className="badge badge-emerald mb-4">Success Stories</span>
             <h2 className="mb-4">Real Businesses, Real Results</h2>
             <p className="text-xl text-gray-600">
@@ -702,7 +738,7 @@ const HomePage = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all slide-in">
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-xl">★</span>
@@ -730,7 +766,7 @@ const HomePage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           {/* Minimal Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-up">
             <h2 className="text-3xl font-light text-gray-900 mb-2">Frequently Asked Questions</h2>
             <p className="text-gray-600">Clear answers about energy broker commission claims</p>
           </div>
@@ -833,7 +869,7 @@ const HomePage = () => {
         
         <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
           {/* Refined Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-up">
             <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-2">
               Your Money
               <span className="text-green-600 font-semibold"> Is Waiting</span>
@@ -842,7 +878,7 @@ const HomePage = () => {
           </div>
           
           {/* Clean Content Card */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-10 mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 lg:p-10 mb-12 scale-in">
             <div className="grid lg:grid-cols-2 gap-10">
               {/* Left Column */}
               <div>
@@ -899,7 +935,7 @@ const HomePage = () => {
           </div>
           
           {/* Refined CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center fade-up">
             <Link to="/calculator" className="group">
               <div className="bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-lg font-medium text-sm transition-all duration-200 flex items-center gap-2.5 shadow-sm">
                 <IconCalculator className="w-4 h-4" />
