@@ -50,80 +50,48 @@ const Calculator = () => {
   return (
     <div>
       {/* Professional Hero Section */}
-      <section className="relative py-16 overflow-hidden bg-gradient-to-br from-green-50 via-white to-gray-50">
-        {/* Icon Pattern Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Large decorative icons */}
-          <div className="absolute top-10 left-10 text-green-100 opacity-40">
-            <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-            </svg>
-          </div>
-          <div className="absolute top-20 right-20 text-green-100 opacity-30 transform rotate-12">
-            <svg className="w-40 h-40" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            </svg>
-          </div>
-          <div className="absolute bottom-10 left-1/4 text-green-100 opacity-25 transform -rotate-12">
-            <svg className="w-36 h-36" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-            </svg>
-          </div>
-          <div className="absolute bottom-20 right-1/3 text-green-100 opacity-35">
-            <svg className="w-28 h-28" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/>
-            </svg>
-          </div>
-          <div className="absolute top-1/2 left-10 text-green-100 opacity-20 transform rotate-45">
-            <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          {/* Pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
+      <section className="relative py-20 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 overflow-hidden opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2310b981' fill-opacity='1'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
           }}></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center">
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-5 py-2.5 rounded-full text-sm font-semibold mb-8 shadow-sm">
-              <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 100 4h2a2 2 0 100-4h2a1 1 0 100-2 2 2 0 00-2 2v11a2 2 0 002 2h4a2 2 0 002-2V5a2 2 0 00-2-2H6a2 2 0 00-2 2v11a2 2 0 002 2h4a2 2 0 002-2V5a2 2 0 00-2-2H6z" clipRule="evenodd"/>
-              </svg>
+            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 px-4 py-2 rounded-full text-xs font-medium mb-8">
+              <IconShieldCheck className="w-4 h-4" />
               FCA Regulated • No Win No Fee • 100% Confidential
             </div>
             
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Calculate Your
-              <span className="block text-green-600 mt-2">
-                Energy Commission Claim
-              </span>
+              <span className="text-green-600"> Energy Commission Claim</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Join <span className="text-gray-900 font-semibold">10,000+ UK businesses</span> recovering millions in hidden broker commissions. 
+            <p className="text-base text-gray-600 max-w-2xl mx-auto mb-12">
+              Join <span className="font-semibold">10,000+ UK businesses</span> recovering millions in hidden broker commissions. 
               Your free assessment takes just 2 minutes.
             </p>
-          </div>
           
-          {/* Professional Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex justify-center mb-3">
-                  <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600">
-                    {stat.icon}
+            {/* Professional Stats Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
+              {stats.map((stat, index) => (
+                <div key={index} className="bg-white rounded-xl p-5 border border-gray-100 hover:border-gray-200 transition-all group">
+                  <div className="flex justify-center mb-2">
+                    <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center text-green-600 group-hover:bg-green-100 transition-colors">
+                      {stat.icon}
+                    </div>
                   </div>
+                  <div className="text-xl font-bold text-gray-900">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide mt-1">{stat.label}</div>
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-gray-500 uppercase tracking-wider text-center">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
