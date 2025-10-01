@@ -209,10 +209,6 @@ const HomePage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:pt-8">
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm uppercase tracking-wider mb-6 fade-up">
-                <IconCircleCheck className="w-5 h-5" />
-                <span>Trusted by 10,000+ UK Businesses</span>
-              </div>
               
               {/* Main Headline */}
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight fade-up">
@@ -551,7 +547,7 @@ const HomePage = () => {
                     Start Your Claim Today
                   </h3>
                   <p className="text-xl text-green-50 mb-10 max-w-2xl mx-auto">
-                    Join over 10,000 UK businesses who have successfully recovered their hidden energy broker commissions
+Successfully recover your hidden energy broker commissions
                   </p>
                   
                   {/* Key Benefits Grid */}
@@ -596,18 +592,6 @@ const HomePage = () => {
                     Learn how it works →
                   </Link>
                   
-                  {/* Trust Rating */}
-                  <div className="mt-8 pt-8 border-t border-white/20">
-                    <p className="text-green-100 text-sm mb-3">Excellent rating from our clients</p>
-                    <div className="flex items-center justify-center gap-1 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                        </svg>
-                      ))}
-                    </div>
-                    <p className="text-green-100 text-xs">4.9/5 based on 10,000+ reviews</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -689,18 +673,13 @@ const HomePage = () => {
             <span className="badge badge-emerald mb-4">Success Stories</span>
             <h2 className="mb-4">Real Businesses, Real Results</h2>
             <p className="text-xl text-gray-600">
-              Join thousands of UK businesses who've successfully recovered their hidden commissions
+UK businesses who've successfully recovered their hidden commissions
             </p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all slide-in">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
-                  ))}
-                </div>
                 <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
                 <div className="border-t pt-4">
                   <div className="font-semibold">{testimonial.author}</div>
@@ -831,7 +810,7 @@ const HomePage = () => {
               Your Money
               <span className="text-green-600 font-semibold"> Is Waiting</span>
             </h2>
-            <p className="text-gray-600 text-sm">Join thousands recovering hidden broker commissions</p>
+            <p className="text-gray-600 text-sm">Recover your hidden broker commissions</p>
           </div>
           
           {/* Clean Content Card */}
