@@ -10,6 +10,19 @@
   NODE_VERSION = "20.11.0"
   NPM_VERSION = "10.2.4"
 
+# Redirect removed pages to home
+[[redirects]]
+  from = "/case-studies"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources"
+  to = "/"
+  status = 301
+  force = true
+
 # Redirects for single page application
 [[redirects]]
   from = "/*"
