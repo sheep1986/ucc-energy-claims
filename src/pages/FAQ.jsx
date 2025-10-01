@@ -19,7 +19,6 @@ import {
   IconTrendingUp,
   IconAlertCircle,
   IconCheck,
-  IconSparkle,
   IconPhone,
   IconFileSearch,
   IconCalculator,
@@ -632,7 +631,7 @@ const FAQ = () => {
         <div className="container-custom relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-emerald/20 text-emerald px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-emerald/30">
-              <IconSparkle size={16} />
+              <IconStar size={16} />
               Expert Support Available
             </div>
             
