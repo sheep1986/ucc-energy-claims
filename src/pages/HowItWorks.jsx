@@ -194,6 +194,32 @@ const HowItWorks = () => {
               </div>
             ))}
           </div>
+          
+          {/* Additional Info Bar */}
+          <div className="mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 fade-up">
+            <div className="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <IconShieldCheck className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">100%</div>
+                <div className="text-sm text-gray-600">Risk Free</div>
+              </div>
+              <div>
+                <IconClock className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">21 Days</div>
+                <div className="text-sm text-gray-600">Claim Submission</div>
+              </div>
+              <div>
+                <IconCurrencyPound className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">25%</div>
+                <div className="text-sm text-gray-600">Success Fee Only</div>
+              </div>
+              <div>
+                <IconScale className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-gray-900">6 Years</div>
+                <div className="text-sm text-gray-600">Claim Window</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
