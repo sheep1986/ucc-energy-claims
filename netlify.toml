@@ -2,7 +2,7 @@
 
 # Build settings
 [build]
-  command = "npm install && npm run build"
+  command = "NODE_ENV=development npm install && NODE_ENV=production npm run build"
   publish = "dist"
   
 # Build environment variables
@@ -54,7 +54,7 @@
 
 # Branch deploy settings
 [context.production]
-  environment = { NODE_ENV = "production" }
+  # NODE_ENV handled in build command
 
 [context.deploy-preview]
   environment = { NODE_ENV = "development" }
