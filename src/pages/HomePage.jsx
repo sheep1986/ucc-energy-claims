@@ -538,17 +538,15 @@ const HomePage = () => {
                   Learn more about how it works
                 </Link>
               </div>
-                </div>
-                
-                {/* Trust Badge */}
-                <div className="mt-6 pt-6 border-t border-white/20 text-center">
+              
+              {/* Trust Badge */}
+              <div className="mt-6 pt-6 border-t border-white/20 text-center">
                   <div className="text-xs text-green-100">Trusted by 10,000+ UK businesses</div>
                   <div className="flex justify-center gap-1 mt-2">
                     {[1,2,3,4,5].map(i => (
                       <span key={i} className="text-yellow-400">★</span>
                     ))}
                   </div>
-                </div>
               </div>
             </div>
           </div>
