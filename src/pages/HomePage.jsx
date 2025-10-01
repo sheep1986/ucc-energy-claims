@@ -147,123 +147,109 @@ const HomePage = () => {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-gray-900 text-white py-3 text-center text-sm font-medium">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-center gap-2">
-          <IconShieldCheck className="w-4 h-4" />
-          <span>Free Claim Assessment • No Win, No Fee • FCA Regulated</span>
+      <div className="bg-green-600 text-white py-3 text-center text-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <span className="font-medium">Free Assessment Available</span>
+          <span className="mx-2">•</span>
+          <span>No Win, No Fee</span>
+          <span className="mx-2">•</span>
+          <span>FCA Regulated Service</span>
         </div>
       </div>
 
-      {/* Hero Section - Enhanced Professional Design */}
-      <section className="relative min-h-[700px] flex items-center overflow-hidden">
-        {/* Premium Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent"></div>
-        </div>
-        
-        {/* Animated Geometric Shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-600/5 rounded-full blur-3xl"></div>
+      {/* Hero Section - Clean Professional Law Firm Style */}
+      <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, #10b981 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }}></div>
         </div>
         
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              {/* Animated Trust Badge */}
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full px-6 py-3 mb-8 shadow-lg backdrop-blur-sm">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-gray-800 text-sm font-bold uppercase tracking-wide">Trusted by 10,000+ UK Businesses</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="lg:pt-8">
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 text-green-600 font-semibold text-sm uppercase tracking-wider mb-6">
+                <IconCircleCheck className="w-5 h-5" />
+                <span>Trusted by 10,000+ UK Businesses</span>
               </div>
               
               {/* Main Headline */}
-              <h1 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight">
-                Hidden Energy
-                <span className="block mt-2">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">Commissions?</span>
-                </span>
-                <span className="block text-2xl lg:text-3xl mt-6 font-normal text-gray-300">
-                  We've recovered <span className="text-green-400 font-bold">£52 million</span> for UK businesses
-                </span>
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Recover Hidden
+                <span className="text-green-600"> Energy Broker </span>
+                Commissions
               </h1>
               
-              {/* Key Message - Glass Effect */}
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 mb-8 shadow-2xl">
-                <div className="flex items-start gap-3">
-                  <IconAlertCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
-                  <p className="text-white text-lg leading-relaxed">
-                    <span className="text-xl font-bold text-yellow-400">Act Now - Time Limits Apply</span><br/>
-                    Your broker took up to <span className="font-bold text-green-400">50% hidden commission</span>.
-                    The courts say it's illegal. We'll get it back. <span className="font-bold">No win = No fee.</span>
-                  </p>
-                </div>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Your energy broker may have taken up to 50% commission without telling you. 
+                UK courts ruled this is illegal. We'll get your money back.
+              </p>
+              
+              {/* Key Benefits */}
+              <div className="bg-green-50 border-l-4 border-green-600 p-6 mb-8">
+                <h2 className="font-bold text-gray-900 text-lg mb-3">Why Choose UCC?</h2>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>No Win, No Fee guarantee</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>Average recovery of £25,000</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>FCA regulated service</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-700">
+                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>98% success rate on claims</span>
+                  </li>
+                </ul>
               </div>
               
-              {/* Stats Grid - Enhanced */}
-              <div className="grid grid-cols-3 gap-4 mb-10">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-                  <div className="relative text-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:border-green-400/50 transition-all">
-                    <div className="text-3xl font-black text-green-400">£25k</div>
-                    <div className="text-xs text-gray-300 uppercase tracking-wider mt-1">Avg Recovery</div>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-                  <div className="relative text-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:border-green-400/50 transition-all">
-                    <div className="text-3xl font-black text-green-400">21</div>
-                    <div className="text-xs text-gray-300 uppercase tracking-wider mt-1">Days Average</div>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-                  <div className="relative text-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:border-green-400/50 transition-all">
-                    <div className="text-3xl font-black text-green-400">98%</div>
-                    <div className="text-xs text-gray-300 uppercase tracking-wider mt-1">Success Rate</div>
-                  </div>
-                </div>
-              </div>
               
-              {/* CTAs - Premium Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link to="/calculator" className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-green-500/25 transition-all transform hover:-translate-y-1">
-                  <IconCalculator className="w-6 h-6" />
-                  Start Free Assessment
-                  <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Link to="/calculator" className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-green-700 transition-colors">
+                  Check If You Can Claim
+                  <IconArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:08001234567" className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold text-lg border border-white/20 hover:bg-white/20 transition-all">
-                  <IconPhone className="w-6 h-6 text-green-400" />
+                <a href="tel:08001234567" className="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-900 px-8 py-4 rounded-md font-semibold hover:bg-gray-200 transition-colors">
+                  <IconPhone className="w-5 h-5" />
                   <span>0800 123 4567</span>
                 </a>
               </div>
               
-              {/* Trust Indicators - Enhanced */}
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                  <IconShieldCheck className="w-5 h-5 text-green-400" />
-                  <span className="text-sm text-gray-300 font-medium">FCA Regulated</span>
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap gap-6 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <IconShieldCheck className="w-5 h-5 text-green-600" />
+                  <span>FCA Regulated</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                  <IconCircleCheck className="w-5 h-5 text-green-400" />
-                  <span className="text-sm text-gray-300 font-medium">No Win, No Fee</span>
+                <div className="flex items-center gap-2">
+                  <IconClock className="w-5 h-5 text-green-600" />
+                  <span>2 Minute Check</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                  <IconUsers className="w-5 h-5 text-green-400" />
-                  <span className="text-sm text-gray-300 font-medium">10,000+ Claims Won</span>
+                <div className="flex items-center gap-2">
+                  <IconAward className="w-5 h-5 text-green-600" />
+                  <span>98% Success Rate</span>
                 </div>
               </div>
             </div>
             
-            {/* Calculator Card - Floating Glass Effect */}
-            <div className="hidden lg:block">
-              <div className="relative">
-                {/* Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl blur-2xl"></div>
-                
-                {/* Card */}
-                <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 overflow-hidden">
+            {/* Calculator Card - Clean Style */}
+            <div className="lg:block">
+              <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                  <h3 className="text-lg font-bold text-gray-900">Quick Assessment</h3>
+                  <p className="text-sm text-gray-600 mt-1">Find out if you can claim in 2 minutes</p>
+                </div>
+                <div className="p-6">
                   <InstantCalculator />
                 </div>
               </div>
@@ -271,32 +257,32 @@ const HomePage = () => {
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs uppercase tracking-wider">Scroll</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
       </section>
 
-      {/* Stats Bar - Professional */}
-      <section className="py-12 bg-white border-t border-gray-200">
+      {/* Stats Bar */}
+      <section className="py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Businesses Choose UCC</h2>
+            <p className="text-lg text-gray-600">Join thousands of UK businesses recovering their hidden commissions</p>
+          </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="flex justify-center mb-3 text-green-600">
-                  {stat.icon}
-                </div>
-                <div className="text-2xl font-bold text-gray-900">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
-              </div>
-            ))}
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">£52M+</div>
+              <div className="text-sm text-gray-600">Total Recovered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">10,000+</div>
+              <div className="text-sm text-gray-600">Successful Claims</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">21 Days</div>
+              <div className="text-sm text-gray-600">Average Settlement</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-green-600 mb-2">98%</div>
+              <div className="text-sm text-gray-600">Success Rate</div>
+            </div>
           </div>
         </div>
       </section>
