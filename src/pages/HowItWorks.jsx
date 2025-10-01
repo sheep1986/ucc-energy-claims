@@ -13,14 +13,33 @@ import {
   IconBuildingSkyscraper,
   IconChartBar,
   IconHandshake,
-  IconCertificate
+  IconCertificate,
+  IconCalculator,
+  IconCalendar
 } from '@tabler/icons-react'
 import { useState } from 'react'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const HowItWorks = () => {
   const [openFAQ, setOpenFAQ] = useState(null)
+  const [annualSpend, setAnnualSpend] = useState('')
+  const [contractYears, setContractYears] = useState('3')
+  const [calculatedSavings, setCalculatedSavings] = useState(null)
   useScrollAnimation()
+
+  const calculateSavings = () => {
+    const spend = parseFloat(annualSpend)
+    const years = parseFloat(contractYears)
+    if (spend && years) {
+      const commissionRate = 0.25 // 25% average hidden commission
+      const totalCommission = spend * commissionRate * years
+      const withInterest = totalCommission * 1.15 // 15% interest estimate
+      setCalculatedSavings({
+        commission: totalCommission,
+        total: withInterest
+      })
+    }
+  }
 
   const process = [
     {
@@ -137,28 +156,104 @@ const HowItWorks = () => {
               </div>
             </div>
             
-            {/* Hero Image */}
+            {/* Calculator Widget */}
             <div className="relative fade-up">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1551135049-8a33b5883817?w=1200"
-                  alt="Professional team reviewing documents"
-                  className="w-full h-[400px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                {/* Stats Overlay */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <div className="text-2xl font-bold text-green-600">£127M+</div>
-                      <div className="text-sm text-gray-600">Recovered for clients</div>
+              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                <div className="flex items-center gap-2 mb-6">
+                  <IconCalculator className="w-6 h-6 text-green-600" />
+                  <h3 className="text-2xl font-bold text-gray-900">Quick Recovery Calculator</h3>
+                </div>
+                
+                <p className="text-gray-600 mb-6">
+                  Calculate your potential recovery in seconds
+                </p>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Annual Energy Spend
+                    </label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">£</span>
+                      <input
+                        type="number"
+                        placeholder="50000"
+                        value={annualSpend}
+                        onChange={(e) => {
+                          setAnnualSpend(e.target.value)
+                          setCalculatedSavings(null)
+                        }}
+                        className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      />
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-green-600">95%</div>
-                      <div className="text-sm text-gray-600">Success rate</div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Contract Duration
+                    </label>
+                    <select
+                      value={contractYears}
+                      onChange={(e) => {
+                        setContractYears(e.target.value)
+                        setCalculatedSavings(null)
+                      }}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    >
+                      <option value="1">1 Year</option>
+                      <option value="2">2 Years</option>
+                      <option value="3">3 Years</option>
+                      <option value="4">4 Years</option>
+                      <option value="5">5 Years</option>
+                      <option value="6">6 Years</option>
+                    </select>
+                  </div>
+                  
+                  <button
+                    onClick={calculateSavings}
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all flex items-center justify-center gap-2"
+                  >
+                    Calculate Recovery
+                    <IconArrowRight className="w-5 h-5" />
+                  </button>
+                </div>
+                
+                {calculatedSavings && (
+                  <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
+                    <div className="text-center">
+                      <p className="text-sm text-gray-600 mb-2">Estimated Recovery</p>
+                      <p className="text-3xl font-bold text-green-600 mb-3">
+                        £{calculatedSavings.total.toLocaleString('en-GB', { maximumFractionDigits: 0 })}
+                      </p>
+                      <div className="text-xs text-gray-500 space-y-1">
+                        <p>Hidden commissions: £{calculatedSavings.commission.toLocaleString('en-GB', { maximumFractionDigits: 0 })}</p>
+                        <p>Plus interest & costs</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Trust Indicators */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="flex justify-between text-center">
+                    <div>
+                      <div className="text-xl font-bold text-gray-900">£127M+</div>
+                      <div className="text-xs text-gray-500">Recovered</div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-gray-900">95%</div>
+                      <div className="text-xs text-gray-500">Success Rate</div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-gray-900">21 Days</div>
+                      <div className="text-xs text-gray-500">Average Time</div>
                     </div>
                   </div>
                 </div>
+                
+                <Link to="/calculator" className="block mt-6 text-center text-sm text-green-600 hover:text-green-700 font-medium">
+                  Try our detailed calculator →
+                </Link>
               </div>
             </div>
           </div>
