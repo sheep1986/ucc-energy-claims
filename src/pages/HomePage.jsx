@@ -372,102 +372,182 @@ const HomePage = () => {
       {/* Affected Suppliers Section */}
       <SupplierSection />
 
-      {/* Burden Section - Emotional Impact */}
-      <section className="py-32 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-green-500 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500 rounded-full filter blur-3xl"></div>
+      {/* Success Story Section - Enhanced Design */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.015]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Section Header */}
+          <div className="text-center mb-16 fade-up">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <IconUsers className="w-4 h-4" />
+              Real Client Success Story
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Discover How We Exposed
+              <span className="text-green-600"> Hidden Broker Commissions</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Join thousands of UK businesses who've successfully reclaimed their money
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Enhanced Story Card */}
             <div className="order-2 lg:order-1">
-              <div className="relative">
-                {/* Main Image with Overlay Stats */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800"
-                    alt="Professional business team reviewing documents"
-                    className="w-full h-[600px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  
-                  {/* Floating Stats Cards */}
-                  <div className="absolute top-6 left-6 bg-green-500 text-white rounded-2xl p-4 shadow-2xl animate-float">
-                    <div className="text-3xl font-bold">£18K</div>
-                    <div className="text-sm opacity-90">Average recovery</div>
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-1">
+                <div className="bg-white rounded-3xl p-8 lg:p-10">
+                  {/* Client Quote Header */}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                      MD
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-lg">Manufacturing Director</h3>
+                      <p className="text-gray-600">Birmingham-based Manufacturing Company</p>
+                      <div className="flex items-center gap-1 mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  
-                  <div className="absolute top-6 right-6 bg-emerald-500 text-white rounded-2xl p-4 shadow-2xl animate-float" style={{animationDelay: '1s'}}>
-                    <div className="text-3xl font-bold">6 Years</div>
-                    <div className="text-sm opacity-90">Claim period</div>
+
+                  {/* Main Quote */}
+                  <div className="relative mb-8">
+                    <svg className="absolute -top-2 -left-2 w-8 h-8 text-green-200" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <p className="text-xl lg:text-2xl font-medium text-gray-800 italic pl-8">
+                      The energy broker told us that there were no hidden fees. 
+                      <span className="text-green-600"> We trusted them completely.</span>
+                    </p>
                   </div>
-                  
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        "The energy broker told us that there were no hidden fees"
-                      </h3>
-                      <p className="text-gray-600">Manufacturing Director, Birmingham</p>
-                      <div className="mt-3 text-green-600 font-bold">Recovered £47,000 in 19 days</div>
+
+                  {/* Timeline Story */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex gap-3">
+                      <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-red-600 text-xs font-bold">1</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">The Discovery</h4>
+                        <p className="text-sm text-gray-600">After years of paying inflated energy bills, we discovered our "free" broker was taking 35% commission</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-3">
+                      <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-amber-600 text-xs font-bold">2</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">UCC Investigation</h4>
+                        <p className="text-sm text-gray-600">UCC analyzed 6 years of our contracts and found systematic overcharging totaling £47,000</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-3">
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-green-600 text-xs font-bold">3</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Full Recovery</h4>
+                        <p className="text-sm text-gray-600">Money recovered in just 19 days - funds we can now reinvest in our business growth</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Results Banner */}
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 text-white">
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="text-2xl lg:text-3xl font-bold">£47K</div>
+                        <div className="text-xs lg:text-sm opacity-90">Recovered</div>
+                      </div>
+                      <div className="border-x border-white/20">
+                        <div className="text-2xl lg:text-3xl font-bold">19</div>
+                        <div className="text-xs lg:text-sm opacity-90">Days</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl lg:text-3xl font-bold">£0</div>
+                        <div className="text-xs lg:text-sm opacity-90">Upfront</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             
+            {/* Right Side - Key Points */}
             <div className="order-1 lg:order-2">
-              <span className="badge badge-emerald mb-4 fade-up">The Hidden Truth</span>
-              <h2 className="mb-6 fade-up">
-                Your Energy Broker Is
-                <span className="text-green-600"> Secretly Profiting</span> From You
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 fade-up">
-                While you trusted them to get you the best deal, energy brokers have been taking 
-                massive hidden commissions from your contracts - without telling you.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-4 bg-red-50 p-4 rounded-lg">
-                  <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
-                    <span className="text-red-600 font-bold">£</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Thousands in Hidden Fees Every Year</h4>
-                    <p className="text-sm text-gray-600">Brokers receive up to 50% commission without disclosure</p>
-                  </div>
+              <div className="mb-8">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 fade-up">
+                  The Shocking Truth About
+                  <span className="text-green-600"> Energy Broker Commissions</span>
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 fade-up">
+                  90% of UK businesses are unknowingly paying hidden broker commissions. 
+                  These "secret profits" have been ruled illegal by UK courts.
+                </p>
+              </div>
+
+              {/* Key Statistics */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="bg-gray-50 rounded-xl p-5 border border-gray-100 scale-in">
+                  <div className="text-3xl font-bold text-green-600 mb-1">90%</div>
+                  <p className="text-sm text-gray-600">of UK businesses affected</p>
                 </div>
-                
-                <div className="flex items-start gap-4 bg-amber-50 p-4 rounded-lg">
-                  <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <span className="text-amber-600 font-bold">6</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Six Years of Overpayments</h4>
-                    <p className="text-sm text-gray-600">You can claim back charges from the past 6 years</p>
-                  </div>
+                <div className="bg-gray-50 rounded-xl p-5 border border-gray-100 scale-in">
+                  <div className="text-3xl font-bold text-green-600 mb-1">£2.2bn</div>
+                  <p className="text-sm text-gray-600">in hidden commissions yearly</p>
                 </div>
-                
-                <div className="flex items-start gap-4 bg-green-50 p-4 rounded-lg">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <IconCircleCheck className="w-6 h-6 text-green-600" />
-                  </div>
+                <div className="bg-gray-50 rounded-xl p-5 border border-gray-100 scale-in">
+                  <div className="text-3xl font-bold text-green-600 mb-1">10-50%</div>
+                  <p className="text-sm text-gray-600">typical broker commission</p>
+                </div>
+                <div className="bg-gray-50 rounded-xl p-5 border border-gray-100 scale-in">
+                  <div className="text-3xl font-bold text-green-600 mb-1">6 years</div>
+                  <p className="text-sm text-gray-600">claim back period</p>
+                </div>
+              </div>
+
+              {/* Warning Box */}
+              <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl mb-8 fade-up">
+                <div className="flex gap-3">
+                  <IconAlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1">We Fight For You</h4>
-                    <p className="text-sm text-gray-600">No win, no fee - we handle everything while you run your business</p>
+                    <h4 className="font-semibold text-gray-900 mb-1">Don't Wait - Time Is Running Out</h4>
+                    <p className="text-sm text-gray-700">
+                      You can only claim back 6 years. Every day you wait is money lost forever. 
+                      Start your free assessment now before it's too late.
+                    </p>
                   </div>
                 </div>
               </div>
-              
-              <div className="flex flex-wrap gap-4">
-                <Link to="/calculator" className="btn btn-primary">
-                  Discover Your Hidden Costs
-                  <IconArrowRight className="w-5 h-5" />
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 fade-up">
+                <Link to="/calculator" className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-xl font-bold hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <IconCalculator className="w-5 h-5" />
+                  Check If You're Affected
+                  <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/how-it-works" className="btn btn-secondary">
-                  Learn More
+                <Link to="/how-it-works" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-900 px-6 py-4 rounded-xl font-semibold hover:border-green-600 hover:text-green-600 transition-all">
+                  See How It Works
                 </Link>
+              </div>
+
+              {/* Trust Badge */}
+              <div className="mt-6 flex items-center gap-2 text-sm text-gray-600">
+                <IconShieldCheck className="w-5 h-5 text-green-600" />
+                <span>FCA Regulated • No Win No Fee • 100% Confidential</span>
               </div>
             </div>
           </div>
