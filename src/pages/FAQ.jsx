@@ -18,7 +18,13 @@ import {
   IconStar,
   IconTrendingUp,
   IconAlertCircle,
-  IconCheck
+  IconCheck,
+  IconSparkle,
+  IconPhone,
+  IconFileSearch,
+  IconCalculator,
+  IconCircleCheck,
+  IconAward
 } from '@tabler/icons-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -615,31 +621,88 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-navy to-navy-light text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Still Have Questions?
-          </h2>
-          <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-            Our team is available to answer any specific questions about your situation. 
-            Or start with our free calculator to see your potential claim.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/calculate"
-              className="inline-flex items-center justify-center gap-2 bg-emerald text-white px-8 py-4 rounded-xl hover:bg-emerald/90 transition-all duration-300 font-medium"
-            >
-              Calculate My Claim
-              <IconChevronRight size={20} />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur text-white px-8 py-4 rounded-xl hover:bg-white/20 transition-all duration-300 font-medium border border-white/20"
-            >
-              Contact Support
-              <IconMail size={20} />
-            </Link>
+      {/* Enhanced CTA Section */}
+      <section className="section-padding bg-gradient-to-br from-navy to-navy-light text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-emerald rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-400 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-emerald/20 text-emerald px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-emerald/30">
+              <IconSparkle size={16} />
+              Expert Support Available
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-emerald bg-clip-text text-transparent">
+              Can't Find Your Answer?
+            </h2>
+            
+            <p className="text-xl text-slate-200 mb-12 leading-relaxed">
+              Don't worry - our energy claim specialists are here to help.
+              <span className="block mt-2 text-lg text-slate-300">
+                Get personalized guidance tailored to your specific situation.
+              </span>
+            </p>
+
+            {/* Feature Highlights */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10">
+                <IconPhone className="w-10 h-10 text-emerald mb-4 mx-auto" />
+                <h3 className="font-semibold text-white mb-2">Speak to an Expert</h3>
+                <p className="text-slate-300 text-sm">Direct line to our claims specialists</p>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10">
+                <IconFileSearch className="w-10 h-10 text-emerald mb-4 mx-auto" />
+                <h3 className="font-semibold text-white mb-2">Free Assessment</h3>
+                <p className="text-slate-300 text-sm">No obligation claim evaluation</p>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10">
+                <IconShieldCheck className="w-10 h-10 text-emerald mb-4 mx-auto" />
+                <h3 className="font-semibold text-white mb-2">100% Confidential</h3>
+                <p className="text-slate-300 text-sm">Your information stays secure</p>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/calculator"
+                className="inline-flex items-center justify-center gap-2 bg-emerald text-white px-8 py-4 rounded-xl hover:bg-emerald/90 hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-xl shadow-emerald/20"
+              >
+                <IconCalculator size={24} />
+                Start Free Calculator
+                <IconChevronRight size={20} />
+              </Link>
+              
+              <a
+                href="tel:08001234567"
+                className="inline-flex items-center justify-center gap-2 bg-white text-navy px-8 py-4 rounded-xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-xl"
+              >
+                <IconPhone size={24} />
+                Call 0800 123 4567
+              </a>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center justify-center gap-6 mt-8 text-sm text-slate-300">
+              <div className="flex items-center gap-2">
+                <IconCircleCheck size={16} className="text-emerald" />
+                <span>No Win, No Fee</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <IconClock size={16} className="text-emerald" />
+                <span>2 Minute Assessment</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <IconAward size={16} className="text-emerald" />
+                <span>FCA Regulated</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
