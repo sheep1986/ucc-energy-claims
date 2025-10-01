@@ -12,8 +12,7 @@ const Footer = () => {
     services: [
       { name: 'Calculator', href: '/calculator' },
       { name: 'How It Works', href: '/how-it-works' },
-      { name: 'Industries', href: '/industries' },
-      { name: 'Case Studies', href: '/case-studies' }
+      { name: 'Industries', href: '/industries' }
     ],
     company: [
       { name: 'About Us', href: '/about' },
