@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom'
 import { 
   IconMail, 
   IconClock,
-  IconShieldCheck,
-  IconArrowRight
+  IconShieldCheck
 } from '@tabler/icons-react'
 
 const Footer = () => {
@@ -32,28 +31,25 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
-      {/* Newsletter Section */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Stay informed about energy claims
+      {/* CTA Section */}
+      <div className="bg-green-600">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-1">
+                Ready to check if you have a claim?
               </h3>
-              <p className="text-gray-600">
-                Get monthly updates on industry changes and claim opportunities.
+              <p className="text-green-100">
+                Takes just 2 minutes • No obligation • 100% free assessment
               </p>
             </div>
-            <div className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600"
-              />
-              <button className="btn btn-primary">
-                Subscribe
-                <IconArrowRight className="w-4 h-4" />
-              </button>
+            <div className="flex gap-4">
+              <Link to="/calculator" className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                Start Free Check
+              </Link>
+              <a href="tel:08001234567" className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors">
+                Call: 0800 123 4567
+              </a>
             </div>
           </div>
         </div>
