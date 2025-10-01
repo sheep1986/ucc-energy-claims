@@ -194,67 +194,66 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Hero Section - Clean Professional Law Firm Style */}
-      <section ref={heroRef} className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02] parallax" data-speed="0.3">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, #10b981 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }}></div>
-        </div>
+      {/* Hero Section - Modern Professional Style */}
+      <section ref={heroRef} className="relative bg-gradient-to-br from-gray-50 via-white to-green-50/30 pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
         
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:pt-8">
-              {/* Trust Badge */}
+              {/* Main Headline with Badge */}
+              <div className="mb-6 fade-up">
+                <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  FCA Regulated • No Win No Fee
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Recover Your Hidden
+                  <span className="block text-green-600">Energy Broker Commissions</span>
+                </h1>
+              </div>
               
-              {/* Main Headline */}
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight fade-up">
-                Recover Hidden
-                <span className="text-green-600"> Energy Broker </span>
-                Commissions
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed fade-up">
-                Your energy broker may have taken up to 50% commission without telling you. 
-                UK courts ruled this is illegal. We'll get your money back.
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed fade-up max-w-xl">
+                <span className="font-semibold">Did you know?</span> Your energy broker may have taken up to 
+                <span className="text-green-600 font-bold">50% commission</span> without telling you. 
+                UK courts ruled this is illegal. <span className="underline decoration-green-500 decoration-2">We'll get your money back.</span>
               </p>
               
-              {/* Key Benefits */}
-              <div className="bg-green-50 border-l-4 border-green-600 p-6 mb-8">
-                <h2 className="font-bold text-gray-900 text-lg mb-3">Why Choose UCC?</h2>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-gray-700">
-                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span>No Win, No Fee guarantee</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-gray-700">
-                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span>Average recovery of £25,000</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-gray-700">
-                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span>FCA regulated service</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-gray-700">
-                    <IconCircleCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span>98% success rate on claims</span>
-                  </li>
-                </ul>
+              {/* Key Stats Grid */}
+              <div className="grid grid-cols-2 gap-4 mb-8 fade-up">
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-green-600">£25k+</div>
+                  <div className="text-sm text-gray-600">Average Recovery</div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-green-600">21 Days</div>
+                  <div className="text-sm text-gray-600">Average Timeline</div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-green-600">98%</div>
+                  <div className="text-sm text-gray-600">Success Rate</div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-bold text-green-600">£0</div>
+                  <div className="text-sm text-gray-600">Upfront Cost</div>
+                </div>
               </div>
               
               
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-up">
-                <Link to="/calculator" className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-green-700 transition-colors">
-                  Check If You Can Claim
-                  <IconArrowRight className="w-5 h-5" />
+                <Link to="/calculator" className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-bold hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <IconCalculator className="w-5 h-5" />
+                  Start Free Assessment Now
+                  <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-900 px-8 py-4 rounded-md font-semibold hover:bg-gray-200 transition-colors">
-                  <IconMail className="w-5 h-5" />
-                  <span>Contact Us</span>
+                <Link to="/how-it-works" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:border-green-600 hover:text-green-600 transition-all">
+                  Learn How It Works
                 </Link>
               </div>
               
@@ -275,14 +274,18 @@ const HomePage = () => {
               </div>
             </div>
             
-            {/* Calculator Card - Clean Style */}
+            {/* Calculator Card - Enhanced Design */}
             <div className="lg:block">
-              <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden scale-in">
-                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                  <h3 className="text-lg font-bold text-gray-900">Quick Assessment</h3>
-                  <p className="text-sm text-gray-600 mt-1">Find out if you can claim in 2 minutes</p>
+              <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden scale-in relative">
+                {/* Premium Badge */}
+                <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  2 Min Assessment
                 </div>
-                <div className="p-6">
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-5 border-b border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-900">Check Your Eligibility</h3>
+                  <p className="text-sm text-gray-600 mt-1">Get instant results - 100% free & confidential</p>
+                </div>
+                <div className="p-6 bg-gradient-to-b from-white to-gray-50/50">
                   <InstantCalculator />
                 </div>
               </div>
@@ -292,6 +295,44 @@ const HomePage = () => {
         
       </section>
 
+
+      {/* Check Our Numbers Section */}
+      <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Check Our Numbers</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Real results from businesses we've helped recover their hidden energy commissions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">£2.5M+</div>
+              <div className="text-sm text-gray-400">Total Recovered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">98%</div>
+              <div className="text-sm text-gray-400">Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">21</div>
+              <div className="text-sm text-gray-400">Days Average</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">£0</div>
+              <div className="text-sm text-gray-400">Upfront Costs</div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link to="/calculator" className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-all transform hover:scale-105">
+              Get Your Free Assessment Now
+              <IconArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* OFGEM Report Alert */}
       <section className="py-8 bg-amber-50 border-t-4 border-amber-400 fade-up">
@@ -666,24 +707,48 @@ Successfully recover your hidden energy broker commissions
         </div>
       </section>
 
-      {/* Testimonials - Enhanced */}
+      {/* Testimonials - Premium Design */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 fade-up">
-            <span className="badge badge-emerald mb-4">Success Stories</span>
-            <h2 className="mb-4">Real Businesses, Real Results</h2>
-            <p className="text-xl text-gray-600">
-UK businesses who've successfully recovered their hidden commissions
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+              </svg>
+              Client Success Stories
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What Our Satisfied Clients Say</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real feedback from UK businesses we've helped recover their hidden commissions
             </p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all slide-in">
-                <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-gray-500">{testimonial.company}</div>
+              <div key={index} className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all border border-gray-100 slide-in transform hover:-translate-y-1">
+                {/* Quote Icon */}
+                <div className="absolute top-6 right-6">
+                  <svg className="w-8 h-8 text-green-100" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                
+                <div className="relative">
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">
+                    "{testimonial.text}"
+                  </p>
+                  
+                  <div className="pt-6 border-t border-gray-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        {testimonial.author.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                        <p className="text-sm text-gray-500">{testimonial.company}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
