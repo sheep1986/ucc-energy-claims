@@ -9,7 +9,7 @@ import {
   IconAward,
   IconBuildingBank,
   IconChartBar,
-  IconHandshake,
+  IconHandshake2,
   IconBriefcase,
   IconCertificate
 } from '@tabler/icons-react'
@@ -45,7 +45,7 @@ const About = () => {
     { number: "£127M+", label: "Total Recovered", icon: IconChartBar },
     { number: "50,000+", label: "Businesses Helped", icon: IconBuildingBank },
     { number: "95%", label: "Success Rate", icon: IconAward },
-    { number: "21 Days", label: "Average Resolution", icon: IconHandshake }
+    { number: "21 Days", label: "Average Resolution", icon: IconHandshake2 }
   ]
 
   const teamMembers = [
