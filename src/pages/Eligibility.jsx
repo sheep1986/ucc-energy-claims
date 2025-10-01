@@ -67,7 +67,7 @@ const Eligibility = () => {
   ]
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-emerald-light/20 py-16 md:py-24">
         <div className="container-custom">

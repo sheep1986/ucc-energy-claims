@@ -48,7 +48,7 @@ const Calculator = () => {
   ]
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Professional Hero Section */}
       <section className="relative py-16 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
         {/* Subtle Pattern Background */}

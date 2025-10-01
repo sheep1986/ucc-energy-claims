@@ -127,7 +127,7 @@ const Industries = () => {
   }, 0)
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-ice-light/30 py-16 md:py-24">
         <div className="container-custom">

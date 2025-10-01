@@ -73,7 +73,7 @@ const HowItWorks = () => {
   ]
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-green-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

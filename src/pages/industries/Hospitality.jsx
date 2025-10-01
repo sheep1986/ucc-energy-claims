@@ -106,7 +106,7 @@ const Hospitality = () => {
   ]
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 via-ice-light/30 to-emerald-light/20 py-16 md:py-24">
         <div className="container-custom">
