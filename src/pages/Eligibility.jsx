@@ -192,8 +192,8 @@ const Eligibility = () => {
           </div>
 
           <div className="text-center">
-            <Link to="/industries" className="text-ice-dark hover:text-ice font-medium">
-              View industry-specific information <IconChevronRight className="inline" size={20} />
+            <Link to="/contact" className="text-ice-dark hover:text-ice font-medium">
+              Contact us for industry-specific information <IconChevronRight className="inline" size={20} />
             </Link>
           </div>
         </div>

@@ -5,7 +5,6 @@ import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import HowItWorks from './pages/HowItWorks'
 import Eligibility from './pages/Eligibility'
-import Industries from './pages/Industries'
 import FAQ from './pages/FAQ'
 import Calculator from './pages/Calculator'
 import Contact from './pages/Contact'
@@ -53,7 +52,6 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/eligibility" element={<Eligibility />} />
-            <Route path="/industries" element={<Industries />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/contact" element={<Contact />} />
