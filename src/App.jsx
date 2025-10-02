@@ -35,6 +35,9 @@ import Education from './pages/industries/Education'
 import Offices from './pages/industries/Offices'
 import Warehouses from './pages/industries/Warehouses'
 import Restaurants from './pages/industries/Restaurants'
+// SEO Sector pages for energy broker reclaims
+import HospitalitySector from './pages/sectors/HospitalityPage'
+import ManufacturingSector from './pages/sectors/ManufacturingPage'
 
 function App() {
   return (
@@ -71,6 +74,9 @@ function App() {
             <Route path="/industries/offices" element={<Offices />} />
             <Route path="/industries/warehouses" element={<Warehouses />} />
             <Route path="/industries/restaurants" element={<Restaurants />} />
+            {/* SEO Sector Landing Pages */}
+            <Route path="/energy-broker-reclaims-hospitality" element={<HospitalitySector />} />
+            <Route path="/energy-broker-reclaims-manufacturing" element={<ManufacturingSector />} />
             {/* Additional Routes */}
             {/* Legal & Other Routes */}
             <Route path="/privacy" element={<Privacy />} />

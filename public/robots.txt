@@ -1,0 +1,27 @@
+# Robots.txt for Utility Commission Claims
+# Energy Broker Reclaims & Business Energy Claims
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://utilitycommissionclaims.co.uk/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

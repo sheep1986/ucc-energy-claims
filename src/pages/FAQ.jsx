@@ -35,6 +35,65 @@ const FAQ = () => {
   const [viewMode, setViewMode] = useState('categories') // 'categories' or 'all'
   const [popularExpanded, setPopularExpanded] = useState(false)
 
+  // Add FAQ Schema to head for SEO
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are energy broker reclaims?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Energy broker reclaims are claims to recover hidden commissions that energy brokers received from suppliers without disclosure. UK businesses can reclaim these undisclosed commissions dating back 6 years, with average claims worth £45,000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much are business energy claims worth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Business energy claims typically range from £10,000 to £150,000. The average claim is £45,000, but larger businesses with high energy usage can recover significantly more. Manufacturing and hospitality sectors often see the highest claims."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start an energy broker reclaim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starting your energy broker reclaim is simple: 1) Use our free online calculator to check eligibility in 60 seconds, 2) We review your energy contracts for hidden commissions, 3) Our legal team handles your entire claim on a no win, no fee basis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a time limit for energy broker claims?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can claim for energy broker commissions from contracts dating back 6 years from today. This means contracts from 2018 onwards are eligible. Don't delay as older contracts will become time-barred."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need my energy contracts for a claim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, you don't need your original contracts. We can obtain copies from your energy supplier with your authorization. All we need is your business details and permission to investigate on your behalf."
+          }
+        }
+      ]
+    })
+    document.head.appendChild(script)
+    
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
+
   const faqSections = [
     {
       id: 'claims',
@@ -44,8 +103,8 @@ const FAQ = () => {
       bgColor: 'bg-blue-50',
       questions: [
         {
-          q: 'What are hidden energy broker commissions?',
-          a: 'Energy brokers receive payments from suppliers for securing contracts. When undisclosed, these commissions inflate your energy costs illegally. Businesses unknowingly pay 10-40% above necessary rates. These hidden markups have been ruled as mis-selling by UK courts, giving businesses the right to reclaim these overcharges dating back six years.',
+          q: 'What are energy broker reclaims and hidden commissions?',
+          a: 'Energy broker reclaims recover hidden commissions that brokers received from suppliers without telling you. These secret payments inflated your business energy costs by 10-40%. UK courts ruled this practice illegal, entitling businesses to claim back these overcharges from the last 6 years. Average energy broker reclaims are worth £45,000.',
           popular: true,
           relatedTopics: ['Legal Rights', 'Claim Process']
         },

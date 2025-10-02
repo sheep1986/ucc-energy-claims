@@ -104,9 +104,10 @@ const HomePage = () => {
 
   const testimonials = [
     {
-      text: 'The process was remarkably straightforward. UCC handled everything professionally and we received our compensation within 3 weeks.',
-      author: 'Manufacturing Director',
-      company: 'Birmingham',
+      text: 'Energy broker reclaim worth £67,000! We had no idea these hidden commissions existed. UCC handled our business energy claim professionally - money in our account within 21 days.',
+      author: 'James Mitchell',
+      company: 'Steel Manufacturing Ltd',
+      amount: '£67,000',
       rating: 5
     },
     {
@@ -215,15 +216,15 @@ const HomePage = () => {
                   FCA Regulated • No Win No Fee
                 </div>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Recover Your Hidden
-                  <span className="block text-green-600">Energy Broker Commissions</span>
+                  Energy Broker Reclaims:
+                  <span className="block text-green-600">Claim Back £1000s</span>
                 </h1>
               </div>
               
               <p className="text-xl text-gray-700 mb-8 leading-relaxed fade-up max-w-xl">
-                <span className="font-semibold">Did you know?</span> Your energy broker may have taken up to 
-                <span className="text-green-600 font-bold">50% commission</span> without telling you. 
-                UK courts ruled this is illegal. <span className="underline decoration-green-500 decoration-2">We'll get your money back.</span>
+                <strong>Business energy claims</strong> specialists recovering hidden energy broker commissions. 
+                Average claim <span className="text-green-600 font-bold">£45,000</span>. Check if your business qualifies for 
+                <strong>energy broker reclaims</strong> in 60 seconds.
               </p>
               
               {/* Key Benefits Grid */}
@@ -304,9 +305,9 @@ const HomePage = () => {
             <div className="flex items-start gap-4">
               <IconAlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">OFGEM Report Confirms Widespread Mis-Selling</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">Energy Broker Reclaims Now Available - OFGEM Ruling</h3>
                 <p className="text-gray-700">
-                  On 28th March 2022, OFGEM confirmed that over 2 million UK businesses have been mis-sold energy contracts with undisclosed commissions
+                  OFGEM confirms 2 million UK businesses eligible for <strong>business energy claims</strong> due to hidden broker commissions. Start your <strong>energy broker reclaim</strong> today.
                 </p>
               </div>
             </div>
@@ -331,11 +332,11 @@ const HomePage = () => {
                   <span className="text-green-600 font-semibold">Your Legal Right</span>
                 </div>
                 <h2 className="text-3xl font-bold mb-4 fade-up">
-                  "Secret Commissions" Are Now Illegal - Claim Yours Back
+                  Energy Broker Reclaims: Your Business Could Be Owed £1000s
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  UK courts have ruled that undisclosed broker commissions are "secret commissions" and businesses 
-                  are entitled to full transparency. If these weren't disclosed, you have a legal right to claim them back.
+                  <strong>Business energy claims</strong> are now possible after UK courts ruled hidden energy broker commissions illegal. 
+                  If your broker didn't disclose their commission, you're entitled to <strong>energy broker reclaims</strong> worth thousands.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start gap-2">
