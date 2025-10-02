@@ -849,10 +849,10 @@ Successfully recover your hidden energy broker commissions
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((industry, index) => (
-              <Link
+              <div
                 key={index}
-                to="/industries"
-                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group stagger-in block"
+                onClick={() => setShowCalculatorModal(true)}
+                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group stagger-in"
               >
                 <div className="text-4xl mb-4">{industry.icon}</div>
                 <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
@@ -865,7 +865,7 @@ Successfully recover your hidden energy broker commissions
                   </span>
                   <IconArrowRight className="w-4 h-4 text-gray-400 group-hover:text-green-600 transition-all group-hover:translate-x-1" />
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
           
