@@ -280,7 +280,7 @@ const Terms = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -288,38 +288,50 @@ const Terms = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-6 text-white">Questions About These Terms?</h2>
-            <p className="text-xl text-blue-50 mb-8 max-w-3xl mx-auto">
+            <h2 className="text-5xl font-bold mb-4 text-white">Questions About These Terms?</h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
               Our legal team is here to explain any aspect of our terms and answer your questions
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
-              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
-                <IconGavel className="text-white mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2 text-white">Legal Enquiries</h3>
-                <p className="text-blue-50 text-sm">legal@utilitycommissionclaims.co.uk</p>
-                <p className="text-blue-100 text-xs mt-2">Response within 24 hours</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
-                <IconHeart className="text-white mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2 text-white">General Enquiries</h3>
-                <p className="text-blue-50 text-sm">hello@utilitycommissionclaims.co.uk</p>
-                <p className="text-blue-100 text-xs mt-2">Mon-Fri 9am-6pm</p>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/15 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+                  <IconGavel className="text-white" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">Legal Enquiries</h3>
+                <p className="text-blue-100 text-base mb-2">legal@utilitycommissionclaims.co.uk</p>
+                <p className="text-blue-200 text-sm">Response within 24 hours</p>
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/15 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+                  <IconHeart className="text-white" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">General Enquiries</h3>
+                <p className="text-blue-100 text-base mb-2">hello@utilitycommissionclaims.co.uk</p>
+                <p className="text-blue-200 text-sm">Mon-Fri 9am-6pm</p>
+              </motion.div>
             </div>
 
             <div className="text-center">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-medium"
+                className="inline-flex items-center gap-3 bg-white text-blue-700 px-10 py-5 rounded-full hover:bg-blue-50 hover:shadow-2xl transition-all duration-300 font-semibold text-lg shadow-xl"
               >
                 Contact Our Legal Team
-                <IconGavel size={20} />
-              </a>
+                <IconGavel size={24} />
+              </motion.a>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-blue-50 text-sm">
+            <div className="mt-16 pt-8 border-t border-white/10">
+              <p className="text-blue-100 text-sm leading-relaxed max-w-4xl mx-auto">
                 Utility Commission Claims Ltd is authorised and regulated by the Solicitors Regulation Authority 
                 (SRA Number: 123456) and is registered in England and Wales (Company Number: 12345678). 
                 Registered office: 123 Legal Street, London, EC1A 1AA.

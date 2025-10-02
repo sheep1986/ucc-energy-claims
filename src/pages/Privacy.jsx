@@ -261,7 +261,7 @@ const Privacy = () => {
       </section>
 
       {/* Contact for Privacy */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
+      <section className="py-24 bg-gradient-to-br from-green-600 via-green-700 to-teal-700">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -269,38 +269,50 @@ const Privacy = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-6 text-white">Questions About Your Privacy?</h2>
-            <p className="text-xl text-green-50 mb-8 max-w-3xl mx-auto">
+            <h2 className="text-5xl font-bold mb-4 text-white">Questions About Your Privacy?</h2>
+            <p className="text-xl text-green-100 mb-12 max-w-3xl mx-auto">
               Our Data Protection Officer is here to help with any privacy-related questions or requests
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
-              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
-                <IconMail className="text-white mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2 text-white">Email Us</h3>
-                <p className="text-green-50 text-sm">privacy@utilitycommissionclaims.co.uk</p>
-                <p className="text-green-100 text-xs mt-2">Response within 24 hours</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
-                <IconMail className="text-white mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2 text-white">Contact Form</h3>
-                <p className="text-green-50 text-sm">Use our secure contact form</p>
-                <p className="text-green-100 text-xs mt-2">Response within 24 hours</p>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/15 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+                  <IconMail className="text-white" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">Email Us</h3>
+                <p className="text-green-100 text-base mb-2">privacy@utilitycommissionclaims.co.uk</p>
+                <p className="text-green-200 text-sm">Response within 24 hours</p>
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/15 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+                  <IconShieldCheck className="text-white" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">Data Protection</h3>
+                <p className="text-green-100 text-base mb-2">Use our secure contact form</p>
+                <p className="text-green-200 text-sm">GDPR Compliant</p>
+              </motion.div>
             </div>
 
             <div className="text-center">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-medium"
+                className="inline-flex items-center gap-3 bg-white text-green-700 px-10 py-5 rounded-full hover:bg-green-50 hover:shadow-2xl transition-all duration-300 font-semibold text-lg shadow-xl"
               >
                 Contact Our Privacy Team
-                <IconShieldCheck size={20} />
-              </a>
+                <IconShieldCheck size={24} />
+              </motion.a>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-green-50 text-sm">
+            <div className="mt-16 pt-8 border-t border-white/10">
+              <p className="text-green-100 text-sm leading-relaxed max-w-4xl mx-auto">
                 Utility Commission Claims Ltd is registered with the Information Commissioner's Office (ICO) 
                 under registration number ZA123456. We are committed to protecting your privacy in accordance 
                 with all applicable UK and EU data protection laws.
