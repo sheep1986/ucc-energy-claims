@@ -149,33 +149,33 @@ const Complaints = () => {
 
           {/* Our Commitment */}
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 text-white">
-            <h2 className="text-2xl font-bold mb-6">Our Commitment to You</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white">Our Commitment to You</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start">
                 <IconCircleCheck className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold mb-1">Treat all complaints seriously</div>
+                  <div className="font-semibold mb-1 text-white">Treat all complaints seriously</div>
                   <div className="text-white/70 text-sm">Every concern matters to us</div>
                 </div>
               </div>
               <div className="flex items-start">
                 <IconCircleCheck className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold mb-1">Investigate thoroughly</div>
+                  <div className="font-semibold mb-1 text-white">Investigate thoroughly</div>
                   <div className="text-white/70 text-sm">We review all aspects of your case</div>
                 </div>
               </div>
               <div className="flex items-start">
                 <IconCircleCheck className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold mb-1">Respond promptly</div>
+                  <div className="font-semibold mb-1 text-white">Respond promptly</div>
                   <div className="text-white/70 text-sm">Clear timelines for resolution</div>
                 </div>
               </div>
               <div className="flex items-start">
                 <IconCircleCheck className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
                 <div>
-                  <div className="font-semibold mb-1">Learn from feedback</div>
+                  <div className="font-semibold mb-1 text-white">Learn from feedback</div>
                   <div className="text-white/70 text-sm">Continuously improve our service</div>
                 </div>
               </div>
