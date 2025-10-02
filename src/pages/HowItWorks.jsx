@@ -525,22 +525,22 @@ const HowItWorks = () => {
       </section>
 
       {/* Final CTA Section with Image */}
-      <section className="py-20 bg-gradient-to-b from-white to-green-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      <section className="py-12 sm:py-20 bg-gradient-to-b from-white to-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
             <img 
               src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600"
               alt="Success celebration"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[300px] sm:h-[400px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-emerald-900/80"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white px-6">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to recover your money?</h2>
-                <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+              <div className="text-center">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-white">Ready to recover your money?</h2>
+                <p className="text-base sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                   Join thousands of UK businesses who have successfully claimed back their hidden energy broker commissions
                 </p>
-                <Link to="/calculator" className="btn bg-white text-green-600 hover:bg-gray-100">
+                <Link to="/calculator" className="inline-flex items-center justify-center gap-2 bg-white text-green-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-colors">
                   Start Your Claim
                   <IconArrowRight className="w-5 h-5" />
                 </Link>
