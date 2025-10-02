@@ -69,10 +69,18 @@
 [[forms.notifications]]
   name = "contact"
   email = "hello@utilitycommissionclaims.co.uk"
+  subject = "New Contact Form Submission from UCC Website"
 
 [[forms.notifications]]
   name = "calculator"
   email = "hello@utilitycommissionclaims.co.uk"
+  subject = "New Calculator Assessment from UCC Website"
+
+# Catch-all for any other forms
+[[forms.notifications]]
+  name = "*"
+  email = "hello@utilitycommissionclaims.co.uk"
+  subject = "New Form Submission from UCC Website"
 
 # Branch deploy settings
 [context.production]

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { 
   IconMail,
   IconMapPin,
@@ -10,6 +10,7 @@ import {
 } from '@tabler/icons-react'
 
 const Contact = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,7 +37,8 @@ const Contact = () => {
       })
       
       if (response.ok) {
-        setIsSubmitted(true)
+        // Navigate to success page after successful submission
+        navigate('/success')
       } else {
         alert('There was an error submitting the form. Please try again or email us directly at hello@utilitycommissionclaims.co.uk')
       }

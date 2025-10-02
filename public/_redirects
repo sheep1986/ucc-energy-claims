@@ -1,0 +1,6 @@
+# Form submission success pages
+/contact-success /success 301
+/calculator-success /success 301
+
+# Ensure forms work with React Router
+/* /index.html 200

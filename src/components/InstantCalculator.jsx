@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { 
   IconArrowRight, 
   IconArrowLeft,
@@ -15,6 +16,7 @@ import {
 } from '@tabler/icons-react'
 
 const InstantCalculator = () => {
+  const navigate = useNavigate()
   const [currentStep, setCurrentStep] = useState(1)
   const [showModal, setShowModal] = useState(false)
   const [formData, setFormData] = useState({
@@ -75,14 +77,15 @@ const InstantCalculator = () => {
       })
       
       if (response.ok) {
-        setShowModal(true)
+        // Navigate to success page after successful submission
+        navigate('/success')
       } else {
-        setShowModal(true) // Still show modal but data might not be sent
+        alert('There was an error submitting the form. Please try again or email us directly at hello@utilitycommissionclaims.co.uk')
         console.error('Form submission failed')
       }
     } catch (error) {
       console.error('Form submission error:', error)
-      setShowModal(true) // Still show modal even if submission fails
+      alert('There was an error submitting the form. Please try again or email us directly at hello@utilitycommissionclaims.co.uk')
     }
   }
 
