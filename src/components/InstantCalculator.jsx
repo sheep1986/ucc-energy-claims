@@ -51,9 +51,39 @@ const InstantCalculator = () => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setShowModal(true)
+    
+    // Prepare form data for Netlify
+    const form = e.target.form || e.target.closest('form')
+    const netlifyData = new FormData()
+    
+    // Add form name
+    netlifyData.append('form-name', 'calculator')
+    
+    // Add all form fields
+    Object.keys(formData).forEach(key => {
+      netlifyData.append(key, formData[key])
+    })
+    
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(netlifyData).toString()
+      })
+      
+      if (response.ok) {
+        setShowModal(true)
+      } else {
+        setShowModal(true) // Still show modal but data might not be sent
+        console.error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setShowModal(true) // Still show modal even if submission fails
+    }
   }
 
   const steps = [
@@ -132,7 +162,21 @@ const InstantCalculator = () => {
         <p className="text-gray-600 mb-8">{steps[currentStep - 1].description}</p>
 
         {/* Step Forms */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form 
+          name="calculator"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit} 
+          className="space-y-4"
+        >
+          <input type="hidden" name="form-name" value="calculator" />
+          <div className="hidden">
+            <label>
+              Don't fill this out if you're human: 
+              <input name="bot-field" />
+            </label>
+          </div>
           {currentStep === 1 && (
             <div className="space-y-4">
               <button

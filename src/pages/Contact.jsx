@@ -20,9 +20,30 @@ const Contact = () => {
   
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsSubmitted(true)
+    
+    // Prepare form data for Netlify
+    const form = e.target
+    const formData = new FormData(form)
+    
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      
+      if (response.ok) {
+        setIsSubmitted(true)
+      } else {
+        alert('There was an error submitting the form. Please try again or email us directly at hello@utilitycommissionclaims.co.uk')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      alert('There was an error submitting the form. Please try again or email us directly at hello@utilitycommissionclaims.co.uk')
+    }
   }
 
   const handleChange = (e) => {
@@ -111,7 +132,21 @@ const Contact = () => {
                 <div className="bg-white rounded-2xl p-8 shadow-lg">
                   <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form 
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div className="hidden">
+                      <label>
+                        Don't fill this out if you're human: 
+                        <input name="bot-field" />
+                      </label>
+                    </div>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">

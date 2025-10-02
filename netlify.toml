@@ -61,9 +61,18 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Form detection
+# Form detection and email forwarding
 [forms]
   mode = "netlify"
+
+# Form notifications - emails sent to hello@utilitycommissionclaims.co.uk
+[[forms.notifications]]
+  name = "contact"
+  email = "hello@utilitycommissionclaims.co.uk"
+
+[[forms.notifications]]
+  name = "calculator"
+  email = "hello@utilitycommissionclaims.co.uk"
 
 # Branch deploy settings
 [context.production]
