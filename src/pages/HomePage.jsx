@@ -189,7 +189,7 @@ const HomePage = () => {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-2.5 sm:py-3.5 text-center">
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-2.5 sm:py-3.5 text-center mt-16 lg:mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-xs sm:text-sm md:text-base">
             <span className="inline-flex items-center">
@@ -211,7 +211,7 @@ const HomePage = () => {
       </div>
 
       {/* Hero Section - Modern Professional Style */}
-      <section ref={heroRef} className="relative bg-gradient-to-br from-gray-50 via-white to-green-50/30 pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+      <section ref={heroRef} className="relative bg-gradient-to-br from-gray-50 via-white to-green-50/30 pt-8 pb-16 lg:pt-12 lg:pb-24 overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
