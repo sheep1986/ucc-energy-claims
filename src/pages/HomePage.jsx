@@ -222,9 +222,10 @@ const HomePage = () => {
               </div>
               
               <p className="text-xl text-gray-700 mb-8 leading-relaxed fade-up max-w-xl">
-                <strong>Business energy claims</strong> specialists recovering hidden broker commissions of 
-                <span className="text-red-600 font-bold">0.05p to 10p per kWh</span>. Average claim <span className="text-green-600 font-bold">£45,000</span>. 
-                Windermere School recovered <span className="font-bold">£200,000</span>. Check your <strong>energy broker reclaim</strong> now.
+                <strong>Business energy claims</strong> specialists recovering hidden broker commissions of{' '}
+                <span className="text-red-600 font-bold whitespace-nowrap">0.05p to 10p per kWh</span>. Average claim{' '}
+                <span className="text-green-600 font-bold">£45,000</span>. Windermere School recovered{' '}
+                <span className="font-bold">£200,000</span>. Check your <strong>energy broker reclaim</strong> now.
               </p>
               
               {/* Key Benefits Grid */}
