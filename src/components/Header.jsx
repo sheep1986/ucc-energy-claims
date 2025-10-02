@@ -17,9 +17,9 @@ const Header = () => {
 
   const navigation = [
     { name: 'How It Works', href: '/how-it-works' },
+    { name: 'Commission Rates', href: '/energy-broker-commission-rates' },
     { name: 'Industries', href: '/industries' },
-    { name: 'Insights', href: '/insights' },
-    { name: 'About', href: '/about' },
+    { name: 'OFGEM Report', href: '/ofgem-energy-broker-investigation' },
     { name: 'Contact', href: '/contact' },
   ]
 

@@ -38,6 +38,9 @@ import Restaurants from './pages/industries/Restaurants'
 // SEO Sector pages for energy broker reclaims
 import HospitalitySector from './pages/sectors/HospitalityPage'
 import ManufacturingSector from './pages/sectors/ManufacturingPage'
+// SEO Pages for energy broker commission
+import CommissionRates from './pages/CommissionRates'
+import OfgemInvestigationPage from './pages/OfgemInvestigation'
 
 function App() {
   return (
@@ -77,6 +80,9 @@ function App() {
             {/* SEO Sector Landing Pages */}
             <Route path="/energy-broker-reclaims-hospitality" element={<HospitalitySector />} />
             <Route path="/energy-broker-reclaims-manufacturing" element={<ManufacturingSector />} />
+            {/* SEO Pages for Energy Broker Commission */}
+            <Route path="/energy-broker-commission-rates" element={<CommissionRates />} />
+            <Route path="/ofgem-energy-broker-investigation" element={<OfgemInvestigationPage />} />
             {/* Additional Routes */}
             {/* Legal & Other Routes */}
             <Route path="/privacy" element={<Privacy />} />

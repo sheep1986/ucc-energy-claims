@@ -222,9 +222,9 @@ const HomePage = () => {
               </div>
               
               <p className="text-xl text-gray-700 mb-8 leading-relaxed fade-up max-w-xl">
-                <strong>Business energy claims</strong> specialists recovering hidden energy broker commissions. 
-                Average claim <span className="text-green-600 font-bold">£45,000</span>. Check if your business qualifies for 
-                <strong>energy broker reclaims</strong> in 60 seconds.
+                <strong>Business energy claims</strong> specialists recovering hidden broker commissions of 
+                <span className="text-red-600 font-bold">0.05p to 10p per kWh</span>. Average claim <span className="text-green-600 font-bold">£45,000</span>. 
+                Windermere School recovered <span className="font-bold">£200,000</span>. Check your <strong>energy broker reclaim</strong> now.
               </p>
               
               {/* Key Benefits Grid */}
@@ -305,16 +305,17 @@ const HomePage = () => {
             <div className="flex items-start gap-4">
               <IconAlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">Energy Broker Reclaims Now Available - OFGEM Ruling</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">OFGEM: Hidden Commissions 0.05p-10p per kWh - Claim Yours Back</h3>
                 <p className="text-gray-700">
-                  OFGEM confirms 2 million UK businesses eligible for <strong>business energy claims</strong> due to hidden broker commissions. Start your <strong>energy broker reclaim</strong> today.
+                  <strong>28 March 2022:</strong> OFGEM confirms 2 million businesses overcharged through <strong>secret commissions</strong>. 
+                  <strong>1 Oct 2024:</strong> New transparency rules don't affect historic claims. Your <strong>energy broker reclaim</strong> could be worth £100,000+.
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-600">£2,000 - £150,000</div>
-                <div className="text-sm text-gray-600">Potential compensation per business</div>
+                <div className="text-2xl font-bold text-amber-600">£2,000 - £200,000+</div>
+                <div className="text-sm text-gray-600">Windermere School: £200k recovered</div>
               </div>
             </div>
           </div>
