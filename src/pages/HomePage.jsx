@@ -22,7 +22,8 @@ import {
   IconLock,
   IconRocket,
   IconHandStop,
-  IconQuestionMark
+  IconQuestionMark,
+  IconX
 } from '@tabler/icons-react'
 import InstantCalculator from '../components/InstantCalculator'
 import SupplierSection from '../components/SupplierSection'
@@ -32,6 +33,7 @@ const HomePage = () => {
   const [activeFAQ, setActiveFAQ] = useState(0)
   const [showAnnualImpact, setShowAnnualImpact] = useState(false)
   const [hoveredItem, setHoveredItem] = useState(null)
+  const [showCalculatorModal, setShowCalculatorModal] = useState(false)
   const heroRef = useRef(null)
   
   // Initialize scroll animations
@@ -251,11 +253,14 @@ const HomePage = () => {
               
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-up">
-                <Link to="/calculator" className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-bold hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <button 
+                  onClick={() => setShowCalculatorModal(true)}
+                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-bold hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
                   <IconCalculator className="w-5 h-5" />
                   Start Free Assessment Now
                   <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
                 <Link to="/how-it-works" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:border-green-600 hover:text-green-600 transition-all">
                   Learn How It Works
                 </Link>
@@ -1148,6 +1153,36 @@ Successfully recover your hidden energy broker commissions
           </div>
         </div>
       </section>
+
+      {/* Calculator Modal */}
+      {showCalculatorModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
+            onClick={() => setShowCalculatorModal(false)}
+          />
+          
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-gradient-to-r from-green-600 to-green-700 px-6 py-4 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl font-bold text-white">Check Your Energy Broker Claim</h2>
+                <button
+                  onClick={() => setShowCalculatorModal(false)}
+                  className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+                >
+                  <IconX className="w-5 h-5 text-white" />
+                </button>
+              </div>
+            </div>
+            
+            {/* Calculator Component */}
+            <div className="p-6">
+              <InstantCalculator />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }
