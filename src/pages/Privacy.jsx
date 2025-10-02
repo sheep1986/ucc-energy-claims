@@ -131,24 +131,24 @@ const Privacy = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-gray-800 via-slate-900 to-gray-800 text-white">
-        <div className="container-custom">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-green-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-green-500/20 flex items-center justify-center">
-              <IconShieldCheck size={40} className="text-green-500" />
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-green-100 flex items-center justify-center">
+              <IconShieldCheck size={40} className="text-green-600" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Privacy
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald to-blue-400"> Policy</span>
+              <span className="text-green-600"> Policy</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               We take your privacy seriously. This policy explains how we collect, use, and protect your personal information.
             </p>
-            <div className="inline-flex items-center gap-2 bg-green-500/10 backdrop-blur text-green-500 px-4 py-2 rounded-full text-sm">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
               <IconShieldCheck size={16} />
               <span>Last updated: March 2024</span>
             </div>
@@ -157,7 +157,7 @@ const Privacy = () => {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-12 bg-green-500-50">
+      <section className="py-12 bg-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -170,17 +170,17 @@ const Privacy = () => {
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <IconLock className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold text-gray-900 mb-2">Secure Collection</h3>
-                <p className="text-slate-600 text-sm">We only collect information necessary to process your claim</p>
+                <p className="text-gray-600 text-sm">We only collect information necessary to process your claim</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <IconShieldCheck className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold text-gray-900 mb-2">Protected Use</h3>
-                <p className="text-slate-600 text-sm">Your data is used exclusively for claim processing and legal purposes</p>
+                <p className="text-gray-600 text-sm">Your data is used exclusively for claim processing and legal purposes</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <IconEye className="text-green-500 mx-auto mb-4" size={32} />
                 <h3 className="font-bold text-gray-900 mb-2">Full Transparency</h3>
-                <p className="text-slate-600 text-sm">You maintain complete control and visibility over your data</p>
+                <p className="text-gray-600 text-sm">You maintain complete control and visibility over your data</p>
               </div>
             </div>
           </motion.div>
@@ -265,38 +265,38 @@ const Privacy = () => {
       </section>
 
       {/* Contact for Privacy */}
-      <section className="py-20 bg-navy text-white">
-        <div className="container-custom">
+      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-6">Questions About Your Privacy?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Questions About Your Privacy?</h2>
+            <p className="text-xl text-green-50 mb-8 max-w-3xl mx-auto">
               Our Data Protection Officer is here to help with any privacy-related questions or requests
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
-              <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconMail className="text-green-500 mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2">Email Us</h3>
-                <p className="text-gray-300 text-sm">privacy@utilitycommissionclaims.co.uk</p>
-                <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
+              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
+                <IconMail className="text-white mx-auto mb-4" size={32} />
+                <h3 className="font-bold mb-2 text-white">Email Us</h3>
+                <p className="text-green-50 text-sm">privacy@utilitycommissionclaims.co.uk</p>
+                <p className="text-green-100 text-xs mt-2">Response within 24 hours</p>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconMail className="text-green-500 mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2">Contact Form</h3>
-                <p className="text-gray-300 text-sm">Use our secure contact form</p>
-                <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
+              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
+                <IconMail className="text-white mx-auto mb-4" size={32} />
+                <h3 className="font-bold mb-2 text-white">Contact Form</h3>
+                <p className="text-green-50 text-sm">Use our secure contact form</p>
+                <p className="text-green-100 text-xs mt-2">Response within 24 hours</p>
               </div>
             </div>
 
             <div className="text-center">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-500/90 transition-all duration-300 font-medium"
+                className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-medium"
               >
                 Contact Our Privacy Team
                 <IconShieldCheck size={20} />
@@ -304,7 +304,7 @@ const Privacy = () => {
             </div>
 
             <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-gray-400 text-sm">
+              <p className="text-green-50 text-sm">
                 Utility Commission Claims Ltd is registered with the Information Commissioner's Office (ICO) 
                 under registration number ZA123456. We are committed to protecting your privacy in accordance 
                 with all applicable UK and EU data protection laws.

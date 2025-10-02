@@ -122,7 +122,7 @@ const Terms = () => {
     <>
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-gray-800 via-slate-900 to-gray-800 text-white">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ const Terms = () => {
 
       {/* Quick Facts */}
       <section className="py-12 bg-green-500-50">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +177,7 @@ const Terms = () => {
 
       {/* Important Notice */}
       <section className="py-12 bg-orange-50 border-l-4 border-orange-400">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -199,7 +199,7 @@ const Terms = () => {
 
       {/* Detailed Terms */}
       <section className="py-20">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {sections.map((section, index) => (
               <motion.div
@@ -233,7 +233,7 @@ const Terms = () => {
 
       {/* Additional Important Terms */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +285,7 @@ const Terms = () => {
 
       {/* Contact Section */}
       <section className="py-20 bg-navy text-white">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -298,24 +298,24 @@ const Terms = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
-              <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconGavel className="text-green-500 mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2">Legal Enquiries</h3>
-                <p className="text-gray-300 text-sm">legal@utilitycommissionclaims.co.uk</p>
-                <p className="text-gray-400 text-xs mt-2">Response within 24 hours</p>
+              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
+                <IconGavel className="text-white mx-auto mb-4" size={32} />
+                <h3 className="font-bold mb-2 text-white">Legal Enquiries</h3>
+                <p className="text-blue-50 text-sm">legal@utilitycommissionclaims.co.uk</p>
+                <p className="text-blue-100 text-xs mt-2">Response within 24 hours</p>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-                <IconHeart className="text-green-500 mx-auto mb-4" size={32} />
-                <h3 className="font-bold mb-2">General Enquiries</h3>
-                <p className="text-gray-300 text-sm">hello@utilitycommissionclaims.co.uk</p>
-                <p className="text-gray-400 text-xs mt-2">Mon-Fri 9am-6pm</p>
+              <div className="bg-white/20 backdrop-blur rounded-xl p-6">
+                <IconHeart className="text-white mx-auto mb-4" size={32} />
+                <h3 className="font-bold mb-2 text-white">General Enquiries</h3>
+                <p className="text-blue-50 text-sm">hello@utilitycommissionclaims.co.uk</p>
+                <p className="text-blue-100 text-xs mt-2">Mon-Fri 9am-6pm</p>
               </div>
             </div>
 
             <div className="text-center">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-500/90 transition-all duration-300 font-medium"
+                className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-medium"
               >
                 Contact Our Legal Team
                 <IconGavel size={20} />
@@ -323,7 +323,7 @@ const Terms = () => {
             </div>
 
             <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-gray-400 text-sm">
+              <p className="text-blue-50 text-sm">
                 Utility Commission Claims Ltd is authorised and regulated by the Solicitors Regulation Authority 
                 (SRA Number: 123456) and is registered in England and Wales (Company Number: 12345678). 
                 Registered office: 123 Legal Street, London, EC1A 1AA.
