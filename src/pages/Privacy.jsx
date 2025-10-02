@@ -131,27 +131,23 @@ const Privacy = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-green-50 to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-green-100 flex items-center justify-center">
-              <IconShieldCheck size={40} className="text-green-600" />
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+              <IconShieldCheck className="w-4 h-4 text-green-400 mr-2" />
+              <span className="text-white/90 text-sm">Your Data Protection</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Privacy
-              <span className="text-green-600"> Policy</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Privacy Policy
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               We take your privacy seriously. This policy explains how we collect, use, and protect your personal information.
             </p>
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
-              <IconShieldCheck size={16} />
-              <span>Last updated: March 2024</span>
-            </div>
           </motion.div>
         </div>
       </section>
