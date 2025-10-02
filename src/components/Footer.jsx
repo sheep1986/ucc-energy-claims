@@ -31,21 +31,21 @@ const Footer = () => {
     <footer className="bg-gray-50 border-t border-gray-200">
       {/* CTA Section */}
       <div className="bg-green-600">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-            <div className="text-white">
-              <h3 className="text-xl font-bold mb-1 text-white">
+            <div className="text-white text-center lg:text-left">
+              <h3 className="text-lg sm:text-xl font-bold mb-1 text-white">
                 Ready to check if you have a claim?
               </h3>
-              <p className="text-white">
+              <p className="text-white text-sm sm:text-base">
                 Takes just 2 minutes • No obligation • 100% free assessment
               </p>
             </div>
-            <div className="flex gap-4">
-              <Link to="/calculator" className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+            <div className="flex gap-2 sm:gap-4 w-full sm:w-auto">
+              <Link to="/calculator" className="bg-white text-green-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors text-sm sm:text-base flex-1 sm:flex-none text-center">
                 Start Free Check
               </Link>
-              <Link to="/contact" className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors">
+              <Link to="/contact" className="bg-green-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors text-sm sm:text-base flex-1 sm:flex-none text-center">
                 Contact Us
               </Link>
             </div>
@@ -54,10 +54,10 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Column */}
-          <div className="col-span-2 lg:col-span-2">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2">
             <img 
               src="/ucc-logo.png" 
               alt="UCC" 
@@ -71,15 +71,15 @@ const Footer = () => {
               <span className="text-2xl font-bold">UCC</span>
             </div>
             
-            <p className="text-gray-600 mb-6 max-w-sm">
+            <p className="text-gray-600 mb-6 max-w-sm text-sm sm:text-base">
               UK's leading energy broker commission recovery specialists. 
               No win, no fee. FCA regulated.
             </p>
             
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-gray-600">
-                <IconMail className="w-4 h-4 text-gray-400" />
-                hello@utilitycommissionclaims.co.uk
+              <div className="flex items-start sm:items-center gap-3 text-sm text-gray-600">
+                <IconMail className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <span className="break-all">hello@utilitycommissionclaims.co.uk</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-600">
                 <IconClock className="w-4 h-4 text-gray-400" />

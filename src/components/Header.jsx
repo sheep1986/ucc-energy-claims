@@ -103,7 +103,7 @@ const Header = () => {
           onClick={() => setIsOpen(false)}
         />
         
-        <div className={`absolute right-0 top-0 h-full w-[280px] bg-white shadow-2xl transition-transform duration-500 ${
+        <div className={`absolute right-0 top-0 h-full w-full sm:w-[280px] bg-white shadow-2xl transition-transform duration-500 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="p-6 pt-20">

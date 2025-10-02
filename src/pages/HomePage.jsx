@@ -189,9 +189,9 @@ const HomePage = () => {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-3.5 text-center">
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-2.5 sm:py-3.5 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-3 text-sm md:text-base">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-xs sm:text-sm md:text-base">
             <span className="inline-flex items-center">
               <svg className="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -228,13 +228,13 @@ const HomePage = () => {
                   </svg>
                   FCA Regulated • No Win No Fee
                 </div>
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Energy Broker Reclaims:
                   <span className="block text-green-600">Claim Back £1000s</span>
                 </h1>
               </div>
               
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed fade-up max-w-xl">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed fade-up max-w-xl">
                 <strong>Business energy claims</strong> specialists recovering hidden broker commissions of{' '}
                 <span className="text-red-600 font-bold whitespace-nowrap">0.05p to 10p per kWh</span>. Average claim{' '}
                 <span className="text-green-600 font-bold">£45,000</span>. Windermere School recovered{' '}
@@ -242,22 +242,22 @@ const HomePage = () => {
               </p>
               
               {/* Key Benefits Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-8 fade-up">
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">No Win</div>
-                  <div className="text-sm text-gray-600">No Fee</div>
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-8 fade-up">
+                <div className="bg-white rounded-xl p-3 sm:p-4 border border-gray-100 shadow-sm">
+                  <div className="text-lg sm:text-2xl font-bold text-green-600">No Win</div>
+                  <div className="text-xs sm:text-sm text-gray-600">No Fee</div>
                 </div>
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">Fast</div>
-                  <div className="text-sm text-gray-600">Processing</div>
+                <div className="bg-white rounded-xl p-3 sm:p-4 border border-gray-100 shadow-sm">
+                  <div className="text-lg sm:text-2xl font-bold text-green-600">Fast</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Processing</div>
                 </div>
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">FCA</div>
-                  <div className="text-sm text-gray-600">Regulated</div>
+                <div className="bg-white rounded-xl p-3 sm:p-4 border border-gray-100 shadow-sm">
+                  <div className="text-lg sm:text-2xl font-bold text-green-600">FCA</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Regulated</div>
                 </div>
-                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">£0</div>
-                  <div className="text-sm text-gray-600">Upfront Cost</div>
+                <div className="bg-white rounded-xl p-3 sm:p-4 border border-gray-100 shadow-sm">
+                  <div className="text-lg sm:text-2xl font-bold text-green-600">£0</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Upfront Cost</div>
                 </div>
               </div>
               
@@ -266,13 +266,13 @@ const HomePage = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-up">
                 <button 
                   onClick={() => setShowCalculatorModal(true)}
-                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-bold hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
                 >
                   <IconCalculator className="w-5 h-5" />
                   Start Free Assessment Now
                   <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <Link to="/how-it-works" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:border-green-600 hover:text-green-600 transition-all">
+                <Link to="/how-it-works" className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-900 px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:border-green-600 hover:text-green-600 transition-all text-sm sm:text-base">
                   Learn How It Works
                 </Link>
               </div>
@@ -295,7 +295,7 @@ const HomePage = () => {
             </div>
             
             {/* Calculator Card - Enhanced Design */}
-            <div className="lg:block">
+            <div className="hidden lg:block">
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden scale-in relative">
                 {/* Premium Badge */}
                 <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -1168,20 +1168,20 @@ Successfully recover your hidden energy broker commissions
 
       {/* Calculator Modal */}
       {showCalculatorModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-2 sm:px-4">
           <div 
             className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
             onClick={() => setShowCalculatorModal(false)}
           />
           
-          <div className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-gradient-to-r from-green-600 to-green-700 px-6 py-4 rounded-t-2xl">
+            <div className="sticky top-0 bg-gradient-to-r from-green-600 to-green-700 px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold text-white">Check Your Energy Broker Claim</h2>
+                <h2 className="text-lg sm:text-xl font-bold text-white">Check Your Energy Broker Claim</h2>
                 <button
                   onClick={() => setShowCalculatorModal(false)}
-                  className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+                  className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors"
                 >
                   <IconX className="w-5 h-5 text-white" />
                 </button>
@@ -1189,7 +1189,7 @@ Successfully recover your hidden energy broker commissions
             </div>
             
             {/* Calculator Component */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <InstantCalculator />
             </div>
           </div>
