@@ -315,14 +315,14 @@ const OfgemInvestigation = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold mb-6 text-white">
             <IconShieldCheck className="w-4 h-4" />
             OFGEM Investigation Confirms Your Right to Claim
           </div>
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl font-bold mb-4 text-white">
             Join 20,000+ Businesses Claiming Back Hidden Commissions
           </h2>
-          <p className="text-xl mb-8 text-blue-50">
+          <p className="text-xl mb-8 text-white/90">
             OFGEM's investigation proves you've been overcharged. Don't let brokers keep your money. 
             Check your claim value in 60 seconds. No win, no fee.
           </p>
